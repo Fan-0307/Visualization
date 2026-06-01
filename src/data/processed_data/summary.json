@@ -1,0 +1,45 @@
+{
+  "generated_at_utc": "2026-06-01T07:35:33.248569+00:00",
+  "source_output_dir": "/home/jovyan/Visionization/data/output",
+  "processed_data_dir": "/home/jovyan/Visionization/data/processed_data",
+  "results_json": "/home/jovyan/Visionization/data/processed_data/results.json",
+  "total_questions": 199,
+  "models": {
+    "qwen": {
+      "status": "ok",
+      "count": 199,
+      "correct": 168,
+      "accuracy": 0.8442211055276382,
+      "results_count": 199,
+      "heatmap_count": 199,
+      "photos_dir": "/home/jovyan/Visionization/data/processed_data/photos/qwen"
+    },
+    "llava": {
+      "status": "ok",
+      "count": 199,
+      "correct": 158,
+      "accuracy": 0.7939698492462312,
+      "results_count": 199,
+      "heatmap_count": 199,
+      "photos_dir": "/home/jovyan/Visionization/data/processed_data/photos/llava"
+    },
+    "salesforce": {
+      "status": "ok",
+      "count": 199,
+      "correct": 66,
+      "accuracy": 0.3316582914572864,
+      "results_count": 199,
+      "heatmap_count": 199,
+      "photos_dir": "/home/jovyan/Visionization/data/processed_data/photos/salesforce"
+    },
+    "openai": {
+      "status": "ok",
+      "count": 199,
+      "correct": 12,
+      "accuracy": 0.06030150753768844,
+      "results_count": 199,
+      "heatmap_count": 199,
+      "photos_dir": "/home/jovyan/Visionization/data/processed_data/photos/openai"
+    }
+  }
+}
