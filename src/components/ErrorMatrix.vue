@@ -1,15 +1,19 @@
 <template>
   <div style="padding:16px">
-    <div style="margin-bottom:12px;display:flex;gap:12px;align-items:center">
+    <div style="margin-bottom:10px;display:flex;gap:16px;align-items:center;flex-wrap:wrap">
       <label style="font-size:13px">
         <input type="checkbox" v-model="showOnlyErrors" @change="redraw" />
         只显示有模型答错的样本
       </label>
-      <span style="font-size:12px;color:#999">（{{ filteredSamples.length }} / {{ allSamples.length }} 个样本）</span>
+      <span style="font-size:12px;color:#999">{{ filteredSamples.length }} / {{ allSamples.length }} 个样本</span>
+      <span style="font-size:12px;color:#555">点击格子 → 查看 Attention</span>
     </div>
-    <div style="overflow-x:auto;max-height:70vh">
-      <svg ref="svgRef"></svg>
+    <div style="display:flex;gap:16px;margin-bottom:8px;font-size:12px">
+      <span><span style="display:inline-block;width:12px;height:12px;background:#4caf50;border-radius:2px;vertical-align:middle"></span> 正确</span>
+      <span><span style="display:inline-block;width:12px;height:12px;background:#f44336;border-radius:2px;vertical-align:middle"></span> 错误</span>
+      <span><span style="display:inline-block;width:12px;height:12px;border:2px solid #ff9800;border-radius:2px;vertical-align:middle"></span> 所有模型都错</span>
     </div>
+    <div style="overflow:auto;max-height:75vh"><svg ref="svgRef"></svg></div>
   </div>
 </template>
 
@@ -27,70 +31,67 @@ const allSamples = computed(() => [...new Set(props.data.map(d => d.sample_id))]
 
 const filteredSamples = computed(() => {
   if (!showOnlyErrors.value) return allSamples.value
-  // 只保留至少一个模型答错的样本
   const errorSamples = new Set()
   props.data.forEach(d => { if (!d.correct) errorSamples.add(d.sample_id) })
   return allSamples.value.filter(s => errorSamples.has(s))
 })
 
+const allWrongSamples = computed(() => {
+  const byS = {}
+  props.data.forEach(d => {
+    if (!byS[d.sample_id]) byS[d.sample_id] = { total: 0, wrong: 0 }
+    byS[d.sample_id].total++
+    if (!d.correct) byS[d.sample_id].wrong++
+  })
+  return new Set(Object.entries(byS).filter(([,v]) => v.wrong === v.total).map(([k]) => k))
+})
+
 function redraw() {
   const samples = filteredSamples.value
-  const margin = { top: 30, right: 20, bottom: 60, left: 80 }
-  const cellSize = 40
-  const w = samples.length * cellSize + margin.left + margin.right
-  const h = models.value.length * cellSize + margin.top + margin.bottom
+  const ms = models.value
+  const cell = 20, ml = 70, mt = 30, mb = 50, mr = 20
+  const W = samples.length * cell + ml + mr
+  const H = ms.length * cell + mt + mb
 
-  const svg = d3.select(svgRef.value)
-    .attr('width', w).attr('height', h)
+  const svg = d3.select(svgRef.value).attr('width', W).attr('height', H)
   svg.selectAll('*').remove()
+  const g = svg.append('g').attr('transform', `translate(${ml},${mt})`)
 
-  const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`)
+  const x = d3.scaleBand().domain(samples).range([0, samples.length * cell]).padding(0.05)
+  const y = d3.scaleBand().domain(ms).range([0, ms.length * cell]).padding(0.05)
 
-  const x = d3.scaleBand().domain(samples).range([0, samples.length * cellSize]).padding(0.05)
-  const y = d3.scaleBand().domain(models.value).range([0, models.value.length * cellSize]).padding(0.05)
+  g.append('g').attr('transform', `translate(0,${ms.length * cell})`)
+    .call(d3.axisBottom(x).tickSize(0))
+    .selectAll('text').attr('transform','rotate(-45)').style('text-anchor','end').style('font-size','7px')
+  g.append('g').call(d3.axisLeft(y).tickSize(0))
+    .selectAll('text').style('font-size','12px')
 
-  // axes
-  g.append('g').attr('transform', `translate(0,${models.value.length * cellSize})`)
-    .call(d3.axisBottom(x))
-    .selectAll('text').attr('transform', 'rotate(-40)').style('text-anchor', 'end').style('font-size', '10px')
+  const tooltip = d3.select('body').selectAll('.em-tip').data([0]).join('div')
+    .attr('class','em-tip')
+    .style('position','absolute').style('background','rgba(0,0,0,0.8)').style('color','#fff')
+    .style('padding','6px 10px').style('border-radius','4px').style('font-size','12px')
+    .style('pointer-events','none').style('opacity',0)
 
-  g.append('g').call(d3.axisLeft(y)).selectAll('text').style('font-size', '13px')
-
-  // tooltip
-  const tooltip = d3.select('body').selectAll('.matrix-tooltip').data([0]).join('div')
-    .attr('class', 'matrix-tooltip')
-    .style('position', 'absolute')
-    .style('background', 'rgba(0,0,0,0.8)')
-    .style('color', '#fff')
-    .style('padding', '6px 10px')
-    .style('border-radius', '4px')
-    .style('font-size', '12px')
-    .style('pointer-events', 'none')
-    .style('opacity', 0)
-
-  // cells
   const filtered = props.data.filter(d => samples.includes(d.sample_id))
   g.selectAll('rect').data(filtered).join('rect')
     .attr('x', d => x(d.sample_id))
     .attr('y', d => y(d.model))
-    .attr('width', x.bandwidth())
-    .attr('height', y.bandwidth())
+    .attr('width', x.bandwidth()).attr('height', y.bandwidth())
     .attr('fill', d => d.correct ? '#4caf50' : '#f44336')
-    .attr('opacity', 0.85)
-    .attr('rx', 3)
-    .attr('stroke', d => d.correct ? null : '#000')
-    .attr('stroke-width', d => d.correct ? 0 : 1.5)
-    .style('cursor', 'pointer')
+    .attr('opacity', d => 0.5 + d.confidence * 0.5)
+    .attr('rx', 2)
+    .attr('stroke', d => allWrongSamples.value.has(d.sample_id) ? '#ff9800' : 'none')
+    .attr('stroke-width', 2)
+    .style('cursor','pointer')
     .on('mouseover', function(e, d) {
-      d3.select(this).attr('stroke', '#333').attr('stroke-width', 3)
-      tooltip.style('opacity', 1)
-        .html(`<b>${d.model}</b><br/>样本 ${d.sample_id}<br/>${d.correct ? '✓ 正确' : '✗ 错误'}`)
-        .style('left', (e.pageX + 10) + 'px')
-        .style('top', (e.pageY - 20) + 'px')
+      d3.select(this).attr('stroke','#333').attr('stroke-width',2)
+      tooltip.style('opacity',1)
+        .html(`<b>${d.model}</b> · ${d.sample_id}<br/>${d.correct?'✓ 正确':'✗ 错误'} · conf ${d.confidence?.toFixed(2)}`)
+        .style('left',(e.pageX+10)+'px').style('top',(e.pageY-20)+'px')
     })
     .on('mouseout', function(e, d) {
-      d3.select(this).attr('stroke', d.correct ? null : '#000').attr('stroke-width', d.correct ? 0 : 1.5)
-      tooltip.style('opacity', 0)
+      d3.select(this).attr('stroke', allWrongSamples.value.has(d.sample_id)?'#ff9800':'none').attr('stroke-width',2)
+      tooltip.style('opacity',0)
     })
     .on('click', (_, d) => emit('cell-click', { model: d.model, sample_id: d.sample_id }))
 }
