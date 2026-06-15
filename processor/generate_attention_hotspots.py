@@ -32,7 +32,102 @@ TOP_VQA_ANSWERS = [
     "grass", "water", "tree", "cat", "dog", "bird", "standing", "sitting",
     "walking", "cake", "laptop", "phone", "clock", "car", "truck", "bus",
     "train", "bike", "horse", "kitchen", "bathroom", "beach", "street",
+    "trees", "food", "pizza", "skateboarding", "surfing", "eating",
+    "sleeping", "sheep", "cow", "elephant", "giraffe", "zebra", "bear",
+    "living room", "bedroom", "park", "ocean", "sky", "day", "night",
+    "summer", "winter", "plastic", "metal", "glass", "paper", "book",
+    "computer", "tv", "sandwich", "apple", "orange", "banana", "coffee",
 ]
+
+YES_NO_ANSWERS = ["yes", "no"]
+NUMBER_ANSWERS = [str(number) for number in range(0, 21)]
+COLOR_ANSWERS = [
+    "white", "black", "gray", "red", "blue", "green", "yellow", "brown",
+    "orange", "pink", "purple",
+]
+TIME_ANSWERS = [
+    "day", "night", "morning", "afternoon", "evening", "summer", "winter",
+]
+PLACE_ANSWERS = [
+    "kitchen", "bathroom", "bedroom", "living room", "beach", "street",
+    "park", "ocean", "inside", "outside", "indoors", "outdoors",
+]
+MATERIAL_ANSWERS = [
+    "wood", "metal", "plastic", "glass", "paper", "ceramic", "leather",
+    "cotton",
+]
+
+
+def question_type(question):
+    question = norm_answer(question)
+    if re.match(
+        r"^(is|are|was|were|do|does|did|can|could|will|would|has|have|had|"
+        r"should|may|might)\b",
+        question,
+    ):
+        return "yes_no"
+    if re.search(r"\b(how many|number of)\b", question):
+        return "number"
+    if re.search(r"\b(what|which) colou?r\b|\bcolou?r is\b", question):
+        return "color"
+    if re.search(r"\bwhat time\b|\btime of day\b|\bdaytime\b", question):
+        return "time"
+    if re.search(r"\bwhere\b|\bwhat room\b|\bwhat place\b", question):
+        return "place"
+    if re.search(r"\bwhat material\b|\bmade of\b", question):
+        return "material"
+    return "open"
+
+
+def candidate_answers(question):
+    answer_type = question_type(question)
+    candidates = {
+        "yes_no": YES_NO_ANSWERS,
+        "number": NUMBER_ANSWERS,
+        "color": COLOR_ANSWERS,
+        "time": TIME_ANSWERS,
+        "place": PLACE_ANSWERS,
+        "material": MATERIAL_ANSWERS,
+    }.get(answer_type, TOP_VQA_ANSWERS)
+    return answer_type, candidates
+
+
+def answer_instruction(question):
+    answer_type = question_type(question)
+    if answer_type == "yes_no":
+        return "Answer only yes or no."
+    if answer_type == "number":
+        return "Answer only with the number."
+    if answer_type == "color":
+        return "Answer only with the color."
+    if answer_type == "time":
+        return "Answer only with the time or time period."
+    if answer_type == "place":
+        return "Answer only with the place."
+    if answer_type == "material":
+        return "Answer only with the material."
+    return "Answer with one short phrase."
+
+
+def clean_generated_answer(question, text):
+    answer_type = question_type(question)
+    cleaned = norm_answer((text or "").split("\n")[0])
+    if answer_type == "yes_no":
+        matches = re.findall(r"\b(yes|no)\b", cleaned)
+        return matches[0] if matches else "unknown"
+    if answer_type == "number":
+        match = re.search(r"\b(?:[0-9]+|zero|one|two|three|four|five|six|seven|eight|nine|ten)\b", cleaned)
+        return match.group(0) if match else cleaned
+    typed_candidates = {
+        "color": COLOR_ANSWERS,
+        "time": TIME_ANSWERS,
+        "place": PLACE_ANSWERS,
+        "material": MATERIAL_ANSWERS,
+    }.get(answer_type, [])
+    for candidate in sorted(typed_candidates, key=len, reverse=True):
+        if re.search(rf"\b{re.escape(candidate)}\b", cleaned):
+            return candidate
+    return cleaned
 
 
 def norm_answer(text):
@@ -147,6 +242,7 @@ def write_result(model_dir, sample, pred, confidence, weights):
         "image_path": str(sample["image_path"]),
         "attention_image": str(attn_file),
         "question": sample["question"],
+        "question_type": question_type(sample["question"]),
         "ground_truth": sample["ground_truth"],
         "prediction": pred,
         "correct": is_correct(pred, sample["annotation"]),
@@ -172,29 +268,36 @@ def summarize(model_dir, rows, status="ok", error=None):
         json.dump(summary, f, indent=2, ensure_ascii=False)
 
 
-def run_openai_clip(samples, out_root, model_path, device, dtype):
+def run_openai_clip(samples, out_root, model_path, device, dtype, overwrite=False):
     from transformers import CLIPModel, CLIPProcessor
     model_dir = out_root / "openai"
     processor = CLIPProcessor.from_pretrained(model_path, local_files_only=True)
     model = CLIPModel.from_pretrained(model_path, local_files_only=True, torch_dtype=dtype, attn_implementation="eager").to(device).eval()
 
-    text = processor(text=TOP_VQA_ANSWERS, return_tensors="pt", padding=True).to(device)
-    with torch.no_grad():
-        text_feat = as_tensor(model.get_text_features(**text))
-        text_feat = text_feat / text_feat.norm(dim=-1, keepdim=True)
-
-    rows = load_existing_rows(model_dir)
+    rows = [] if overwrite else load_existing_rows(model_dir)
+    if overwrite:
+        (model_dir / "results.jsonl").unlink(missing_ok=True)
     done = {r["sample_id"] for r in rows}
     for s in tqdm([x for x in samples if x["sample_id"] not in done], desc="openai/clip"):
         image = Image.open(s["image_path"]).convert("RGB")
         inputs = processor(images=image, return_tensors="pt").to(device)
         if dtype != torch.float32:
             inputs["pixel_values"] = inputs["pixel_values"].to(dtype)
+        _, candidates = candidate_answers(s["question"])
+        candidate_prompts = [
+            f"Question: {s['question']} Answer: {answer}."
+            for answer in candidates
+        ]
+        text_inputs = processor(
+            text=candidate_prompts, return_tensors="pt", padding=True
+        ).to(device)
         with torch.no_grad():
+            text_feat = as_tensor(model.get_text_features(**text_inputs))
+            text_feat = text_feat / text_feat.norm(dim=-1, keepdim=True)
             img_feat = as_tensor(model.get_image_features(**inputs))
             img_feat = img_feat / img_feat.norm(dim=-1, keepdim=True)
             sims = (img_feat.float() @ text_feat.float().T).squeeze(0)
-            pred = TOP_VQA_ANSWERS[int(sims.argmax())]
+            pred = candidates[int(sims.argmax())]
             conf = sims.softmax(-1).max().item()
             vout = model.vision_model(pixel_values=inputs["pixel_values"], output_attentions=True)
         attn = vout.attentions[-1][0].float().mean(0)
@@ -209,7 +312,7 @@ def run_openai_clip(samples, out_root, model_path, device, dtype):
         torch.cuda.empty_cache()
 
 
-def run_salesforce_blip2(samples, out_root, model_path, device, dtype):
+def run_salesforce_blip2(samples, out_root, model_path, device, dtype, overwrite=False):
     from transformers import Blip2ForConditionalGeneration, Blip2Processor
     model_dir = out_root / "salesforce"
     processor = Blip2Processor.from_pretrained(model_path, local_files_only=True)
@@ -230,17 +333,19 @@ def run_salesforce_blip2(samples, out_root, model_path, device, dtype):
     target = getattr(last.crossattention.attention, "self", last.crossattention.attention)
     handle = target.register_forward_hook(hook)
 
-    rows = load_existing_rows(model_dir)
+    rows = [] if overwrite else load_existing_rows(model_dir)
+    if overwrite:
+        (model_dir / "results.jsonl").unlink(missing_ok=True)
     done = {r["sample_id"] for r in rows}
     for s in tqdm([x for x in samples if x["sample_id"] not in done], desc="salesforce/blip2"):
         cap.clear()
         image = Image.open(s["image_path"]).convert("RGB")
-        prompt = f"Question: {s['question']} Answer:"
+        prompt = f"{answer_instruction(s['question'])} Question: {s['question']} Answer:"
         inputs = processor(images=image, text=prompt, return_tensors="pt").to(device, dtype)
         with torch.no_grad():
             out = model.generate(**inputs, max_new_tokens=8, do_sample=False)
         text = processor.tokenizer.decode(out[0], skip_special_tokens=True)
-        pred = text.replace(prompt, "").strip().split("\n")[0].strip()
+        pred = clean_generated_answer(s["question"], text.replace(prompt, "").strip())
         attn = cap.get("weights")
         if attn is None:
             weights = np.zeros((14, 14), dtype=np.float32)
@@ -258,7 +363,7 @@ def run_salesforce_blip2(samples, out_root, model_path, device, dtype):
         torch.cuda.empty_cache()
 
 
-def run_llava(samples, out_root, model_path, device, dtype):
+def run_llava(samples, out_root, model_path, device, dtype, overwrite=False):
     from transformers import AutoProcessor, LlavaForConditionalGeneration
     model_dir = out_root / "llava"
     processor = AutoProcessor.from_pretrained(model_path, local_files_only=True)
@@ -266,18 +371,22 @@ def run_llava(samples, out_root, model_path, device, dtype):
         model_path, local_files_only=True, torch_dtype=dtype, device_map="auto", attn_implementation="eager"
     ).eval()
 
-    rows = load_existing_rows(model_dir)
+    rows = [] if overwrite else load_existing_rows(model_dir)
+    if overwrite:
+        (model_dir / "results.jsonl").unlink(missing_ok=True)
     done = {r["sample_id"] for r in rows}
     for s in tqdm([x for x in samples if x["sample_id"] not in done], desc="llava"):
         image = Image.open(s["image_path"]).convert("RGB")
-        prompt = f"USER: <image>\nAnswer the question with a short phrase. {s['question']}\nASSISTANT:"
+        prompt = f"USER: <image>\n{answer_instruction(s['question'])} {s['question']}\nASSISTANT:"
         inputs = processor(text=prompt, images=image, return_tensors="pt").to(device)
         if "pixel_values" in inputs and dtype != torch.float32:
             inputs["pixel_values"] = inputs["pixel_values"].to(dtype)
         with torch.no_grad():
             out = model.generate(**inputs, max_new_tokens=12, do_sample=False)
         text = processor.decode(out[0], skip_special_tokens=True)
-        pred = text.split("ASSISTANT:")[-1].strip().split("\n")[0].strip()
+        pred = clean_generated_answer(
+            s["question"], text.split("ASSISTANT:")[-1].strip()
+        )
         with torch.no_grad():
             vision_tower = getattr(model, "vision_tower", None) or getattr(getattr(model, "model", None), "vision_tower")
             vout = vision_tower(pixel_values=inputs["pixel_values"], output_attentions=True)
@@ -293,10 +402,12 @@ def run_llava(samples, out_root, model_path, device, dtype):
         torch.cuda.empty_cache()
 
 
-def run_qwen(samples, out_root, model_path, device, dtype):
+def run_qwen(samples, out_root, model_path, device, dtype, overwrite=False):
     from transformers import AutoModelForImageTextToText, AutoProcessor
     model_dir = out_root / "qwen"
-    rows = load_existing_rows(model_dir)
+    rows = [] if overwrite else load_existing_rows(model_dir)
+    if overwrite:
+        (model_dir / "results.jsonl").unlink(missing_ok=True)
     done = {r["sample_id"] for r in rows}
     model_dtype = torch.bfloat16 if device == "cuda" and torch.cuda.is_bf16_supported() else dtype
     try:
@@ -319,14 +430,22 @@ def run_qwen(samples, out_root, model_path, device, dtype):
             "role": "user",
             "content": [
                 {"type": "image", "image": image},
-                {"type": "text", "text": f"Answer with a short phrase: {s['question']}"},
+                {
+                    "type": "text",
+                    "text": f"{answer_instruction(s['question'])} {s['question']}",
+                },
             ],
         }]
         text = processor.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
         inputs = processor(text=[text], images=[image], return_tensors="pt").to(device)
         with torch.no_grad():
             out = model.generate(**inputs, max_new_tokens=12, do_sample=False)
-        pred = processor.batch_decode(out[:, inputs["input_ids"].shape[1]:], skip_special_tokens=True)[0].strip()
+        pred = clean_generated_answer(
+            s["question"],
+            processor.batch_decode(
+                out[:, inputs["input_ids"].shape[1]:], skip_special_tokens=True
+            )[0],
+        )
         with torch.no_grad():
             visual_tower = getattr(model, "visual", None) or getattr(model.model, "visual")
             visual = visual_tower(
@@ -359,7 +478,7 @@ def build_model_paths(args):
     }
 
 
-def run_attention_hotspots(data_dir, out_root, models, model_paths, limit=0):
+def run_attention_hotspots(data_dir, out_root, models, model_paths, limit=0, overwrite=False):
     device = "cuda" if torch.cuda.is_available() else "cpu"
     dtype = torch.float16 if device == "cuda" else torch.float32
     samples = load_samples(Path(data_dir), limit)
@@ -369,13 +488,13 @@ def run_attention_hotspots(data_dir, out_root, models, model_paths, limit=0):
     for name in models:
         try:
             if name == "openai":
-                run_openai_clip(samples, out_root, model_paths[name], device, dtype)
+                run_openai_clip(samples, out_root, model_paths[name], device, dtype, overwrite)
             elif name == "salesforce":
-                run_salesforce_blip2(samples, out_root, model_paths[name], device, dtype)
+                run_salesforce_blip2(samples, out_root, model_paths[name], device, dtype, overwrite)
             elif name == "llava":
-                run_llava(samples, out_root, model_paths[name], device, dtype)
+                run_llava(samples, out_root, model_paths[name], device, dtype, overwrite)
             elif name == "qwen":
-                run_qwen(samples, out_root, model_paths[name], device, dtype)
+                run_qwen(samples, out_root, model_paths[name], device, dtype, overwrite)
             else:
                 print(f"[skip] unknown model group: {name}")
         except Exception as e:
@@ -390,6 +509,11 @@ def parse_args():
     parser.add_argument("--model-root", type=Path, default=DEFAULT_MODEL_ROOT)
     parser.add_argument("--models", default=",".join(DEFAULT_MODELS))
     parser.add_argument("--limit", type=int, default=0)
+    parser.add_argument(
+        "--overwrite",
+        action="store_true",
+        help="Recompute samples instead of skipping existing results.jsonl rows.",
+    )
     parser.add_argument("--openai-model-path", type=Path)
     parser.add_argument("--salesforce-model-path", type=Path)
     parser.add_argument("--llava-model-path", type=Path)
@@ -406,6 +530,7 @@ def main():
         models=models,
         model_paths=build_model_paths(args),
         limit=args.limit,
+        overwrite=args.overwrite,
     )
 
 
