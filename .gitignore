@@ -1,6 +1,37 @@
 node_modules/
 dist/
+
+# Python virtual environment
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
 .DS_Store
+
+# Jupyter
 .ipynb_checkpoints/
-train/.ipynb_checkpoints/
-train/vqa_data/
+
+# Data directories (large binary data)
+public/data/attn/
+public/img/
+train/
+train.zip
+
+# Model cache
+.cache/
+
+# Package locks (use pnpm-lock.yaml)
+package-lock.json

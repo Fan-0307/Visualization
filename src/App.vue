@@ -11,6 +11,7 @@
       <ModelComparison v-if="activeTab==='compare'" :data="matrixData" />
       <MatrixAttention v-if="activeTab==='matrix'" :data="matrixData" :models="models" />
       <CorrectErrorPattern v-if="activeTab==='pattern'" :data="matrixData" :models="models" />
+      <TokenAttentionDetail v-if="activeTab==='token'" />
     </div>
   </div>
 </template>
@@ -20,6 +21,7 @@ import { reactive, ref, computed } from 'vue'
 import ModelComparison from './components/ModelComparison.vue'
 import MatrixAttention from './components/MatrixAttention.vue'
 import CorrectErrorPattern from './components/CorrectErrorPattern.vue'
+import TokenAttentionDetail from './components/TokenAttentionDetail.vue'
 import data from './data/vl_attention_data.json'
 
 const matrixData = data.matrix_data || []
@@ -30,6 +32,7 @@ const tabs = [
   { id: 'compare', label: '模型对比' },
   { id: 'matrix',  label: 'Error Matrix & Attention' },
   { id: 'pattern', label: '正确 / 错误模式' },
+  { id: 'token',   label: '逐层 Token 注意力' },
 ]
 </script>
 

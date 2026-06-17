@@ -1,0 +1,452 @@
+{
+  "samples": [
+    {
+      "image_id": "262146",
+      "question_id": "262146000",
+      "file": "BLIP-vqa-base_262146_262146000.json",
+      "correct": 1,
+      "model": "BLIP-vqa-base"
+    },
+    {
+      "image_id": "262146",
+      "question_id": "262146001",
+      "file": "BLIP-vqa-base_262146_262146001.json",
+      "correct": 1,
+      "model": "BLIP-vqa-base"
+    },
+    {
+      "image_id": "262146",
+      "question_id": "262146002",
+      "file": "BLIP-vqa-base_262146_262146002.json",
+      "correct": 1,
+      "model": "BLIP-vqa-base"
+    },
+    {
+      "image_id": "393221",
+      "question_id": "393221000",
+      "file": "BLIP-vqa-base_393221_393221000.json",
+      "correct": 1,
+      "model": "BLIP-vqa-base"
+    },
+    {
+      "image_id": "393221",
+      "question_id": "393221001",
+      "file": "BLIP-vqa-base_393221_393221001.json",
+      "correct": 1,
+      "model": "BLIP-vqa-base"
+    },
+    {
+      "image_id": "393221",
+      "question_id": "393221002",
+      "file": "BLIP-vqa-base_393221_393221002.json",
+      "correct": 1,
+      "model": "BLIP-vqa-base"
+    },
+    {
+      "image_id": "393223",
+      "question_id": "393223000",
+      "file": "BLIP-vqa-base_393223_393223000.json",
+      "correct": 1,
+      "model": "BLIP-vqa-base"
+    },
+    {
+      "image_id": "393223",
+      "question_id": "393223001",
+      "file": "BLIP-vqa-base_393223_393223001.json",
+      "correct": 1,
+      "model": "BLIP-vqa-base"
+    },
+    {
+      "image_id": "393223",
+      "question_id": "393223002",
+      "file": "BLIP-vqa-base_393223_393223002.json",
+      "correct": 1,
+      "model": "BLIP-vqa-base"
+    },
+    {
+      "image_id": "393223",
+      "question_id": "393223003",
+      "file": "BLIP-vqa-base_393223_393223003.json",
+      "correct": 1,
+      "model": "BLIP-vqa-base"
+    },
+    {
+      "image_id": "393224",
+      "question_id": "393224000",
+      "file": "BLIP-vqa-base_393224_393224000.json",
+      "correct": 1,
+      "model": "BLIP-vqa-base"
+    },
+    {
+      "image_id": "393224",
+      "question_id": "393224001",
+      "file": "BLIP-vqa-base_393224_393224001.json",
+      "correct": 1,
+      "model": "BLIP-vqa-base"
+    },
+    {
+      "image_id": "393224",
+      "question_id": "393224002",
+      "file": "BLIP-vqa-base_393224_393224002.json",
+      "correct": 1,
+      "model": "BLIP-vqa-base"
+    },
+    {
+      "image_id": "393224",
+      "question_id": "393224003",
+      "file": "BLIP-vqa-base_393224_393224003.json",
+      "correct": 1,
+      "model": "BLIP-vqa-base"
+    },
+    {
+      "image_id": "393224",
+      "question_id": "393224004",
+      "file": "BLIP-vqa-base_393224_393224004.json",
+      "correct": 1,
+      "model": "BLIP-vqa-base"
+    },
+    {
+      "image_id": "393224",
+      "question_id": "393224005",
+      "file": "BLIP-vqa-base_393224_393224005.json",
+      "correct": 1,
+      "model": "BLIP-vqa-base"
+    },
+    {
+      "image_id": "393227",
+      "question_id": "393227000",
+      "file": "BLIP-vqa-base_393227_393227000.json",
+      "correct": 1,
+      "model": "BLIP-vqa-base"
+    },
+    {
+      "image_id": "393227",
+      "question_id": "393227001",
+      "file": "BLIP-vqa-base_393227_393227001.json",
+      "correct": 1,
+      "model": "BLIP-vqa-base"
+    },
+    {
+      "image_id": "393227",
+      "question_id": "393227002",
+      "file": "BLIP-vqa-base_393227_393227002.json",
+      "correct": 1,
+      "model": "BLIP-vqa-base"
+    },
+    {
+      "image_id": "393227",
+      "question_id": "393227003",
+      "file": "BLIP-vqa-base_393227_393227003.json",
+      "correct": 1,
+      "model": "BLIP-vqa-base"
+    },
+    {
+      "image_id": "393227",
+      "question_id": "393227004",
+      "file": "BLIP-vqa-base_393227_393227004.json",
+      "correct": 1,
+      "model": "BLIP-vqa-base"
+    },
+    {
+      "image_id": "458752",
+      "question_id": "458752000",
+      "file": "BLIP-vqa-base_458752_458752000.json",
+      "correct": 1,
+      "model": "BLIP-vqa-base"
+    },
+    {
+      "image_id": "458752",
+      "question_id": "458752001",
+      "file": "BLIP-vqa-base_458752_458752001.json",
+      "correct": 1,
+      "model": "BLIP-vqa-base"
+    },
+    {
+      "image_id": "458752",
+      "question_id": "458752002",
+      "file": "BLIP-vqa-base_458752_458752002.json",
+      "correct": 1,
+      "model": "BLIP-vqa-base"
+    },
+    {
+      "image_id": "458752",
+      "question_id": "458752003",
+      "file": "BLIP-vqa-base_458752_458752003.json",
+      "correct": 1,
+      "model": "BLIP-vqa-base"
+    },
+    {
+      "image_id": "524291",
+      "question_id": "524291000",
+      "file": "BLIP-vqa-base_524291_524291000.json",
+      "correct": 1,
+      "model": "BLIP-vqa-base"
+    },
+    {
+      "image_id": "524291",
+      "question_id": "524291001",
+      "file": "BLIP-vqa-base_524291_524291001.json",
+      "correct": 1,
+      "model": "BLIP-vqa-base"
+    },
+    {
+      "image_id": "524291",
+      "question_id": "524291002",
+      "file": "BLIP-vqa-base_524291_524291002.json",
+      "correct": 1,
+      "model": "BLIP-vqa-base"
+    },
+    {
+      "image_id": "524297",
+      "question_id": "524297000",
+      "file": "BLIP-vqa-base_524297_524297000.json",
+      "correct": 1,
+      "model": "BLIP-vqa-base"
+    },
+    {
+      "image_id": "524297",
+      "question_id": "524297001",
+      "file": "BLIP-vqa-base_524297_524297001.json",
+      "correct": 1,
+      "model": "BLIP-vqa-base"
+    },
+    {
+      "image_id": "524297",
+      "question_id": "524297002",
+      "file": "BLIP-vqa-base_524297_524297002.json",
+      "correct": 1,
+      "model": "BLIP-vqa-base"
+    },
+    {
+      "image_id": "524297",
+      "question_id": "524297003",
+      "file": "BLIP-vqa-base_524297_524297003.json",
+      "correct": 1,
+      "model": "BLIP-vqa-base"
+    },
+    {
+      "image_id": "262146",
+      "question_id": "262146000",
+      "file": "Qwen3-VL-2B_262146_262146000.json",
+      "correct": 1,
+      "model": "Qwen3-VL-2B"
+    },
+    {
+      "image_id": "262146",
+      "question_id": "262146001",
+      "file": "Qwen3-VL-2B_262146_262146001.json",
+      "correct": 1,
+      "model": "Qwen3-VL-2B"
+    },
+    {
+      "image_id": "262146",
+      "question_id": "262146002",
+      "file": "Qwen3-VL-2B_262146_262146002.json",
+      "correct": 1,
+      "model": "Qwen3-VL-2B"
+    },
+    {
+      "image_id": "393221",
+      "question_id": "393221000",
+      "file": "Qwen3-VL-2B_393221_393221000.json",
+      "correct": 0,
+      "model": "Qwen3-VL-2B"
+    },
+    {
+      "image_id": "393221",
+      "question_id": "393221001",
+      "file": "Qwen3-VL-2B_393221_393221001.json",
+      "correct": 1,
+      "model": "Qwen3-VL-2B"
+    },
+    {
+      "image_id": "393221",
+      "question_id": "393221002",
+      "file": "Qwen3-VL-2B_393221_393221002.json",
+      "correct": 1,
+      "model": "Qwen3-VL-2B"
+    },
+    {
+      "image_id": "393223",
+      "question_id": "393223000",
+      "file": "Qwen3-VL-2B_393223_393223000.json",
+      "correct": 1,
+      "model": "Qwen3-VL-2B"
+    },
+    {
+      "image_id": "393223",
+      "question_id": "393223001",
+      "file": "Qwen3-VL-2B_393223_393223001.json",
+      "correct": 0,
+      "model": "Qwen3-VL-2B"
+    },
+    {
+      "image_id": "393223",
+      "question_id": "393223002",
+      "file": "Qwen3-VL-2B_393223_393223002.json",
+      "correct": 1,
+      "model": "Qwen3-VL-2B"
+    },
+    {
+      "image_id": "393223",
+      "question_id": "393223003",
+      "file": "Qwen3-VL-2B_393223_393223003.json",
+      "correct": 1,
+      "model": "Qwen3-VL-2B"
+    },
+    {
+      "image_id": "393224",
+      "question_id": "393224000",
+      "file": "Qwen3-VL-2B_393224_393224000.json",
+      "correct": 1,
+      "model": "Qwen3-VL-2B"
+    },
+    {
+      "image_id": "393224",
+      "question_id": "393224001",
+      "file": "Qwen3-VL-2B_393224_393224001.json",
+      "correct": 1,
+      "model": "Qwen3-VL-2B"
+    },
+    {
+      "image_id": "393224",
+      "question_id": "393224002",
+      "file": "Qwen3-VL-2B_393224_393224002.json",
+      "correct": 0,
+      "model": "Qwen3-VL-2B"
+    },
+    {
+      "image_id": "393224",
+      "question_id": "393224003",
+      "file": "Qwen3-VL-2B_393224_393224003.json",
+      "correct": 1,
+      "model": "Qwen3-VL-2B"
+    },
+    {
+      "image_id": "393224",
+      "question_id": "393224004",
+      "file": "Qwen3-VL-2B_393224_393224004.json",
+      "correct": 1,
+      "model": "Qwen3-VL-2B"
+    },
+    {
+      "image_id": "393224",
+      "question_id": "393224005",
+      "file": "Qwen3-VL-2B_393224_393224005.json",
+      "correct": 0,
+      "model": "Qwen3-VL-2B"
+    },
+    {
+      "image_id": "393227",
+      "question_id": "393227000",
+      "file": "Qwen3-VL-2B_393227_393227000.json",
+      "correct": 0,
+      "model": "Qwen3-VL-2B"
+    },
+    {
+      "image_id": "393227",
+      "question_id": "393227001",
+      "file": "Qwen3-VL-2B_393227_393227001.json",
+      "correct": 1,
+      "model": "Qwen3-VL-2B"
+    },
+    {
+      "image_id": "393227",
+      "question_id": "393227002",
+      "file": "Qwen3-VL-2B_393227_393227002.json",
+      "correct": 0,
+      "model": "Qwen3-VL-2B"
+    },
+    {
+      "image_id": "393227",
+      "question_id": "393227003",
+      "file": "Qwen3-VL-2B_393227_393227003.json",
+      "correct": 1,
+      "model": "Qwen3-VL-2B"
+    },
+    {
+      "image_id": "393227",
+      "question_id": "393227004",
+      "file": "Qwen3-VL-2B_393227_393227004.json",
+      "correct": 1,
+      "model": "Qwen3-VL-2B"
+    },
+    {
+      "image_id": "458752",
+      "question_id": "458752000",
+      "file": "Qwen3-VL-2B_458752_458752000.json",
+      "correct": 1,
+      "model": "Qwen3-VL-2B"
+    },
+    {
+      "image_id": "458752",
+      "question_id": "458752001",
+      "file": "Qwen3-VL-2B_458752_458752001.json",
+      "correct": 1,
+      "model": "Qwen3-VL-2B"
+    },
+    {
+      "image_id": "458752",
+      "question_id": "458752002",
+      "file": "Qwen3-VL-2B_458752_458752002.json",
+      "correct": 1,
+      "model": "Qwen3-VL-2B"
+    },
+    {
+      "image_id": "458752",
+      "question_id": "458752003",
+      "file": "Qwen3-VL-2B_458752_458752003.json",
+      "correct": 0,
+      "model": "Qwen3-VL-2B"
+    },
+    {
+      "image_id": "524291",
+      "question_id": "524291000",
+      "file": "Qwen3-VL-2B_524291_524291000.json",
+      "correct": 1,
+      "model": "Qwen3-VL-2B"
+    },
+    {
+      "image_id": "524291",
+      "question_id": "524291001",
+      "file": "Qwen3-VL-2B_524291_524291001.json",
+      "correct": 0,
+      "model": "Qwen3-VL-2B"
+    },
+    {
+      "image_id": "524291",
+      "question_id": "524291002",
+      "file": "Qwen3-VL-2B_524291_524291002.json",
+      "correct": 1,
+      "model": "Qwen3-VL-2B"
+    },
+    {
+      "image_id": "524297",
+      "question_id": "524297000",
+      "file": "Qwen3-VL-2B_524297_524297000.json",
+      "correct": 0,
+      "model": "Qwen3-VL-2B"
+    },
+    {
+      "image_id": "524297",
+      "question_id": "524297001",
+      "file": "Qwen3-VL-2B_524297_524297001.json",
+      "correct": 1,
+      "model": "Qwen3-VL-2B"
+    },
+    {
+      "image_id": "524297",
+      "question_id": "524297002",
+      "file": "Qwen3-VL-2B_524297_524297002.json",
+      "correct": 0,
+      "model": "Qwen3-VL-2B"
+    },
+    {
+      "image_id": "524297",
+      "question_id": "524297003",
+      "file": "Qwen3-VL-2B_524297_524297003.json",
+      "correct": 1,
+      "model": "Qwen3-VL-2B"
+    }
+  ]
+}
