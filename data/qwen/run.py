@@ -1,10 +1,10 @@
 import torch, os, json
 from PIL import Image
 
-path = "D:\\.cache\\hf_models_manual_download\\Qwen3-VL-2B-Instruct"
+path = os.environ.get("QWEN_MODEL_PATH", "Qwen/Qwen3-VL-2B-Instruct")
 IMG_DIR = "public/img"
 OUT_DIR = "public/data/attn"
-MODEL   = "Qwen3-VL-2B"
+MODEL   = os.environ.get("QWEN_MODEL_NAME", "Qwen3-VL-2B")
 
 os.makedirs(IMG_DIR, exist_ok=True)
 os.makedirs(OUT_DIR, exist_ok=True)
@@ -80,6 +80,21 @@ def all_attn(model, inputs, outputs, indices):
     print("Finish Attention Fetch")
     return reoutputs.attentions
 
+def attention_rollout(attentions, seq_len):
+    """Attention Rollout (Abnar & Zuidema 2020).
+    Each layer: Ã = 0.5 * mean_heads(A) + 0.5 * I, then row-normalize.
+    Rollout = Ã_L · ... · Ã_1  (accumulated on CPU to save GPU memory)
+    Returns (seq_len, seq_len) float32 tensor on CPU.
+    """
+    eye = torch.eye(seq_len, dtype=torch.float32)
+    rollout = eye.clone()
+    for layer_attn in attentions:
+        A = layer_attn[0].float().mean(dim=0).cpu()   # (seq_len, seq_len)
+        A_tilde = 0.5 * A + 0.5 * eye
+        A_tilde = A_tilde / A_tilde.sum(dim=-1, keepdim=True).clamp(min=1e-12)
+        rollout = A_tilde @ rollout
+    return rollout
+
 def to_json(attentions, data, outputs, processor, indices):
     W, H = data['image'].size
     img_id = data['image_id']
@@ -104,6 +119,11 @@ def to_json(attentions, data, outputs, processor, indices):
         global_idx = indices['ans_start'] + local_idx
         text = processor.decode(tid)
         answer_tokens.append({"index": global_idx, "text": text})
+
+    # Compute rollout once for the full sequence
+    seq_len = outputs.shape[1]
+    rollout = attention_rollout(attentions, seq_len)
+    print("Finish Rollout")
 
     question_attn_dict = {}
     answer_attn_dict = {}
@@ -138,6 +158,21 @@ def to_json(attentions, data, outputs, processor, indices):
             que_attn_vec = attn_matrix[:, global_idx, indices['que_start']:indices['que_end']].mean(dim=0).float().cpu().tolist()
             answer_attn_dict[global_idx]["que_attn"][layer_name] = que_attn_vec
 
+    # Add rollout as a special entry in vis_attn
+    for q_item in question_tokens:
+        global_idx = q_item["index"]
+        question_attn_dict[global_idx]["vis_attn"]["rollout"] = \
+            rollout[global_idx, indices['vis_start']:indices['vis_end']].tolist()
+        question_attn_dict[global_idx]["que_attn"]["rollout"] = \
+            rollout[global_idx, indices['que_start']:indices['que_end']].tolist()
+
+    for a_item in answer_tokens:
+        global_idx = a_item["index"]
+        answer_attn_dict[global_idx]["vis_attn"]["rollout"] = \
+            rollout[global_idx, indices['vis_start']:indices['vis_end']].tolist()
+        answer_attn_dict[global_idx]["que_attn"]["rollout"] = \
+            rollout[global_idx, indices['que_start']:indices['que_end']].tolist()
+
     result = {
         "image": {"w": W, "h": H, "img_id": img_id, "grid": {"w": merged_cols, "h": merged_rows}},
         "question": question_attn_dict,
@@ -149,14 +184,13 @@ def to_json(attentions, data, outputs, processor, indices):
 def is_correct(outputs, data, indices, processor):
     ans_ids = outputs[0][indices['ans_start']:indices['ans_end']]
     pred = processor.decode(ans_ids, skip_special_tokens=True).strip().lower()
-    gt = data['multiple_choice_answer'].strip().lower()
-    if pred == gt or gt in pred or pred in gt:
-        return 1
+    # VQAv2 官方 accuracy：对每个 valid answer，算出现次数/3，取 min(1)，再取最大值
+    counts = {}
     for a in data['answers']:
         ans = a['answer'].strip().lower()
-        if pred == ans or ans in pred or pred in ans:
-            return 1
-    return 0
+        counts[ans] = counts.get(ans, 0) + 1
+    score = max((min(counts.get(a, 0), 3) / 3) for a in counts if a in pred or pred in a) if counts else 0
+    return 1 if score >= 1/3 else 0
 
 
 model, processor = load_model()

@@ -1,9 +1,10 @@
 import torch, os, json
 from PIL import Image
 
+MODEL_PATH = os.environ.get("BLIP_MODEL_PATH", "Salesforce/blip-vqa-base")
 IMG_DIR = "public/img"
 OUT_DIR = "public/data/attn"
-MODEL   = "BLIP-vqa-base"
+MODEL   = os.environ.get("BLIP_MODEL_NAME", "BLIP-vqa-base")
 
 os.makedirs(IMG_DIR, exist_ok=True)
 os.makedirs(OUT_DIR, exist_ok=True)
@@ -17,12 +18,12 @@ def load_data():
 def load_model():
     from transformers import AutoModelForVisualQuestionAnswering, AutoProcessor
     model = AutoModelForVisualQuestionAnswering.from_pretrained(
-        "Salesforce/blip-vqa-base",
+        MODEL_PATH,
         dtype=torch.bfloat16,
         device_map='auto',
         attn_implementation="eager"
     )
-    processor = AutoProcessor.from_pretrained("Salesforce/blip-vqa-base")
+    processor = AutoProcessor.from_pretrained(MODEL_PATH)
     model.eval()
     torch.set_grad_enabled(False)
     print(f"Load BLIP-vqa-base on device: {model.device}")
@@ -126,14 +127,13 @@ def is_correct(outputs, data, processor):
     ans_start = 1
     ans_end = (len(ids) - 1) if ids[-1] == processor.tokenizer.sep_token_id else len(ids)
     pred = processor.decode(ids[ans_start:ans_end], skip_special_tokens=True).strip().lower()
-    gt = data['multiple_choice_answer'].strip().lower()
-    if pred == gt or gt in pred or pred in gt:
-        return 1
+    # VQAv2 official accuracy: min(#annotators_who_said_pred / 3, 1)
+    counts = {}
     for a in data['answers']:
         ans = a['answer'].strip().lower()
-        if pred == ans or ans in pred or pred in ans:
-            return 1
-    return 0
+        counts[ans] = counts.get(ans, 0) + 1
+    score = max((min(counts.get(a, 0), 3) / 3 for a in counts if a in pred or pred in a), default=0)
+    return 1 if score >= 1/3 else 0
 
 
 model, processor = load_model()
