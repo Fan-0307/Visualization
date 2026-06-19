@@ -97,7 +97,7 @@ def build(src_dirs, img_src, public_dir, out_dir):
 
 if __name__ == "__main__":
     build(
-        src_dirs=["data/qwen", "data/blip", "data/llava"],
+        src_dirs=["data/qwen", "data/blip", "data/llava", "data/clip"],
         img_src="data/img",
         public_dir="public",
         out_dir="src/data",

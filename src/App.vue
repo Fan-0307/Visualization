@@ -13,6 +13,7 @@
       <CorrectErrorPattern v-if="activeTab==='pattern'" :data="matrixData" :models="models" />
       <AnswerAggCompare v-if="activeTab==='agg'" />
       <TokenAttentionDetail v-if="activeTab==='token'" />
+      <LayerEvolution v-if="activeTab==='layer'" />
     </div>
   </div>
 </template>
@@ -24,6 +25,7 @@ import MatrixAttention from './components/MatrixAttention.vue'
 import CorrectErrorPattern from './components/CorrectErrorPattern.vue'
 import TokenAttentionDetail from './components/TokenAttentionDetail.vue'
 import AnswerAggCompare from './components/AnswerAggCompare.vue'
+import LayerEvolution from './components/LayerEvolution.vue'
 import data from './data/vl_attention_data.json'
 
 const matrixData = data.matrix_data || []
@@ -36,6 +38,7 @@ const tabs = [
   { id: 'pattern', label: '正确 / 错误模式' },
   { id: 'agg',     label: '聚合注意力对比' },
   { id: 'token',   label: '逐层 Token 注意力' },
+  { id: 'layer',   label: '逐层演化 (V3)' },
 ]
 </script>
 

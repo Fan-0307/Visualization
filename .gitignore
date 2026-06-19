@@ -26,6 +26,7 @@ __pycache__/
 
 # Data directories (large binary data)
 public/data/attn/
+public/data/layer_evo/
 public/img/
 train/
 train.zip

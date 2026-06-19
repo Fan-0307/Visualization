@@ -68,6 +68,24 @@ run_blip() {
     echo "  Finished: $label at $(date)"
 }
 
+# For CLIP scripts, env vars: CLIP_MODEL_NAME / CLIP_MODEL_PATH
+run_clip() {
+    local label="$1" name="$2" path="$3"
+    local script="data/clip/run.py"
+    if [ ! -f "$script" ]; then
+        echo "[skip] $label: $script not found"
+        return
+    fi
+    echo "========================================="
+    echo "  Running: $label"
+    echo "  Model:   $name"
+    echo "  Path:    $path"
+    echo "  Started: $(date)"
+    echo "========================================="
+    env CLIP_MODEL_NAME="$name" CLIP_MODEL_PATH="$path" python "$script"
+    echo "  Finished: $label at $(date)"
+}
+
 # ============================================================
 # BLIP
 # ============================================================
@@ -75,6 +93,15 @@ if [ "$RUN" = "all" ] || [ "$RUN" = "blip" ]; then
     run_blip "BLIP-base" \
         "${BLIP_MODEL_NAME:-BLIP-vqa-base}" \
         "${BLIP_MODEL_PATH:-Salesforce/blip-vqa-base}"
+fi
+
+# ============================================================
+# CLIP (vision-only self-attention, zero-shot VQA)
+# ============================================================
+if [ "$RUN" = "all" ] || [ "$RUN" = "clip" ]; then
+    run_clip "CLIP-ViT-B-32" \
+        "${CLIP_MODEL_NAME:-CLIP-ViT-B-32}" \
+        "${CLIP_MODEL_PATH:-openai/clip-vit-base-patch32}"
 fi
 
 # ============================================================
