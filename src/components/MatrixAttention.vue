@@ -34,7 +34,7 @@
           <!-- original image -->
           <div style="text-align:center">
             <div class="img-label">原图</div>
-            <img :src="'/val2014/' + selectedEntry?.image_path"
+            <img :src="selectedEntry?.image_src"
               class="attn-img" style="border:2px solid #e5e7eb"
               @error="e => e.target.style.opacity='0.15'" />
           </div>
@@ -44,7 +44,7 @@
               {{ m }} {{ modelCorrect(m) ? '✓' : '✗' }}
             </div>
             <div class="img-pred">{{ modelPred(m) }}</div>
-            <img :src="'/photos/' + modelKey(m) + '/' + selected.sample_id + '.png'"
+            <img :src="modelPhoto(m)"
               class="attn-img" :style="{border: selected.model===m ? '2px solid #3b82f6' : '2px solid #e5e7eb'}"
               @error="e => { e.target.style.display='none'; e.target.nextElementSibling.style.display='flex' }" />
             <div class="attn-placeholder">暂无热力图</div>
@@ -58,20 +58,15 @@
 <script setup>
 import { ref, computed, onMounted, watch } from 'vue'
 import * as d3 from 'd3'
-import rawData from '../data/vl_attention_data.json'
+import { attentionData, getPhotoUrl } from '../data/processedData'
 
 const props = defineProps({ data: Array, models: Array })
 const svgRef = ref(null)
 const showOnlyErrors = ref(true)
 const selected = ref(null)
 
-const attentionData = rawData.attention_data || {}
-
-// model key lookup (label → key)
-const labelToKey = Object.fromEntries(
-  Object.entries(rawData.model_labels || {}).map(([k,v]) => [v, k])
-)
-const modelKey = (label) => labelToKey[label] || label.toLowerCase()
+const modelKey = (label) =>
+  props.data.find(d => d.model === label)?.model_key || label.toLowerCase()
 
 const allSamples = computed(() => [...new Set(props.data.map(d => d.sample_id))])
 const allWrongSamples = computed(() => {
@@ -96,6 +91,7 @@ const selectedEntry = computed(() => selected.value
 
 const modelCorrect = (m) => props.data.find(d => d.model === m && d.sample_id === selected.value?.sample_id)?.correct
 const modelPred = (m) => attentionData[`${m}__${selected.value?.sample_id}`]?.prediction || ''
+const modelPhoto = (m) => getPhotoUrl(modelKey(m), selected.value?.sample_id)
 
 function redraw() {
   const samples = filteredSamples.value

@@ -30,18 +30,18 @@
       ],
       "salesforce": [
         {
-          "answer": "YES!",
+          "answer": "yes",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/88345001.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/88345001.png"
         }
       ],
       "openai": [
         {
-          "answer": "woman",
-          "correct": false,
-          "confidence": 0.021201912313699722,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/88345001.png"
+          "answer": "yes",
+          "correct": true,
+          "confidence": 0.501324474811554,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/88345001.png"
         }
       ]
     },
@@ -65,22 +65,22 @@
           "correct": true,
           "confidence": 0.5,
           "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/llava/74798002.png"
-        }   
+        }
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/74798002.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/74798002.png"
         }
       ],
       "openai": [
         {
-          "answer": "bird",
-          "correct": false,
-          "confidence": 0.021784625947475433,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/74798002.png"
+          "answer": "no",
+          "correct": true,
+          "confidence": 0.5006012916564941,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/74798002.png"
         }
       ]
     },
@@ -108,18 +108,18 @@
       ],
       "salesforce": [
         {
-          "answer": "No",
-          "correct": true,
+          "answer": "yes",
+          "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/437205012.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/437205012.png"
         }
       ],
       "openai": [
         {
-          "answer": "4",
+          "answer": "yes",
           "correct": false,
-          "confidence": 0.0209986362606287,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/437205012.png"
+          "confidence": 0.5003934502601624,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/437205012.png"
         }
       ]
     },
@@ -147,18 +147,18 @@
       ],
       "salesforce": [
         {
-          "answer": "No, the bird is watching the water",
+          "answer": "yes",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/326667009.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/326667009.png"
         }
       ],
       "openai": [
         {
-          "answer": "bird",
+          "answer": "yes",
           "correct": false,
-          "confidence": 0.02180870994925499,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/326667009.png"
+          "confidence": 0.5000342726707458,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/326667009.png"
         }
       ]
     },
@@ -186,18 +186,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/331250011.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/331250011.png"
         }
       ],
       "openai": [
         {
-          "answer": "wood",
-          "correct": false,
-          "confidence": 0.02136133797466755,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/331250011.png"
+          "answer": "yes",
+          "correct": true,
+          "confidence": 0.5004117488861084,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/331250011.png"
         }
       ]
     },
@@ -225,18 +225,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes, he will hit the ball",
-          "correct": false,
+          "answer": "yes",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/167725010.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/167725010.png"
         }
       ],
       "openai": [
         {
-          "answer": "baseball",
-          "correct": false,
-          "confidence": 0.022349465638399124,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/167725010.png"
+          "answer": "yes",
+          "correct": true,
+          "confidence": 0.5023161172866821,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/167725010.png"
         }
       ]
     },
@@ -264,18 +264,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/402233006.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/402233006.png"
         }
       ],
       "openai": [
         {
-          "answer": "kitchen",
-          "correct": false,
-          "confidence": 0.02216164581477642,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/402233006.png"
+          "answer": "yes",
+          "correct": true,
+          "confidence": 0.5008370280265808,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/402233006.png"
         }
       ]
     },
@@ -303,18 +303,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/199578001.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/199578001.png"
         }
       ],
       "openai": [
         {
-          "answer": "bus",
-          "correct": false,
-          "confidence": 0.02212250977754593,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/199578001.png"
+          "answer": "no",
+          "correct": true,
+          "confidence": 0.5000020861625671,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/199578001.png"
         }
       ]
     },
@@ -342,18 +342,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/409867007.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/409867007.png"
         }
       ],
       "openai": [
         {
-          "answer": "cat",
-          "correct": false,
-          "confidence": 0.02154778316617012,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/409867007.png"
+          "answer": "no",
+          "correct": true,
+          "confidence": 0.5002162456512451,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/409867007.png"
         }
       ]
     },
@@ -381,18 +381,18 @@
       ],
       "salesforce": [
         {
-          "answer": "No",
-          "correct": true,
+          "answer": "yes",
+          "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/53697015.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/53697015.png"
         }
       ],
       "openai": [
         {
-          "answer": "kitchen",
-          "correct": false,
-          "confidence": 0.02256295643746853,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/53697015.png"
+          "answer": "no",
+          "correct": true,
+          "confidence": 0.500601053237915,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/53697015.png"
         }
       ]
     },
@@ -420,18 +420,18 @@
       ],
       "salesforce": [
         {
-          "answer": "No, he is not drinking soda",
+          "answer": "yes",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/565929000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/565929000.png"
         }
       ],
       "openai": [
         {
-          "answer": "clock",
-          "correct": false,
-          "confidence": 0.021645719185471535,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/565929000.png"
+          "answer": "no",
+          "correct": true,
+          "confidence": 0.5010126829147339,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/565929000.png"
         }
       ]
     },
@@ -459,18 +459,18 @@
       ],
       "salesforce": [
         {
-          "answer": "No, she's a kid",
+          "answer": "yes",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/279674000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/279674000.png"
         }
       ],
       "openai": [
         {
-          "answer": "kitchen",
-          "correct": false,
-          "confidence": 0.021641574800014496,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/279674000.png"
+          "answer": "no",
+          "correct": true,
+          "confidence": 0.5005553960800171,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/279674000.png"
         }
       ]
     },
@@ -498,18 +498,18 @@
       ],
       "salesforce": [
         {
-          "answer": "No, it's winter time",
+          "answer": "yes",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/90367001.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/90367001.png"
         }
       ],
       "openai": [
         {
-          "answer": "dog",
-          "correct": false,
-          "confidence": 0.021698100492358208,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/90367001.png"
+          "answer": "no",
+          "correct": true,
+          "confidence": 0.5002437829971313,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/90367001.png"
         }
       ]
     },
@@ -537,18 +537,18 @@
       ],
       "salesforce": [
         {
-          "answer": "No, they are players",
-          "correct": false,
+          "answer": "no",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/482800000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/482800000.png"
         }
       ],
       "openai": [
         {
-          "answer": "4",
-          "correct": false,
-          "confidence": 0.021404922008514404,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/482800000.png"
+          "answer": "yes",
+          "correct": true,
+          "confidence": 0.500809371471405,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/482800000.png"
         }
       ]
     },
@@ -576,18 +576,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/359801000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/359801000.png"
         }
       ],
       "openai": [
         {
-          "answer": "table",
-          "correct": false,
-          "confidence": 0.020998451858758926,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/359801000.png"
+          "answer": "yes",
+          "correct": true,
+          "confidence": 0.502081573009491,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/359801000.png"
         }
       ]
     },
@@ -615,18 +615,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/526962004.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/526962004.png"
         }
       ],
       "openai": [
         {
-          "answer": "cat",
-          "correct": false,
-          "confidence": 0.021602395921945572,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/526962004.png"
+          "answer": "yes",
+          "correct": true,
+          "confidence": 0.5003462433815002,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/526962004.png"
         }
       ]
     },
@@ -654,18 +654,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes, it is",
-          "correct": false,
+          "answer": "yes",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/466565003.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/466565003.png"
         }
       ],
       "openai": [
         {
-          "answer": "table",
-          "correct": false,
-          "confidence": 0.02107013203203678,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/466565003.png"
+          "answer": "yes",
+          "correct": true,
+          "confidence": 0.501652717590332,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/466565003.png"
         }
       ]
     },
@@ -693,18 +693,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes, they are",
-          "correct": false,
+          "answer": "yes",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/31471001.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/31471001.png"
         }
       ],
       "openai": [
         {
-          "answer": "horse",
-          "correct": false,
-          "confidence": 0.02103002555668354,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/31471001.png"
+          "answer": "yes",
+          "correct": true,
+          "confidence": 0.500666618347168,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/31471001.png"
         }
       ]
     },
@@ -732,18 +732,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/376295011.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/376295011.png"
         }
       ],
       "openai": [
         {
-          "answer": "cake",
-          "correct": false,
-          "confidence": 0.021875733509659767,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/376295011.png"
+          "answer": "yes",
+          "correct": true,
+          "confidence": 0.5002439618110657,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/376295011.png"
         }
       ]
     },
@@ -771,18 +771,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/391684002.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/391684002.png"
         }
       ],
       "openai": [
         {
-          "answer": "water",
+          "answer": "yes",
           "correct": false,
-          "confidence": 0.02128276601433754,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/391684002.png"
+          "confidence": 0.501323938369751,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/391684002.png"
         }
       ]
     },
@@ -813,15 +813,15 @@
           "answer": "yes",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/361815003.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/361815003.png"
         }
       ],
       "openai": [
         {
-          "answer": "bathroom",
+          "answer": "yes",
           "correct": false,
-          "confidence": 0.02130977250635624,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/361815003.png"
+          "confidence": 0.5001917481422424,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/361815003.png"
         }
       ]
     },
@@ -849,18 +849,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes, there is grass here",
+          "answer": "yes",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/280370000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/280370000.png"
         }
       ],
       "openai": [
         {
-          "answer": "horse",
-          "correct": false,
-          "confidence": 0.021808961406350136,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/280370000.png"
+          "answer": "no",
+          "correct": true,
+          "confidence": 0.5003240704536438,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/280370000.png"
         }
       ]
     },
@@ -888,18 +888,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes, there are pirates on the boat",
+          "answer": "yes",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/319830003.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/319830003.png"
         }
       ],
       "openai": [
         {
-          "answer": "walking",
+          "answer": "yes",
           "correct": false,
-          "confidence": 0.021367177367210388,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/319830003.png"
+          "confidence": 0.5005097985267639,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/319830003.png"
         }
       ]
     },
@@ -927,18 +927,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/315281009.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/315281009.png"
         }
       ],
       "openai": [
         {
-          "answer": "cake",
+          "answer": "yes",
           "correct": false,
-          "confidence": 0.02131860889494419,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/315281009.png"
+          "confidence": 0.500204861164093,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/315281009.png"
         }
       ]
     },
@@ -966,18 +966,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/502671002.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/502671002.png"
         }
       ],
       "openai": [
         {
-          "answer": "table",
-          "correct": false,
-          "confidence": 0.021102283149957657,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/502671002.png"
+          "answer": "yes",
+          "correct": true,
+          "confidence": 0.5002954006195068,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/502671002.png"
         }
       ]
     },
@@ -1005,18 +1005,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/160661001.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/160661001.png"
         }
       ],
       "openai": [
         {
-          "answer": "clock",
-          "correct": false,
-          "confidence": 0.022221578285098076,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/160661001.png"
+          "answer": "no",
+          "correct": true,
+          "confidence": 0.5002411007881165,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/160661001.png"
         }
       ]
     },
@@ -1044,18 +1044,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/360182007.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/360182007.png"
         }
       ],
       "openai": [
         {
-          "answer": "standing",
-          "correct": false,
-          "confidence": 0.021097343415021896,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/360182007.png"
+          "answer": "yes",
+          "correct": true,
+          "confidence": 0.5020644664764404,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/360182007.png"
         }
       ]
     },
@@ -1083,18 +1083,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/43816022.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/43816022.png"
         }
       ],
       "openai": [
         {
-          "answer": "baseball",
-          "correct": false,
-          "confidence": 0.022178979590535164,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/43816022.png"
+          "answer": "yes",
+          "correct": true,
+          "confidence": 0.5018265843391418,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/43816022.png"
         }
       ]
     },
@@ -1122,18 +1122,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/280320000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/280320000.png"
         }
       ],
       "openai": [
         {
-          "answer": "bathroom",
-          "correct": false,
-          "confidence": 0.021647723391652107,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/280320000.png"
+          "answer": "no",
+          "correct": true,
+          "confidence": 0.5002208352088928,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/280320000.png"
         }
       ]
     },
@@ -1161,18 +1161,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/42091004.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/42091004.png"
         }
       ],
       "openai": [
         {
-          "answer": "tree",
-          "correct": false,
-          "confidence": 0.021172991022467613,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/42091004.png"
+          "answer": "yes",
+          "correct": true,
+          "confidence": 0.5008648633956909,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/42091004.png"
         }
       ]
     },
@@ -1200,18 +1200,18 @@
       ],
       "salesforce": [
         {
-          "answer": "No",
-          "correct": true,
+          "answer": "yes",
+          "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/312552029.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/312552029.png"
         }
       ],
       "openai": [
         {
-          "answer": "cake",
+          "answer": "yes",
           "correct": false,
-          "confidence": 0.021358657628297806,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/312552029.png"
+          "confidence": 0.5006946325302124,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/312552029.png"
         }
       ]
     },
@@ -1239,18 +1239,18 @@
       ],
       "salesforce": [
         {
-          "answer": "No",
-          "correct": true,
+          "answer": "yes",
+          "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/500559002.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/500559002.png"
         }
       ],
       "openai": [
         {
-          "answer": "table",
+          "answer": "yes",
           "correct": false,
-          "confidence": 0.021529683843255043,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/500559002.png"
+          "confidence": 0.500557541847229,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/500559002.png"
         }
       ]
     },
@@ -1278,18 +1278,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/413734000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/413734000.png"
         }
       ],
       "openai": [
         {
-          "answer": "brown",
-          "correct": false,
-          "confidence": 0.020995212718844414,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/413734000.png"
+          "answer": "yes",
+          "correct": true,
+          "confidence": 0.500288724899292,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/413734000.png"
         }
       ]
     },
@@ -1317,18 +1317,18 @@
       ],
       "salesforce": [
         {
-          "answer": "No, they are in a zoo",
-          "correct": false,
+          "answer": "no",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/250758013.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/250758013.png"
         }
       ],
       "openai": [
         {
-          "answer": "horse",
+          "answer": "yes",
           "correct": false,
-          "confidence": 0.02135295607149601,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/250758013.png"
+          "confidence": 0.5012315511703491,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/250758013.png"
         }
       ]
     },
@@ -1356,18 +1356,18 @@
       ],
       "salesforce": [
         {
-          "answer": "No",
+          "answer": "no",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/393583004.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/393583004.png"
         }
       ],
       "openai": [
         {
-          "answer": "street",
+          "answer": "yes",
           "correct": false,
-          "confidence": 0.02157723344862461,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/393583004.png"
+          "confidence": 0.500199019908905,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/393583004.png"
         }
       ]
     },
@@ -1395,18 +1395,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/530998005.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/530998005.png"
         }
       ],
       "openai": [
         {
-          "answer": "walking",
-          "correct": false,
-          "confidence": 0.021760595962405205,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/530998005.png"
+          "answer": "no",
+          "correct": true,
+          "confidence": 0.5011516809463501,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/530998005.png"
         }
       ]
     },
@@ -1434,18 +1434,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/283642003.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/283642003.png"
         }
       ],
       "openai": [
         {
-          "answer": "train",
+          "answer": "no",
           "correct": false,
-          "confidence": 0.021812468767166138,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/283642003.png"
+          "confidence": 0.5007724165916443,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/283642003.png"
         }
       ]
     },
@@ -1473,18 +1473,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/404534002.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/404534002.png"
         }
       ],
       "openai": [
         {
-          "answer": "street",
-          "correct": false,
-          "confidence": 0.021086985245347023,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/404534002.png"
+          "answer": "yes",
+          "correct": true,
+          "confidence": 0.5005836486816406,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/404534002.png"
         }
       ]
     },
@@ -1512,18 +1512,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/12927002.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/12927002.png"
         }
       ],
       "openai": [
         {
-          "answer": "water",
-          "correct": false,
-          "confidence": 0.021275540813803673,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/12927002.png"
+          "answer": "yes",
+          "correct": true,
+          "confidence": 0.5008059740066528,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/12927002.png"
         }
       ]
     },
@@ -1551,18 +1551,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/144383000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/144383000.png"
         }
       ],
       "openai": [
         {
-          "answer": "beach",
-          "correct": false,
-          "confidence": 0.021175513043999672,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/144383000.png"
+          "answer": "yes",
+          "correct": true,
+          "confidence": 0.5012856721878052,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/144383000.png"
         }
       ]
     },
@@ -1590,18 +1590,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/57086004.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/57086004.png"
         }
       ],
       "openai": [
         {
-          "answer": "baseball",
-          "correct": false,
-          "confidence": 0.022215384989976883,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/57086004.png"
+          "answer": "no",
+          "correct": true,
+          "confidence": 0.5010364651679993,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/57086004.png"
         }
       ]
     },
@@ -1629,18 +1629,18 @@
       ],
       "salesforce": [
         {
-          "answer": "No, it's a noodle dish",
-          "correct": false,
+          "answer": "yes",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/298924001.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/298924001.png"
         }
       ],
       "openai": [
         {
-          "answer": "table",
-          "correct": false,
-          "confidence": 0.021115081384778023,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/298924001.png"
+          "answer": "yes",
+          "correct": true,
+          "confidence": 0.5030373334884644,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/298924001.png"
         }
       ]
     },
@@ -1668,18 +1668,18 @@
       ],
       "salesforce": [
         {
-          "answer": "No",
+          "answer": "yes",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/260486010.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/260486010.png"
         }
       ],
       "openai": [
         {
-          "answer": "laptop",
-          "correct": false,
-          "confidence": 0.0216190405189991,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/260486010.png"
+          "answer": "yes",
+          "correct": true,
+          "confidence": 0.5009065866470337,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/260486010.png"
         }
       ]
     },
@@ -1707,18 +1707,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/143560011.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/143560011.png"
         }
       ],
       "openai": [
         {
-          "answer": "street",
+          "answer": "yes",
           "correct": false,
-          "confidence": 0.021343404427170753,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/143560011.png"
+          "confidence": 0.5005002021789551,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/143560011.png"
         }
       ]
     },
@@ -1746,18 +1746,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes, there is a party happening",
-          "correct": false,
+          "answer": "yes",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/53870000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/53870000.png"
         }
       ],
       "openai": [
         {
-          "answer": "table",
-          "correct": false,
-          "confidence": 0.02115473337471485,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/53870000.png"
+          "answer": "yes",
+          "correct": true,
+          "confidence": 0.5016310811042786,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/53870000.png"
         }
       ]
     },
@@ -1785,18 +1785,18 @@
       ],
       "salesforce": [
         {
-          "answer": "No",
-          "correct": false,
+          "answer": "yes",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/520892003.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/520892003.png"
         }
       ],
       "openai": [
         {
-          "answer": "woman",
+          "answer": "no",
           "correct": false,
-          "confidence": 0.02113310806453228,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/520892003.png"
+          "confidence": 0.5010857582092285,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/520892003.png"
         }
       ]
     },
@@ -1824,18 +1824,18 @@
       ],
       "salesforce": [
         {
-          "answer": "No, they are watching the giraff",
-          "correct": false,
+          "answer": "yes",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/126766014.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/126766014.png"
         }
       ],
       "openai": [
         {
-          "answer": "horse",
-          "correct": false,
-          "confidence": 0.021776465699076653,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/126766014.png"
+          "answer": "yes",
+          "correct": true,
+          "confidence": 0.501084566116333,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/126766014.png"
         }
       ]
     },
@@ -1863,18 +1863,18 @@
       ],
       "salesforce": [
         {
-          "answer": "No",
-          "correct": false,
+          "answer": "yes",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/377911002.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/377911002.png"
         }
       ],
       "openai": [
         {
-          "answer": "grass",
-          "correct": false,
-          "confidence": 0.021068936213850975,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/377911002.png"
+          "answer": "yes",
+          "correct": true,
+          "confidence": 0.5012086033821106,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/377911002.png"
         }
       ]
     },
@@ -1902,18 +1902,18 @@
       ],
       "salesforce": [
         {
-          "answer": "No",
-          "correct": true,
+          "answer": "yes",
+          "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/267875002.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/267875002.png"
         }
       ],
       "openai": [
         {
-          "answer": "street",
+          "answer": "yes",
           "correct": false,
-          "confidence": 0.021499210968613625,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/267875002.png"
+          "confidence": 0.5014196634292603,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/267875002.png"
         }
       ]
     },
@@ -1941,18 +1941,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes, there are eggs in the fridge",
-          "correct": false,
+          "answer": "yes",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/314370008.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/314370008.png"
         }
       ],
       "openai": [
         {
-          "answer": "kitchen",
-          "correct": false,
-          "confidence": 0.022462328895926476,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/314370008.png"
+          "answer": "yes",
+          "correct": true,
+          "confidence": 0.5007048845291138,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/314370008.png"
         }
       ]
     },
@@ -1980,18 +1980,18 @@
       ],
       "salesforce": [
         {
-          "answer": "No",
-          "correct": true,
+          "answer": "yes",
+          "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/326937000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/326937000.png"
         }
       ],
       "openai": [
         {
-          "answer": "dog",
+          "answer": "yes",
           "correct": false,
-          "confidence": 0.021480461582541466,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/326937000.png"
+          "confidence": 0.5003067255020142,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/326937000.png"
         }
       ]
     },
@@ -2019,18 +2019,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/84431003.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/84431003.png"
         }
       ],
       "openai": [
         {
-          "answer": "baseball",
-          "correct": false,
-          "confidence": 0.021231217309832573,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/84431003.png"
+          "answer": "yes",
+          "correct": true,
+          "confidence": 0.5004298090934753,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/84431003.png"
         }
       ]
     },
@@ -2058,18 +2058,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/449638006.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/449638006.png"
         }
       ],
       "openai": [
         {
-          "answer": "bike",
-          "correct": false,
-          "confidence": 0.021588964387774467,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/449638006.png"
+          "answer": "yes",
+          "correct": true,
+          "confidence": 0.5008946061134338,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/449638006.png"
         }
       ]
     },
@@ -2097,18 +2097,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/388457002.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/388457002.png"
         }
       ],
       "openai": [
         {
-          "answer": "bathroom",
-          "correct": false,
-          "confidence": 0.021100807934999466,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/388457002.png"
+          "answer": "yes",
+          "correct": true,
+          "confidence": 0.5010474324226379,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/388457002.png"
         }
       ]
     },
@@ -2136,18 +2136,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/43997006.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/43997006.png"
         }
       ],
       "openai": [
         {
-          "answer": "bathroom",
-          "correct": false,
-          "confidence": 0.022291282191872597,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/43997006.png"
+          "answer": "no",
+          "correct": true,
+          "confidence": 0.5002440214157104,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/43997006.png"
         }
       ]
     },
@@ -2175,18 +2175,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/91416000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/91416000.png"
         }
       ],
       "openai": [
         {
-          "answer": "kitchen",
-          "correct": false,
-          "confidence": 0.022076604887843132,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/91416000.png"
+          "answer": "no",
+          "correct": true,
+          "confidence": 0.5000771880149841,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/91416000.png"
         }
       ]
     },
@@ -2214,18 +2214,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/562155000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/562155000.png"
         }
       ],
       "openai": [
         {
-          "answer": "green",
-          "correct": false,
-          "confidence": 0.02140592411160469,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/562155000.png"
+          "answer": "yes",
+          "correct": true,
+          "confidence": 0.500700056552887,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/562155000.png"
         }
       ]
     },
@@ -2253,18 +2253,18 @@
       ],
       "salesforce": [
         {
-          "answer": "No, they are outside",
-          "correct": false,
+          "answer": "no",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/503951000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/503951000.png"
         }
       ],
       "openai": [
         {
-          "answer": "bird",
-          "correct": false,
-          "confidence": 0.021603485569357872,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/503951000.png"
+          "answer": "yes",
+          "correct": true,
+          "confidence": 0.501178503036499,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/503951000.png"
         }
       ]
     },
@@ -2292,18 +2292,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/81943003.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/81943003.png"
         }
       ],
       "openai": [
         {
-          "answer": "bathroom",
+          "answer": "no",
           "correct": false,
-          "confidence": 0.021908875554800034,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/81943003.png"
+          "confidence": 0.5004436373710632,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/81943003.png"
         }
       ]
     },
@@ -2331,18 +2331,18 @@
       ],
       "salesforce": [
         {
-          "answer": "No",
-          "correct": false,
+          "answer": "yes",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/487422000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/487422000.png"
         }
       ],
       "openai": [
         {
-          "answer": "standing",
-          "correct": false,
-          "confidence": 0.021496053785085678,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/487422000.png"
+          "answer": "yes",
+          "correct": true,
+          "confidence": 0.5003963708877563,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/487422000.png"
         }
       ]
     },
@@ -2370,18 +2370,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/256199003.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/256199003.png"
         }
       ],
       "openai": [
         {
-          "answer": "standing",
-          "correct": false,
-          "confidence": 0.021598342806100845,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/256199003.png"
+          "answer": "yes",
+          "correct": true,
+          "confidence": 0.5013105273246765,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/256199003.png"
         }
       ]
     },
@@ -2409,18 +2409,18 @@
       ],
       "salesforce": [
         {
-          "answer": "No",
-          "correct": false,
+          "answer": "yes",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/334276014.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/334276014.png"
         }
       ],
       "openai": [
         {
-          "answer": "bird",
-          "correct": false,
-          "confidence": 0.021148528903722763,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/334276014.png"
+          "answer": "yes",
+          "correct": true,
+          "confidence": 0.5002942085266113,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/334276014.png"
         }
       ]
     },
@@ -2448,18 +2448,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes, it is homemade",
-          "correct": false,
+          "answer": "yes",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/89273000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/89273000.png"
         }
       ],
       "openai": [
         {
-          "answer": "red",
-          "correct": false,
-          "confidence": 0.021594010293483734,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/89273000.png"
+          "answer": "yes",
+          "correct": true,
+          "confidence": 0.5008463859558105,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/89273000.png"
         }
       ]
     },
@@ -2487,18 +2487,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/135797000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/135797000.png"
         }
       ],
       "openai": [
         {
-          "answer": "wood",
+          "answer": "no",
           "correct": false,
-          "confidence": 0.021185213699936867,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/135797000.png"
+          "confidence": 0.5000118613243103,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/135797000.png"
         }
       ]
     },
@@ -2526,18 +2526,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/168953004.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/168953004.png"
         }
       ],
       "openai": [
         {
-          "answer": "laptop",
-          "correct": false,
-          "confidence": 0.021244512870907784,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/168953004.png"
+          "answer": "no",
+          "correct": true,
+          "confidence": 0.5003083348274231,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/168953004.png"
         }
       ]
     },
@@ -2565,18 +2565,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/303418002.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/303418002.png"
         }
       ],
       "openai": [
         {
-          "answer": "kitchen",
-          "correct": false,
-          "confidence": 0.022166328504681587,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/303418002.png"
+          "answer": "yes",
+          "correct": true,
+          "confidence": 0.5011462569236755,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/303418002.png"
         }
       ]
     },
@@ -2604,18 +2604,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/13637007.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/13637007.png"
         }
       ],
       "openai": [
         {
-          "answer": "water",
-          "correct": false,
-          "confidence": 0.021124130114912987,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/13637007.png"
+          "answer": "yes",
+          "correct": true,
+          "confidence": 0.5000123381614685,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/13637007.png"
         }
       ]
     },
@@ -2643,18 +2643,18 @@
       ],
       "salesforce": [
         {
-          "answer": "No",
-          "correct": false,
+          "answer": "yes",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/475053004.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/475053004.png"
         }
       ],
       "openai": [
         {
-          "answer": "yellow",
-          "correct": false,
-          "confidence": 0.021341392770409584,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/475053004.png"
+          "answer": "yes",
+          "correct": true,
+          "confidence": 0.5000913143157959,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/475053004.png"
         }
       ]
     },
@@ -2682,18 +2682,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Yes",
+          "answer": "yes",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/314112012.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/314112012.png"
         }
       ],
       "openai": [
         {
-          "answer": "cake",
+          "answer": "yes",
           "correct": false,
-          "confidence": 0.021515507251024246,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/314112012.png"
+          "confidence": 0.501909077167511,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/314112012.png"
         }
       ]
     },
@@ -2721,18 +2721,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Three",
+          "answer": "5",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/57350002.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/57350002.png"
         }
       ],
       "openai": [
         {
-          "answer": "standing",
+          "answer": "7",
           "correct": false,
-          "confidence": 0.021347420290112495,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/57350002.png"
+          "confidence": 0.04772637039422989,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/57350002.png"
         }
       ]
     },
@@ -2760,18 +2760,18 @@
       ],
       "salesforce": [
         {
-          "answer": "None.",
+          "answer": "1",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/353001000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/353001000.png"
         }
       ],
       "openai": [
         {
-          "answer": "man",
+          "answer": "0",
           "correct": false,
-          "confidence": 0.020905032753944397,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/353001000.png"
+          "confidence": 0.047714296728372574,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/353001000.png"
         }
       ]
     },
@@ -2799,18 +2799,18 @@
       ],
       "salesforce": [
         {
-          "answer": "There is one room",
+          "answer": "yes",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/520401018.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/520401018.png"
         }
       ],
       "openai": [
         {
-          "answer": "table",
+          "answer": "yes",
           "correct": false,
-          "confidence": 0.021110668778419495,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/520401018.png"
+          "confidence": 0.5022207498550415,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/520401018.png"
         }
       ]
     },
@@ -2838,18 +2838,18 @@
       ],
       "salesforce": [
         {
-          "answer": "One",
+          "answer": "1",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/540160002.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/540160002.png"
         }
       ],
       "openai": [
         {
-          "answer": "train",
+          "answer": "7",
           "correct": false,
-          "confidence": 0.021718228235840797,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/540160002.png"
+          "confidence": 0.04772235080599785,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/540160002.png"
         }
       ]
     },
@@ -2877,18 +2877,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Two",
+          "answer": "4",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/97924001.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/97924001.png"
         }
       ],
       "openai": [
         {
-          "answer": "truck",
+          "answer": "0",
           "correct": false,
-          "confidence": 0.021526802331209183,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/97924001.png"
+          "confidence": 0.047879692167043686,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/97924001.png"
         }
       ]
     },
@@ -2916,18 +2916,18 @@
       ],
       "salesforce": [
         {
-          "answer": "One",
-          "correct": false,
+          "answer": "1",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/204049004.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/204049004.png"
         }
       ],
       "openai": [
         {
-          "answer": "snow",
+          "answer": "9",
           "correct": false,
-          "confidence": 0.021703341975808144,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/204049004.png"
+          "confidence": 0.047782052308321,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/204049004.png"
         }
       ]
     },
@@ -2955,18 +2955,18 @@
       ],
       "salesforce": [
         {
-          "answer": "A lot",
+          "answer": "lot",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/453708004.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/453708004.png"
         }
       ],
       "openai": [
         {
-          "answer": "green",
+          "answer": "3",
           "correct": false,
-          "confidence": 0.021117767319083214,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/453708004.png"
+          "confidence": 0.047835059463977814,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/453708004.png"
         }
       ]
     },
@@ -2994,18 +2994,18 @@
       ],
       "salesforce": [
         {
-          "answer": "It's a clock",
+          "answer": "day",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/126925000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/126925000.png"
         }
       ],
       "openai": [
         {
-          "answer": "clock",
+          "answer": "afternoon",
           "correct": false,
-          "confidence": 0.022411147132515907,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/126925000.png"
+          "confidence": 0.14459271728992462,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/126925000.png"
         }
       ]
     },
@@ -3033,18 +3033,18 @@
       ],
       "salesforce": [
         {
-          "answer": "He is a teenager",
+          "answer": "about 15 years old",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/570680003.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/570680003.png"
         }
       ],
       "openai": [
         {
-          "answer": "table",
+          "answer": "skateboarding",
           "correct": false,
-          "confidence": 0.02106691524386406,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/570680003.png"
+          "confidence": 0.013120654970407486,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/570680003.png"
         }
       ]
     },
@@ -3072,18 +3072,18 @@
       ],
       "salesforce": [
         {
-          "answer": "nasa-1",
+          "answer": "number on plane is number",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/353981003.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/353981003.png"
         }
       ],
       "openai": [
         {
-          "answer": "6",
+          "answer": "truck",
           "correct": false,
-          "confidence": 0.021250909194350243,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/353981003.png"
+          "confidence": 0.012323292903602123,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/353981003.png"
         }
       ]
     },
@@ -3111,18 +3111,18 @@
       ],
       "salesforce": [
         {
-          "answer": "None",
+          "answer": "1",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/27648004.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/27648004.png"
         }
       ],
       "openai": [
         {
-          "answer": "bathroom",
+          "answer": "3",
           "correct": false,
-          "confidence": 0.021565740928053856,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/27648004.png"
+          "confidence": 0.04771733283996582,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/27648004.png"
         }
       ]
     },
@@ -3150,18 +3150,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Two",
+          "answer": "2",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/319285000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/319285000.png"
         }
       ],
       "openai": [
         {
-          "answer": "bathroom",
+          "answer": "0",
           "correct": false,
-          "confidence": 0.022328954190015793,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/319285000.png"
+          "confidence": 0.047808688133955,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/319285000.png"
         }
       ]
     },
@@ -3189,18 +3189,18 @@
       ],
       "salesforce": [
         {
-          "answer": "One",
-          "correct": false,
+          "answer": "1",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/34418000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/34418000.png"
         }
       ],
       "openai": [
         {
-          "answer": "grass",
+          "answer": "8",
           "correct": false,
-          "confidence": 0.02147875912487507,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/34418000.png"
+          "confidence": 0.04775141552090645,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/34418000.png"
         }
       ]
     },
@@ -3228,18 +3228,18 @@
       ],
       "salesforce": [
         {
-          "answer": "None",
-          "correct": false,
+          "answer": "1",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/430546002.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/430546002.png"
         }
       ],
       "openai": [
         {
-          "answer": "bike",
+          "answer": "0",
           "correct": false,
-          "confidence": 0.021515123546123505,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/430546002.png"
+          "confidence": 0.047777995467185974,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/430546002.png"
         }
       ]
     },
@@ -3267,18 +3267,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Three",
+          "answer": "3",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/377730007.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/377730007.png"
         }
       ],
       "openai": [
         {
-          "answer": "kitchen",
+          "answer": "8",
           "correct": false,
-          "confidence": 0.021369803696870804,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/377730007.png"
+          "confidence": 0.04775456339120865,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/377730007.png"
         }
       ]
     },
@@ -3306,18 +3306,18 @@
       ],
       "salesforce": [
         {
-          "answer": "None",
+          "answer": "none",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/548090005.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/548090005.png"
         }
       ],
       "openai": [
         {
-          "answer": "snow",
+          "answer": "3",
           "correct": false,
-          "confidence": 0.02150939777493477,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/548090005.png"
+          "confidence": 0.04780682548880577,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/548090005.png"
         }
       ]
     },
@@ -3345,18 +3345,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Three",
-          "correct": false,
+          "answer": "3",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/405279001.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/405279001.png"
         }
       ],
       "openai": [
         {
-          "answer": "beach",
-          "correct": false,
-          "confidence": 0.02120744250714779,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/405279001.png"
+          "answer": "9",
+          "correct": true,
+          "confidence": 0.04777901619672775,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/405279001.png"
         }
       ]
     },
@@ -3384,18 +3384,18 @@
       ],
       "salesforce": [
         {
-          "answer": "None",
-          "correct": false,
+          "answer": "2",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/533074002.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/533074002.png"
         }
       ],
       "openai": [
         {
-          "answer": "bathroom",
+          "answer": "7",
           "correct": false,
-          "confidence": 0.022619033232331276,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/533074002.png"
+          "confidence": 0.04780520871281624,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/533074002.png"
         }
       ]
     },
@@ -3423,18 +3423,18 @@
       ],
       "salesforce": [
         {
-          "answer": "None",
-          "correct": false,
+          "answer": "1",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/250619001.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/250619001.png"
         }
       ],
       "openai": [
         {
-          "answer": "beach",
+          "answer": "9",
           "correct": false,
-          "confidence": 0.021767765283584595,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/250619001.png"
+          "confidence": 0.04779975116252899,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/250619001.png"
         }
       ]
     },
@@ -3462,18 +3462,18 @@
       ],
       "salesforce": [
         {
-          "answer": "A lot of birds",
+          "answer": "1",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/490125002.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/490125002.png"
         }
       ],
       "openai": [
         {
-          "answer": "truck",
+          "answer": "3",
           "correct": false,
-          "confidence": 0.021488603204488754,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/490125002.png"
+          "confidence": 0.04772716015577316,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/490125002.png"
         }
       ]
     },
@@ -3501,18 +3501,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Two",
-          "correct": false,
+          "answer": "2",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/570465006.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/570465006.png"
         }
       ],
       "openai": [
         {
-          "answer": "table",
+          "answer": "3",
           "correct": false,
-          "confidence": 0.021532144397497177,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/570465006.png"
+          "confidence": 0.04777227342128754,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/570465006.png"
         }
       ]
     },
@@ -3540,18 +3540,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Two",
-          "correct": false,
+          "answer": "2",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/454982000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/454982000.png"
         }
       ],
       "openai": [
         {
-          "answer": "laptop",
+          "answer": "3",
           "correct": false,
-          "confidence": 0.022060610353946686,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/454982000.png"
+          "confidence": 0.047916967421770096,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/454982000.png"
         }
       ]
     },
@@ -3579,18 +3579,18 @@
       ],
       "salesforce": [
         {
-          "answer": "None",
-          "correct": false,
+          "answer": "3",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/119038002.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/119038002.png"
         }
       ],
       "openai": [
         {
-          "answer": "horse",
-          "correct": false,
-          "confidence": 0.02118322253227234,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/119038002.png"
+          "answer": "3",
+          "correct": true,
+          "confidence": 0.04782264679670334,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/119038002.png"
         }
       ]
     },
@@ -3618,18 +3618,18 @@
       ],
       "salesforce": [
         {
-          "answer": "None",
+          "answer": "5",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/317015002.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/317015002.png"
         }
       ],
       "openai": [
         {
-          "answer": "baseball",
+          "answer": "8",
           "correct": false,
-          "confidence": 0.021610844880342484,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/317015002.png"
+          "confidence": 0.047760672867298126,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/317015002.png"
         }
       ]
     },
@@ -3657,18 +3657,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Three",
+          "answer": "4",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/147422001.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/147422001.png"
         }
       ],
       "openai": [
         {
-          "answer": "beach",
-          "correct": false,
-          "confidence": 0.021723350510001183,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/147422001.png"
+          "answer": "3",
+          "correct": true,
+          "confidence": 0.047951992601156235,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/147422001.png"
         }
       ]
     },
@@ -3696,18 +3696,18 @@
       ],
       "salesforce": [
         {
-          "answer": "None",
+          "answer": "1",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/499594003.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/499594003.png"
         }
       ],
       "openai": [
         {
-          "answer": "table",
-          "correct": false,
-          "confidence": 0.021265676245093346,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/499594003.png"
+          "answer": "3",
+          "correct": true,
+          "confidence": 0.0477355532348156,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/499594003.png"
         }
       ]
     },
@@ -3735,18 +3735,18 @@
       ],
       "salesforce": [
         {
-          "answer": "None",
-          "correct": false,
+          "answer": "2",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/276151004.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/276151004.png"
         }
       ],
       "openai": [
         {
-          "answer": "tennis",
+          "answer": "0",
           "correct": false,
-          "confidence": 0.021340081468224525,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/276151004.png"
+          "confidence": 0.04777156189084053,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/276151004.png"
         }
       ]
     },
@@ -3774,18 +3774,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Two",
-          "correct": false,
+          "answer": "2",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/349776001.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/349776001.png"
         }
       ],
       "openai": [
         {
-          "answer": "cat",
+          "answer": "0",
           "correct": false,
-          "confidence": 0.02139241248369217,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/349776001.png"
+          "confidence": 0.047804273664951324,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/349776001.png"
         }
       ]
     },
@@ -3813,18 +3813,18 @@
       ],
       "salesforce": [
         {
-          "answer": "It is now",
+          "answer": "now",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/213338004.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/213338004.png"
         }
       ],
       "openai": [
         {
-          "answer": "clock",
+          "answer": "afternoon",
           "correct": false,
-          "confidence": 0.02269604615867138,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/213338004.png"
+          "confidence": 0.1435515135526657,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/213338004.png"
         }
       ]
     },
@@ -3852,18 +3852,18 @@
       ],
       "salesforce": [
         {
-          "answer": "One",
-          "correct": false,
+          "answer": "1",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/399830000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/399830000.png"
         }
       ],
       "openai": [
         {
-          "answer": "table",
+          "answer": "3",
           "correct": false,
-          "confidence": 0.021265685558319092,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/399830000.png"
+          "confidence": 0.0478132888674736,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/399830000.png"
         }
       ]
     },
@@ -3891,18 +3891,18 @@
       ],
       "salesforce": [
         {
-          "answer": "3",
-          "correct": false,
+          "answer": "1",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/90155005.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/90155005.png"
         }
       ],
       "openai": [
         {
-          "answer": "train",
+          "answer": "7",
           "correct": false,
-          "confidence": 0.021896980702877045,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/90155005.png"
+          "confidence": 0.047770168632268906,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/90155005.png"
         }
       ]
     },
@@ -3930,18 +3930,18 @@
       ],
       "salesforce": [
         {
-          "answer": "None",
-          "correct": false,
+          "answer": "1",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/231534000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/231534000.png"
         }
       ],
       "openai": [
         {
-          "answer": "truck",
-          "correct": false,
-          "confidence": 0.021037831902503967,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/231534000.png"
+          "answer": "1",
+          "correct": true,
+          "confidence": 0.04778563231229782,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/231534000.png"
         }
       ]
     },
@@ -3972,15 +3972,15 @@
           "answer": "4",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/307138001.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/307138001.png"
         }
       ],
       "openai": [
         {
-          "answer": "kitchen",
+          "answer": "0",
           "correct": false,
-          "confidence": 0.02165195904672146,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/307138001.png"
+          "confidence": 0.04780659079551697,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/307138001.png"
         }
       ]
     },
@@ -4008,18 +4008,18 @@
       ],
       "salesforce": [
         {
-          "answer": "One",
+          "answer": "2",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/380244010.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/380244010.png"
         }
       ],
       "openai": [
         {
-          "answer": "bathroom",
+          "answer": "9",
           "correct": false,
-          "confidence": 0.021093735471367836,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/380244010.png"
+          "confidence": 0.04775775596499443,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/380244010.png"
         }
       ]
     },
@@ -4047,18 +4047,18 @@
       ],
       "salesforce": [
         {
-          "answer": "None.",
+          "answer": "1",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/87429000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/87429000.png"
         }
       ],
       "openai": [
         {
-          "answer": "clock",
+          "answer": "0",
           "correct": false,
-          "confidence": 0.02124783769249916,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/87429000.png"
+          "confidence": 0.047908127307891846,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/87429000.png"
         }
       ]
     },
@@ -4086,18 +4086,18 @@
       ],
       "salesforce": [
         {
-          "answer": "It reads 12:00",
+          "answer": "clock",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/125070003.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/125070003.png"
         }
       ],
       "openai": [
         {
-          "answer": "clock",
+          "answer": "afternoon",
           "correct": false,
-          "confidence": 0.022190649062395096,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/125070003.png"
+          "confidence": 0.1431899517774582,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/125070003.png"
         }
       ]
     },
@@ -4125,18 +4125,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Boat",
+          "answer": "boat",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/265372031.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/265372031.png"
         }
       ],
       "openai": [
         {
-          "answer": "water",
-          "correct": true,
-          "confidence": 0.021086636930704117,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/265372031.png"
+          "answer": "pizza",
+          "correct": false,
+          "confidence": 0.01222774013876915,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/265372031.png"
         }
       ]
     },
@@ -4164,18 +4164,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Two",
-          "correct": false,
+          "answer": "2",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/551815002.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/551815002.png"
         }
       ],
       "openai": [
         {
-          "answer": "cat",
+          "answer": "0",
           "correct": false,
-          "confidence": 0.021197669208049774,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/551815002.png"
+          "confidence": 0.04781899228692055,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/551815002.png"
         }
       ]
     },
@@ -4203,18 +4203,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Two",
+          "answer": "2",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/80756002.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/80756002.png"
         }
       ],
       "openai": [
         {
-          "answer": "kitchen",
+          "answer": "0",
           "correct": false,
-          "confidence": 0.02148408815264702,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/80756002.png"
+          "confidence": 0.047870293259620667,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/80756002.png"
         }
       ]
     },
@@ -4242,18 +4242,18 @@
       ],
       "salesforce": [
         {
-          "answer": "A lot",
-          "correct": false,
+          "answer": "3",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/220531016.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/220531016.png"
         }
       ],
       "openai": [
         {
-          "answer": "kitchen",
+          "answer": "0",
           "correct": false,
-          "confidence": 0.021277209743857384,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/220531016.png"
+          "confidence": 0.047899506986141205,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/220531016.png"
         }
       ]
     },
@@ -4281,18 +4281,18 @@
       ],
       "salesforce": [
         {
-          "answer": "None",
+          "answer": "1",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/355756003.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/355756003.png"
         }
       ],
       "openai": [
         {
-          "answer": "street",
+          "answer": "17",
           "correct": false,
-          "confidence": 0.021119654178619385,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/355756003.png"
+          "confidence": 0.0477265790104866,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/355756003.png"
         }
       ]
     },
@@ -4320,18 +4320,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Two",
+          "answer": "2",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/435389001.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/435389001.png"
         }
       ],
       "openai": [
         {
-          "answer": "clock",
+          "answer": "0",
           "correct": false,
-          "confidence": 0.021727165207266808,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/435389001.png"
+          "confidence": 0.047729022800922394,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/435389001.png"
         }
       ]
     },
@@ -4359,18 +4359,18 @@
       ],
       "salesforce": [
         {
-          "answer": "A lot",
+          "answer": "1",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/407235002.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/407235002.png"
         }
       ],
       "openai": [
         {
-          "answer": "grass",
+          "answer": "8",
           "correct": false,
-          "confidence": 0.02116011269390583,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/407235002.png"
+          "confidence": 0.047728031873703,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/407235002.png"
         }
       ]
     },
@@ -4398,18 +4398,18 @@
       ],
       "salesforce": [
         {
-          "answer": "One",
-          "correct": false,
+          "answer": "1",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/13490001.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/13490001.png"
         }
       ],
       "openai": [
         {
-          "answer": "green",
-          "correct": false,
-          "confidence": 0.021739011630415916,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/13490001.png"
+          "answer": "1",
+          "correct": true,
+          "confidence": 0.0478229857981205,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/13490001.png"
         }
       ]
     },
@@ -4437,18 +4437,18 @@
       ],
       "salesforce": [
         {
-          "answer": "None",
-          "correct": false,
+          "answer": "3",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/288944004.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/288944004.png"
         }
       ],
       "openai": [
         {
-          "answer": "snow",
+          "answer": "8",
           "correct": false,
-          "confidence": 0.021529534831643105,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/288944004.png"
+          "confidence": 0.04776431992650032,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/288944004.png"
         }
       ]
     },
@@ -4476,18 +4476,18 @@
       ],
       "salesforce": [
         {
-          "answer": "none",
-          "correct": false,
+          "answer": "2",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/332625000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/332625000.png"
         }
       ],
       "openai": [
         {
-          "answer": "man",
+          "answer": "10",
           "correct": false,
-          "confidence": 0.021083680912852287,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/332625000.png"
+          "confidence": 0.047704875469207764,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/332625000.png"
         }
       ]
     },
@@ -4515,18 +4515,18 @@
       ],
       "salesforce": [
         {
-          "answer": "One",
-          "correct": false,
+          "answer": "1",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/468917007.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/468917007.png"
         }
       ],
       "openai": [
         {
-          "answer": "cake",
+          "answer": "0",
           "correct": false,
-          "confidence": 0.02202775329351425,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/468917007.png"
+          "confidence": 0.047804392874240875,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/468917007.png"
         }
       ]
     },
@@ -4554,18 +4554,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Two",
-          "correct": false,
+          "answer": "2",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/261504005.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/261504005.png"
         }
       ],
       "openai": [
         {
-          "answer": "table",
+          "answer": "0",
           "correct": false,
-          "confidence": 0.021325087174773216,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/261504005.png"
+          "confidence": 0.04776892066001892,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/261504005.png"
         }
       ]
     },
@@ -4593,18 +4593,18 @@
       ],
       "salesforce": [
         {
-          "answer": "One",
-          "correct": false,
+          "answer": "1",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/430052006.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/430052006.png"
         }
       ],
       "openai": [
         {
-          "answer": "bird",
+          "answer": "3",
           "correct": false,
-          "confidence": 0.021204065531492233,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/430052006.png"
+          "confidence": 0.04777509346604347,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/430052006.png"
         }
       ]
     },
@@ -4632,18 +4632,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Two",
+          "answer": "3",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/333290001.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/333290001.png"
         }
       ],
       "openai": [
         {
-          "answer": "standing",
+          "answer": "9",
           "correct": false,
-          "confidence": 0.02124956250190735,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/333290001.png"
+          "confidence": 0.04781961441040039,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/333290001.png"
         }
       ]
     },
@@ -4671,18 +4671,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Colgate",
-          "correct": true,
+          "answer": "colgatepalmolive",
+          "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/461759001.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/461759001.png"
         }
       ],
       "openai": [
         {
           "answer": "clock",
           "correct": false,
-          "confidence": 0.0216990914195776,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/461759001.png"
+          "confidence": 0.012434675358235836,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/461759001.png"
         }
       ]
     },
@@ -4710,18 +4710,18 @@
       ],
       "salesforce": [
         {
-          "answer": "A dump truck to come down the street",
-          "correct": false,
+          "answer": "truck",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/231402006.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/231402006.png"
         }
       ],
       "openai": [
         {
           "answer": "truck",
           "correct": true,
-          "confidence": 0.021546293050050735,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/231402006.png"
+          "confidence": 0.012547138147056103,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/231402006.png"
         }
       ]
     },
@@ -4749,18 +4749,18 @@
       ],
       "salesforce": [
         {
-          "answer": "A black and white checkered floor",
+          "answer": "black and white checkered floor",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/380247002.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/380247002.png"
         }
       ],
       "openai": [
         {
           "answer": "kitchen",
           "correct": false,
-          "confidence": 0.022514836862683296,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/380247002.png"
+          "confidence": 0.012548479251563549,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/380247002.png"
         }
       ]
     },
@@ -4788,18 +4788,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Dutch",
+          "answer": "dutch",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/296775001.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/296775001.png"
         }
       ],
       "openai": [
         {
           "answer": "bus",
           "correct": false,
-          "confidence": 0.022371584549546242,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/296775001.png"
+          "confidence": 0.013182214461266994,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/296775001.png"
         }
       ]
     },
@@ -4827,18 +4827,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Wood",
+          "answer": "wood",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/197199003.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/197199003.png"
         }
       ],
       "openai": [
         {
-          "answer": "grass",
+          "answer": "cow",
           "correct": false,
-          "confidence": 0.021543364971876144,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/197199003.png"
+          "confidence": 0.012522763572633266,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/197199003.png"
         }
       ]
     },
@@ -4866,18 +4866,18 @@
       ],
       "salesforce": [
         {
-          "answer": "A bicycle",
-          "correct": false,
+          "answer": "bicycle",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/310278008.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/310278008.png"
         }
       ],
       "openai": [
         {
           "answer": "bike",
           "correct": true,
-          "confidence": 0.021946897730231285,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/310278008.png"
+          "confidence": 0.012407169677317142,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/310278008.png"
         }
       ]
     },
@@ -4905,18 +4905,18 @@
       ],
       "salesforce": [
         {
-          "answer": "It's taking off",
+          "answer": "unknown",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/442688002.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/442688002.png"
         }
       ],
       "openai": [
         {
-          "answer": "horse",
+          "answer": "yes",
           "correct": false,
-          "confidence": 0.02117297239601612,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/442688002.png"
+          "confidence": 0.5021020174026489,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/442688002.png"
         }
       ]
     },
@@ -4944,18 +4944,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Stone",
+          "answer": "stone",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/544322000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/544322000.png"
         }
       ],
       "openai": [
         {
-          "answer": "white",
+          "answer": "cotton",
           "correct": false,
-          "confidence": 0.021004583686590195,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/544322000.png"
+          "confidence": 0.12650711834430695,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/544322000.png"
         }
       ]
     },
@@ -4983,18 +4983,18 @@
       ],
       "salesforce": [
         {
-          "answer": "The B-2 stealth bomber",
+          "answer": "supersonic jet",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/517128001.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/517128001.png"
         }
       ],
       "openai": [
         {
-          "answer": "1",
+          "answer": "metal",
           "correct": false,
-          "confidence": 0.02102973684668541,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/517128001.png"
+          "confidence": 0.012392519973218441,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/517128001.png"
         }
       ]
     },
@@ -5022,18 +5022,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Vegetables",
+          "answer": "vegetables",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/528738007.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/528738007.png"
         }
       ],
       "openai": [
         {
-          "answer": "kitchen",
+          "answer": "green",
           "correct": false,
-          "confidence": 0.021486811339855194,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/528738007.png"
+          "confidence": 0.012257801368832588,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/528738007.png"
         }
       ]
     },
@@ -5061,18 +5061,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Red",
+          "answer": "red",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/244539006.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/244539006.png"
         }
       ],
       "openai": [
         {
-          "answer": "bike",
-          "correct": false,
-          "confidence": 0.021721290424466133,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/244539006.png"
+          "answer": "red",
+          "correct": true,
+          "confidence": 0.09246725589036942,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/244539006.png"
         }
       ]
     },
@@ -5100,18 +5100,18 @@
       ],
       "salesforce": [
         {
-          "answer": "It's a cup",
+          "answer": "cup",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/440212004.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/440212004.png"
         }
       ],
       "openai": [
         {
-          "answer": "green",
+          "answer": "sandwich",
           "correct": false,
-          "confidence": 0.02098511904478073,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/440212004.png"
+          "confidence": 0.012608605436980724,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/440212004.png"
         }
       ]
     },
@@ -5139,18 +5139,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Autumn",
-          "correct": false,
+          "answer": "spring",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/412531012.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/412531012.png"
         }
       ],
       "openai": [
         {
           "answer": "phone",
           "correct": false,
-          "confidence": 0.021160706877708435,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/412531012.png"
+          "confidence": 0.012490253895521164,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/412531012.png"
         }
       ]
     },
@@ -5178,18 +5178,18 @@
       ],
       "salesforce": [
         {
-          "answer": "White",
+          "answer": "white",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/103631008.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/103631008.png"
         }
       ],
       "openai": [
         {
-          "answer": "bathroom",
+          "answer": "green",
           "correct": false,
-          "confidence": 0.02225426957011223,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/103631008.png"
+          "confidence": 0.09192540496587753,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/103631008.png"
         }
       ]
     },
@@ -5217,18 +5217,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Clouds",
+          "answer": "cloud",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/166391029.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/166391029.png"
         }
       ],
       "openai": [
         {
-          "answer": "street",
+          "answer": "car",
           "correct": false,
-          "confidence": 0.021037979051470757,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/166391029.png"
+          "confidence": 0.012289516627788544,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/166391029.png"
         }
       ]
     },
@@ -5256,18 +5256,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Baseball",
+          "answer": "baseball",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/73093002.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/73093002.png"
         }
       ],
       "openai": [
         {
           "answer": "baseball",
           "correct": true,
-          "confidence": 0.022432781755924225,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/73093002.png"
+          "confidence": 0.012450546957552433,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/73093002.png"
         }
       ]
     },
@@ -5295,18 +5295,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Blue",
+          "answer": "blue",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/23879001.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/23879001.png"
         }
       ],
       "openai": [
         {
-          "answer": "train",
+          "answer": "yellow",
           "correct": false,
-          "confidence": 0.021780511364340782,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/23879001.png"
+          "confidence": 0.09209112823009491,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/23879001.png"
         }
       ]
     },
@@ -5334,18 +5334,18 @@
       ],
       "salesforce": [
         {
-          "answer": "A plane is flying in the air",
+          "answer": "plane is flying",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/322791000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/322791000.png"
         }
       ],
       "openai": [
         {
-          "answer": "green",
+          "answer": "gray",
           "correct": false,
-          "confidence": 0.02118554897606373,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/322791000.png"
+          "confidence": 0.012426275759935379,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/322791000.png"
         }
       ]
     },
@@ -5373,18 +5373,18 @@
       ],
       "salesforce": [
         {
-          "answer": "They are blue",
+          "answer": "blue",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/277521019.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/277521019.png"
         }
       ],
       "openai": [
         {
-          "answer": "street",
+          "answer": "blue",
           "correct": false,
-          "confidence": 0.02143223024904728,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/277521019.png"
+          "confidence": 0.09183311462402344,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/277521019.png"
         }
       ]
     },
@@ -5412,18 +5412,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Airplane",
+          "answer": "plane",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/480223000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/480223000.png"
         }
       ],
       "openai": [
         {
-          "answer": "yellow",
+          "answer": "sky",
           "correct": false,
-          "confidence": 0.02130609191954136,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/480223000.png"
+          "confidence": 0.01259276457130909,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/480223000.png"
         }
       ]
     },
@@ -5451,18 +5451,18 @@
       ],
       "salesforce": [
         {
-          "answer": "In the bathroom",
-          "correct": false,
+          "answer": "bathroom",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/264628007.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/264628007.png"
         }
       ],
       "openai": [
         {
           "answer": "bathroom",
           "correct": true,
-          "confidence": 0.022440772503614426,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/264628007.png"
+          "confidence": 0.08791754394769669,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/264628007.png"
         }
       ]
     },
@@ -5490,18 +5490,18 @@
       ],
       "salesforce": [
         {
-          "answer": "A blue blanket",
+          "answer": "blue",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/463669003.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/463669003.png"
         }
       ],
       "openai": [
         {
-          "answer": "cat",
+          "answer": "sleeping",
           "correct": false,
-          "confidence": 0.021530089899897575,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/463669003.png"
+          "confidence": 0.012325816787779331,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/463669003.png"
         }
       ]
     },
@@ -5529,18 +5529,18 @@
       ],
       "salesforce": [
         {
-          "answer": "The cowboy hat",
-          "correct": false,
+          "answer": "cowboy hat",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/523274000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/523274000.png"
         }
       ],
       "openai": [
         {
           "answer": "horse",
           "correct": false,
-          "confidence": 0.021980445832014084,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/523274000.png"
+          "confidence": 0.012337811291217804,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/523274000.png"
         }
       ]
     },
@@ -5568,18 +5568,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Pooh Bear",
+          "answer": "bear",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/540830006.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/540830006.png"
         }
       ],
       "openai": [
         {
           "answer": "yellow",
           "correct": false,
-          "confidence": 0.02119702473282814,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/540830006.png"
+          "confidence": 0.012379140593111515,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/540830006.png"
         }
       ]
     },
@@ -5607,18 +5607,18 @@
       ],
       "salesforce": [
         {
-          "answer": "The Oakland A's",
+          "answer": "oakland as",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/281688002.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/281688002.png"
         }
       ],
       "openai": [
         {
           "answer": "baseball",
           "correct": false,
-          "confidence": 0.022119777277112007,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/281688002.png"
+          "confidence": 0.012381752952933311,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/281688002.png"
         }
       ]
     },
@@ -5646,18 +5646,18 @@
       ],
       "salesforce": [
         {
-          "answer": "They are the brand of the skis",
+          "answer": "brand is called ski",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/563912001.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/563912001.png"
         }
       ],
       "openai": [
         {
-          "answer": "snow",
+          "answer": "sky",
           "correct": false,
-          "confidence": 0.021520687267184258,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/563912001.png"
+          "confidence": 0.012246244587004185,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/563912001.png"
         }
       ]
     },
@@ -5688,15 +5688,15 @@
           "answer": "white",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/36492004.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/36492004.png"
         }
       ],
       "openai": [
         {
-          "answer": "white",
-          "correct": true,
-          "confidence": 0.0210606399923563,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/36492004.png"
+          "answer": "gray",
+          "correct": false,
+          "confidence": 0.09195169806480408,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/36492004.png"
         }
       ]
     },
@@ -5724,18 +5724,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Eating grass",
+          "answer": "probably grazing",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/143418007.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/143418007.png"
         }
       ],
       "openai": [
         {
-          "answer": "grass",
+          "answer": "cow",
           "correct": false,
-          "confidence": 0.021327605471014977,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/143418007.png"
+          "confidence": 0.012547251768410206,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/143418007.png"
         }
       ]
     },
@@ -5763,18 +5763,18 @@
       ],
       "salesforce": [
         {
-          "answer": "It's a white wall",
+          "answer": "orange",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/18291001.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/18291001.png"
         }
       ],
       "openai": [
         {
-          "answer": "4",
+          "answer": "orange",
           "correct": false,
-          "confidence": 0.021130351349711418,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/18291001.png"
+          "confidence": 0.09371106326580048,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/18291001.png"
         }
       ]
     },
@@ -5802,18 +5802,18 @@
       ],
       "salesforce": [
         {
-          "answer": "In the snow",
-          "correct": false,
+          "answer": "in background",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/299261002.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/299261002.png"
         }
       ],
       "openai": [
         {
-          "answer": "snow",
+          "answer": "outdoors",
           "correct": false,
-          "confidence": 0.02140136994421482,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/299261002.png"
+          "confidence": 0.085426926612854,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/299261002.png"
         }
       ]
     },
@@ -5841,18 +5841,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Baseball",
+          "answer": "baseball",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/534876001.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/534876001.png"
         }
       ],
       "openai": [
         {
           "answer": "baseball",
           "correct": true,
-          "confidence": 0.022166425362229347,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/534876001.png"
+          "confidence": 0.012390143238008022,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/534876001.png"
         }
       ]
     },
@@ -5880,18 +5880,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Video game controllers",
-          "correct": true,
+          "answer": "video game controller",
+          "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/67207002.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/67207002.png"
         }
       ],
       "openai": [
         {
-          "answer": "phone",
+          "answer": "living room",
           "correct": false,
-          "confidence": 0.021068712696433067,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/67207002.png"
+          "confidence": 0.012651074677705765,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/67207002.png"
         }
       ]
     },
@@ -5919,18 +5919,18 @@
       ],
       "salesforce": [
         {
-          "answer": "The city of sydney",
+          "answer": "city",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/475244002.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/475244002.png"
         }
       ],
       "openai": [
         {
-          "answer": "water",
+          "answer": "tennis",
           "correct": false,
-          "confidence": 0.020980505272746086,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/475244002.png"
+          "confidence": 0.01233695913106203,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/475244002.png"
         }
       ]
     },
@@ -5958,18 +5958,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Wine",
-          "correct": true,
+          "answer": "glass",
+          "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/238029039.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/238029039.png"
         }
       ],
       "openai": [
         {
-          "answer": "table",
+          "answer": "pizza",
           "correct": false,
-          "confidence": 0.021502230316400528,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/238029039.png"
+          "confidence": 0.012683551758527756,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/238029039.png"
         }
       ]
     },
@@ -5997,18 +5997,18 @@
       ],
       "salesforce": [
         {
-          "answer": "A plastic bag",
-          "correct": false,
+          "answer": "plastic",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/251824001.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/251824001.png"
         }
       ],
       "openai": [
         {
-          "answer": "phone",
-          "correct": false,
-          "confidence": 0.0211623664945364,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/251824001.png"
+          "answer": "plastic",
+          "correct": true,
+          "confidence": 0.012750832363963127,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/251824001.png"
         }
       ]
     },
@@ -6036,18 +6036,18 @@
       ],
       "salesforce": [
         {
-          "answer": "They are long",
-          "correct": false,
+          "answer": "long",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/165141009.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/165141009.png"
         }
       ],
       "openai": [
         {
-          "answer": "brown",
+          "answer": "sitting",
           "correct": false,
-          "confidence": 0.021104728803038597,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/165141009.png"
+          "confidence": 0.012255351059138775,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/165141009.png"
         }
       ]
     },
@@ -6075,18 +6075,18 @@
       ],
       "salesforce": [
         {
-          "answer": "The train",
+          "answer": "train",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/58737001.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/58737001.png"
         }
       ],
       "openai": [
         {
           "answer": "train",
           "correct": false,
-          "confidence": 0.021838577464222908,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/58737001.png"
+          "confidence": 0.012903253547847271,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/58737001.png"
         }
       ]
     },
@@ -6114,18 +6114,18 @@
       ],
       "salesforce": [
         {
-          "answer": "American Airlines",
+          "answer": "american airlines",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/360698000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/360698000.png"
         }
       ],
       "openai": [
         {
-          "answer": "4",
+          "answer": "grass",
           "correct": false,
-          "confidence": 0.0212869755923748,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/360698000.png"
+          "confidence": 0.012325532734394073,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/360698000.png"
         }
       ]
     },
@@ -6153,18 +6153,18 @@
       ],
       "salesforce": [
         {
-          "answer": "It's a motorcycle",
+          "answer": "motorcycle",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/267861001.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/267861001.png"
         }
       ],
       "openai": [
         {
-          "answer": "bike",
+          "answer": "red",
           "correct": false,
-          "confidence": 0.022015973925590515,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/267861001.png"
+          "confidence": 0.012406248599290848,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/267861001.png"
         }
       ]
     },
@@ -6195,15 +6195,15 @@
           "answer": "oranges",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/402922002.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/402922002.png"
         }
       ],
       "openai": [
         {
-          "answer": "street",
+          "answer": "orange",
           "correct": false,
-          "confidence": 0.02095479518175125,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/402922002.png"
+          "confidence": 0.012433972209692001,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/402922002.png"
         }
       ]
     },
@@ -6231,18 +6231,18 @@
       ],
       "salesforce": [
         {
-          "answer": "In the glass",
+          "answer": "glass",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/16030003.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/16030003.png"
         }
       ],
       "openai": [
         {
-          "answer": "table",
-          "correct": true,
-          "confidence": 0.022099263966083527,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/16030003.png"
+          "answer": "living room",
+          "correct": false,
+          "confidence": 0.08411840349435806,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/16030003.png"
         }
       ]
     },
@@ -6270,18 +6270,18 @@
       ],
       "salesforce": [
         {
-          "answer": "He is holding a gun",
+          "answer": "holding gun",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/205002004.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/205002004.png"
         }
       ],
       "openai": [
         {
-          "answer": "bike",
+          "answer": "street",
           "correct": false,
-          "confidence": 0.021945105865597725,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/205002004.png"
+          "confidence": 0.0853242352604866,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/205002004.png"
         }
       ]
     },
@@ -6309,18 +6309,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Shoes",
+          "answer": "shoes",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/383435000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/383435000.png"
         }
       ],
       "openai": [
         {
-          "answer": "walking",
+          "answer": "standing",
           "correct": false,
-          "confidence": 0.021361492574214935,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/383435000.png"
+          "confidence": 0.0124776940792799,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/383435000.png"
         }
       ]
     },
@@ -6348,18 +6348,18 @@
       ],
       "salesforce": [
         {
-          "answer": "A clock",
+          "answer": "wall is painted",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/538775018.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/538775018.png"
         }
       ],
       "openai": [
         {
           "answer": "clock",
           "correct": true,
-          "confidence": 0.021565943956375122,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/538775018.png"
+          "confidence": 0.012431269511580467,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/538775018.png"
         }
       ]
     },
@@ -6387,18 +6387,18 @@
       ],
       "salesforce": [
         {
-          "answer": "It's a sandwich",
+          "answer": "sandwich",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/29838039.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/29838039.png"
         }
       ],
       "openai": [
         {
           "answer": "kitchen",
           "correct": false,
-          "confidence": 0.021420447155833244,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/29838039.png"
+          "confidence": 0.012279880233108997,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/29838039.png"
         }
       ]
     },
@@ -6426,18 +6426,18 @@
       ],
       "salesforce": [
         {
-          "answer": "The team with the most fans in the",
+          "answer": "home team is team that is",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/530013000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/530013000.png"
         }
       ],
       "openai": [
         {
           "answer": "baseball",
           "correct": false,
-          "confidence": 0.02237704209983349,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/530013000.png"
+          "confidence": 0.01240468118339777,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/530013000.png"
         }
       ]
     },
@@ -6465,18 +6465,18 @@
       ],
       "salesforce": [
         {
-          "answer": "A cat",
+          "answer": "cat",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/106389003.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/106389003.png"
         }
       ],
       "openai": [
         {
-          "answer": "cat",
+          "answer": "orange",
           "correct": false,
-          "confidence": 0.02131231315433979,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/106389003.png"
+          "confidence": 0.012387709692120552,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/106389003.png"
         }
       ]
     },
@@ -6504,18 +6504,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Hot dog",
-          "correct": true,
+          "answer": "dog",
+          "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/398604014.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/398604014.png"
         }
       ],
       "openai": [
         {
           "answer": "baseball",
           "correct": false,
-          "confidence": 0.020875615999102592,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/398604014.png"
+          "confidence": 0.012533700093626976,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/398604014.png"
         }
       ]
     },
@@ -6546,15 +6546,15 @@
           "answer": "dr seuss",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/312081000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/312081000.png"
         }
       ],
       "openai": [
         {
-          "answer": "4",
+          "answer": "zebra",
           "correct": false,
-          "confidence": 0.021147150546312332,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/312081000.png"
+          "confidence": 0.012561995536088943,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/312081000.png"
         }
       ]
     },
@@ -6582,18 +6582,18 @@
       ],
       "salesforce": [
         {
-          "answer": "A fork",
-          "correct": false,
+          "answer": "spoon",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/3091002.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/3091002.png"
         }
       ],
       "openai": [
         {
           "answer": "cake",
           "correct": false,
-          "confidence": 0.02204367332160473,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/3091002.png"
+          "confidence": 0.01272196602076292,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/3091002.png"
         }
       ]
     },
@@ -6621,18 +6621,18 @@
       ],
       "salesforce": [
         {
-          "answer": "brown",
-          "correct": true,
+          "answer": "horse is running in front of",
+          "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/226571005.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/226571005.png"
         }
       ],
       "openai": [
         {
-          "answer": "horse",
+          "answer": "black",
           "correct": false,
-          "confidence": 0.021608904004096985,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/226571005.png"
+          "confidence": 0.09158633649349213,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/226571005.png"
         }
       ]
     },
@@ -6660,18 +6660,18 @@
       ],
       "salesforce": [
         {
-          "answer": "London",
+          "answer": "london",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/68128001.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/68128001.png"
         }
       ],
       "openai": [
         {
           "answer": "train",
           "correct": false,
-          "confidence": 0.021753666922450066,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/68128001.png"
+          "confidence": 0.012652412988245487,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/68128001.png"
         }
       ]
     },
@@ -6699,18 +6699,18 @@
       ],
       "salesforce": [
         {
-          "answer": "A book",
-          "correct": false,
+          "answer": "bookcase",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/632000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/632000.png"
         }
       ],
       "openai": [
         {
-          "answer": "wood",
+          "answer": "book",
           "correct": false,
-          "confidence": 0.021237822249531746,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/632000.png"
+          "confidence": 0.012560222297906876,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/632000.png"
         }
       ]
     },
@@ -6738,18 +6738,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Broccoli",
+          "answer": "broccoli",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/10785002.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/10785002.png"
         }
       ],
       "openai": [
         {
           "answer": "green",
           "correct": false,
-          "confidence": 0.020970767363905907,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/10785002.png"
+          "confidence": 0.012511594220995903,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/10785002.png"
         }
       ]
     },
@@ -6777,18 +6777,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Orange slices",
-          "correct": false,
+          "answer": "orange",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/346752002.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/346752002.png"
         }
       ],
       "openai": [
         {
-          "answer": "red",
-          "correct": false,
-          "confidence": 0.021124593913555145,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/346752002.png"
+          "answer": "orange",
+          "correct": true,
+          "confidence": 0.01236465759575367,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/346752002.png"
         }
       ]
     },
@@ -6816,18 +6816,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Seagulls",
+          "answer": "seagull",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/63480000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/63480000.png"
         }
       ],
       "openai": [
         {
           "answer": "bird",
           "correct": false,
-          "confidence": 0.021731622517108917,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/63480000.png"
+          "confidence": 0.012716353870928288,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/63480000.png"
         }
       ]
     },
@@ -6855,18 +6855,18 @@
       ],
       "salesforce": [
         {
-          "answer": "grass",
-          "correct": true,
+          "answer": "giraffe",
+          "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/254965001.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/254965001.png"
         }
       ],
       "openai": [
         {
-          "answer": "standing",
+          "answer": "eating",
           "correct": false,
-          "confidence": 0.021200310438871384,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/254965001.png"
+          "confidence": 0.012218835763633251,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/254965001.png"
         }
       ]
     },
@@ -6894,18 +6894,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Green",
+          "answer": "green",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/280909004.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/280909004.png"
         }
       ],
       "openai": [
         {
-          "answer": "tennis",
+          "answer": "white",
           "correct": false,
-          "confidence": 0.02244887501001358,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/280909004.png"
+          "confidence": 0.09201450645923615,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/280909004.png"
         }
       ]
     },
@@ -6933,18 +6933,18 @@
       ],
       "salesforce": [
         {
-          "answer": "A tie",
-          "correct": false,
+          "answer": "black",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/60010012.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/60010012.png"
         }
       ],
       "openai": [
         {
-          "answer": "man",
+          "answer": "giraffe",
           "correct": false,
-          "confidence": 0.02104048989713192,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/60010012.png"
+          "confidence": 0.012202801182866096,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/60010012.png"
         }
       ]
     },
@@ -6972,18 +6972,18 @@
       ],
       "salesforce": [
         {
-          "answer": "The dog's eyes are brown",
+          "answer": "dogs eyes are brown and black",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/364010000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/364010000.png"
         }
       ],
       "openai": [
         {
-          "answer": "dog",
+          "answer": "car",
           "correct": false,
-          "confidence": 0.021411286666989326,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/364010000.png"
+          "confidence": 0.012295342981815338,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/364010000.png"
         }
       ]
     },
@@ -7011,18 +7011,18 @@
       ],
       "salesforce": [
         {
-          "answer": "White",
+          "answer": "white",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/229427055.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/229427055.png"
         }
       ],
       "openai": [
         {
-          "answer": "2",
+          "answer": "living room",
           "correct": false,
-          "confidence": 0.021098364144563675,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/229427055.png"
+          "confidence": 0.012426599860191345,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/229427055.png"
         }
       ]
     },
@@ -7050,18 +7050,18 @@
       ],
       "salesforce": [
         {
-          "answer": "They are the style of chairs that are",
-          "correct": false,
+          "answer": "wooden",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/339177002.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/339177002.png"
         }
       ],
       "openai": [
         {
-          "answer": "table",
+          "answer": "coffee",
           "correct": false,
-          "confidence": 0.021503647789359093,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/339177002.png"
+          "confidence": 0.012319511733949184,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/339177002.png"
         }
       ]
     },
@@ -7089,18 +7089,18 @@
       ],
       "salesforce": [
         {
-          "answer": "He is flying it up to the top",
+          "answer": "wedding",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/61233003.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/61233003.png"
         }
       ],
       "openai": [
         {
-          "answer": "clock",
+          "answer": "sky",
           "correct": false,
-          "confidence": 0.021118612959980965,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/61233003.png"
+          "confidence": 0.012542159296572208,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/61233003.png"
         }
       ]
     },
@@ -7128,18 +7128,18 @@
       ],
       "salesforce": [
         {
-          "answer": "The people are in the bench",
-          "correct": false,
+          "answer": "people",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/361730004.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/361730004.png"
         }
       ],
       "openai": [
         {
-          "answer": "5",
+          "answer": "sky",
           "correct": false,
-          "confidence": 0.021169409155845642,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/361730004.png"
+          "confidence": 0.012491203844547272,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/361730004.png"
         }
       ]
     },
@@ -7167,18 +7167,18 @@
       ],
       "salesforce": [
         {
-          "answer": "A bike",
-          "correct": false,
+          "answer": "bike",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/369190004.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/369190004.png"
         }
       ],
       "openai": [
         {
-          "answer": "bike",
-          "correct": true,
-          "confidence": 0.02173502743244171,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/369190004.png"
+          "answer": "trees",
+          "correct": false,
+          "confidence": 0.012290219776332378,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/369190004.png"
         }
       ]
     },
@@ -7206,18 +7206,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Sheep",
+          "answer": "sheep",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/468043001.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/468043001.png"
         }
       ],
       "openai": [
         {
-          "answer": "train",
-          "correct": false,
-          "confidence": 0.02108103036880493,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/468043001.png"
+          "answer": "sheep",
+          "correct": true,
+          "confidence": 0.012882859446108341,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/468043001.png"
         }
       ]
     },
@@ -7245,18 +7245,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Both",
+          "answer": "yes",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/45587004.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/45587004.png"
         }
       ],
       "openai": [
         {
-          "answer": "beach",
+          "answer": "yes",
           "correct": false,
-          "confidence": 0.021266495808959007,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/45587004.png"
+          "confidence": 0.5017787218093872,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/45587004.png"
         }
       ]
     },
@@ -7284,18 +7284,18 @@
       ],
       "salesforce": [
         {
-          "answer": "G",
+          "answer": "",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/407168007.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/407168007.png"
         }
       ],
       "openai": [
         {
-          "answer": "train",
+          "answer": "red",
           "correct": false,
-          "confidence": 0.02203729934990406,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/407168007.png"
+          "confidence": 0.012357871048152447,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/407168007.png"
         }
       ]
     },
@@ -7323,18 +7323,18 @@
       ],
       "salesforce": [
         {
-          "answer": "The snow",
-          "correct": false,
+          "answer": "snow",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/330205002.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/330205002.png"
         }
       ],
       "openai": [
         {
-          "answer": "snow",
-          "correct": true,
-          "confidence": 0.021604083478450775,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/330205002.png"
+          "answer": "surfing",
+          "correct": false,
+          "confidence": 0.01237975712865591,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/330205002.png"
         }
       ]
     },
@@ -7362,18 +7362,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Orange",
+          "answer": "orange",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/257940002.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/257940002.png"
         }
       ],
       "openai": [
         {
-          "answer": "train",
-          "correct": false,
-          "confidence": 0.02172015979886055,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/257940002.png"
+          "answer": "orange",
+          "correct": true,
+          "confidence": 0.09307775646448135,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/257940002.png"
         }
       ]
     },
@@ -7401,18 +7401,18 @@
       ],
       "salesforce": [
         {
-          "answer": "The style of skirt is called a tart",
+          "answer": "wearing plaid skirt",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/176793000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/176793000.png"
         }
       ],
       "openai": [
         {
           "answer": "bike",
           "correct": false,
-          "confidence": 0.02153169922530651,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/176793000.png"
+          "confidence": 0.0125860795378685,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/176793000.png"
         }
       ]
     },
@@ -7440,18 +7440,18 @@
       ],
       "salesforce": [
         {
-          "answer": "In the back of the car",
+          "answer": "stone",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/525058000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/525058000.png"
         }
       ],
       "openai": [
         {
           "answer": "street",
           "correct": false,
-          "confidence": 0.02133117988705635,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/525058000.png"
+          "confidence": 0.08584114909172058,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/525058000.png"
         }
       ]
     },
@@ -7479,18 +7479,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Because they are looking for food",
+          "answer": "to see other giraffes",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/231161001.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/231161001.png"
         }
       ],
       "openai": [
         {
-          "answer": "standing",
+          "answer": "grass",
           "correct": false,
-          "confidence": 0.02130630798637867,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/231161001.png"
+          "confidence": 0.012254633009433746,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/231161001.png"
         }
       ]
     },
@@ -7518,18 +7518,18 @@
       ],
       "salesforce": [
         {
-          "answer": "A beer can",
-          "correct": false,
+          "answer": "beer can",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/98872006.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/98872006.png"
         }
       ],
       "openai": [
         {
-          "answer": "stop",
+          "answer": "street",
           "correct": false,
-          "confidence": 0.02086128480732441,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/98872006.png"
+          "confidence": 0.012355715036392212,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/98872006.png"
         }
       ]
     },
@@ -7557,18 +7557,18 @@
       ],
       "salesforce": [
         {
-          "answer": "In the past",
+          "answer": "in early 1900s",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/498555003.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/498555003.png"
         }
       ],
       "openai": [
         {
           "answer": "bird",
           "correct": false,
-          "confidence": 0.02163408324122429,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/498555003.png"
+          "confidence": 0.01277048047631979,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/498555003.png"
         }
       ]
     },
@@ -7596,18 +7596,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Because they are delicious",
+          "answer": "to eat them",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/349896002.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/349896002.png"
         }
       ],
       "openai": [
         {
-          "answer": "walking",
+          "answer": "elephant",
           "correct": false,
-          "confidence": 0.0211550984531641,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/349896002.png"
+          "confidence": 0.01244504563510418,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/349896002.png"
         }
       ]
     },
@@ -7635,18 +7635,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Tennis",
+          "answer": "tennis",
           "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/77591006.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/77591006.png"
         }
       ],
       "openai": [
         {
           "answer": "tennis",
           "correct": true,
-          "confidence": 0.0225173681974411,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/77591006.png"
+          "confidence": 0.012939524836838245,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/77591006.png"
         }
       ]
     },
@@ -7674,18 +7674,18 @@
       ],
       "salesforce": [
         {
-          "answer": "It's morning",
+          "answer": "morning",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/554266002.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/554266002.png"
         }
       ],
       "openai": [
         {
-          "answer": "left",
+          "answer": "morning",
           "correct": false,
-          "confidence": 0.020965108647942543,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/554266002.png"
+          "confidence": 0.14391560852527618,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/554266002.png"
         }
       ]
     },
@@ -7713,18 +7713,18 @@
       ],
       "salesforce": [
         {
-          "answer": "Purple",
+          "answer": "purple",
           "correct": false,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/323615000.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/323615000.png"
         }
       ],
       "openai": [
         {
-          "answer": "blue",
+          "answer": "purple",
           "correct": false,
-          "confidence": 0.02109946683049202,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/323615000.png"
+          "confidence": 0.09340867400169373,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/323615000.png"
         }
       ]
     },
@@ -7752,18 +7752,18 @@
       ],
       "salesforce": [
         {
-          "answer": "The living room",
-          "correct": false,
+          "answer": "living room",
+          "correct": true,
           "confidence": 0.5,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/salesforce/302536001.png"
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce/302536001.png"
         }
       ],
       "openai": [
         {
-          "answer": "man",
-          "correct": false,
-          "confidence": 0.02108968421816826,
-          "attention_image": "/home/jovyan/Visionization/data/processed_data/photos/openai/302536001.png"
+          "answer": "living room",
+          "correct": true,
+          "confidence": 0.08527208864688873,
+          "attention_image": "/home/jovyan/Visualization/src/data/processed_data/photos/openai/302536001.png"
         }
       ]
     }

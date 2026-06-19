@@ -28,6 +28,12 @@ __pycache__/
 public/data/attn/
 public/data/layer_evo/
 public/img/
+src/data/processed_data/photos/
+data_bundle.tar
+visualization_data_package/*
+!visualization_data_package/
+!visualization_data_package/README.md
+visualization_data_wechat_parts/
 train/
 train.zip
 

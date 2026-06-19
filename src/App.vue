@@ -19,17 +19,15 @@
 </template>
 
 <script setup>
-import { reactive, ref, computed } from 'vue'
+import { ref } from 'vue'
 import ModelComparison from './components/ModelComparison.vue'
 import MatrixAttention from './components/MatrixAttention.vue'
 import CorrectErrorPattern from './components/CorrectErrorPattern.vue'
 import TokenAttentionDetail from './components/TokenAttentionDetail.vue'
 import AnswerAggCompare from './components/AnswerAggCompare.vue'
 import LayerEvolution from './components/LayerEvolution.vue'
-import data from './data/vl_attention_data.json'
+import { matrixData, models } from './data/processedData'
 
-const matrixData = data.matrix_data || []
-const models = computed(() => [...new Set(matrixData.map(d => d.model))])
 const activeTab = ref('compare')
 
 const tabs = [

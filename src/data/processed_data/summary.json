@@ -1,8 +1,8 @@
 {
-  "generated_at_utc": "2026-06-01T07:35:33.248569+00:00",
+  "generated_at_utc": "2026-06-18T06:36:05.619801+00:00",
   "source_output_dir": "/home/jovyan/Visionization/data/output",
-  "processed_data_dir": "/home/jovyan/Visionization/data/processed_data",
-  "results_json": "/home/jovyan/Visionization/data/processed_data/results.json",
+  "processed_data_dir": "/home/jovyan/Visualization/src/data/processed_data",
+  "results_json": "/home/jovyan/Visualization/src/data/processed_data/results.json",
   "total_questions": 199,
   "models": {
     "qwen": {
@@ -26,20 +26,20 @@
     "salesforce": {
       "status": "ok",
       "count": 199,
-      "correct": 66,
-      "accuracy": 0.3316582914572864,
+      "correct": 110,
+      "accuracy": 0.5527638190954773,
       "results_count": 199,
       "heatmap_count": 199,
-      "photos_dir": "/home/jovyan/Visionization/data/processed_data/photos/salesforce"
+      "photos_dir": "/home/jovyan/Visualization/src/data/processed_data/photos/salesforce"
     },
     "openai": {
       "status": "ok",
       "count": 199,
-      "correct": 12,
-      "accuracy": 0.06030150753768844,
+      "correct": 70,
+      "accuracy": 0.35175879396984927,
       "results_count": 199,
       "heatmap_count": 199,
-      "photos_dir": "/home/jovyan/Visionization/data/processed_data/photos/openai"
+      "photos_dir": "/home/jovyan/Visualization/src/data/processed_data/photos/openai"
     }
   }
 }

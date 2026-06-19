@@ -14,7 +14,7 @@
           </div>
           <div class="thumb-grid">
             <img v-for="sid in correctSamples.slice(0,24)" :key="sid"
-              :src="'/photos/' + modelKey(selectedModel) + '/' + sid + '.png'"
+              :src="modelPhoto(sid)"
               class="thumb thumb-correct"
               @error="e => e.target.style.opacity='0'" />
           </div>
@@ -26,7 +26,7 @@
           </div>
           <div class="thumb-grid">
             <img v-for="sid in wrongSamples.slice(0,24)" :key="sid"
-              :src="'/photos/' + modelKey(selectedModel) + '/' + sid + '.png'"
+              :src="modelPhoto(sid)"
               class="thumb thumb-wrong"
               @error="e => e.target.style.opacity='0'" />
           </div>
@@ -45,17 +45,16 @@
 <script setup>
 import { ref, computed, watch, onMounted } from 'vue'
 import * as d3 from 'd3'
-import rawData from '../data/vl_attention_data.json'
+import { getPhotoUrl } from '../data/processedData'
 
 const props = defineProps({ data: Array, models: Array })
 const svgRef = ref(null)
 const selectedModel = ref(null)
 watch(() => props.models, ms => { if (ms?.length) selectedModel.value = ms[0] }, { immediate: true })
 
-const labelToKey = Object.fromEntries(
-  Object.entries(rawData.model_labels || {}).map(([k,v]) => [v, k])
-)
-const modelKey = (label) => labelToKey[label] || label.toLowerCase()
+const modelKey = (label) =>
+  props.data.find(d => d.model === label)?.model_key || label.toLowerCase()
+const modelPhoto = (sampleId) => getPhotoUrl(modelKey(selectedModel.value), sampleId)
 
 const correctSamples = computed(() =>
   props.data.filter(d => d.model === selectedModel.value && d.correct).map(d => d.sample_id)
