@@ -158,13 +158,27 @@
 </template>
 
 <script setup>
-import { ref, computed, watch, nextTick, onBeforeUnmount } from 'vue'
+import { ref, computed, watch, nextTick, onBeforeUnmount, inject } from 'vue'
 import * as d3 from 'd3'
 import attnIndex from '../data/attn_index.json'
+
+const broadcast = inject('broadcast', () => {})
+const consume = inject('consume', () => null)
 
 // ===== Data =====
 const samples = attnIndex.samples || []
 const sid = ref(samples[0]?.file || '')
+
+// Map an incoming linked sample_id (== question_id) to one of this view's files.
+function fileForQid(qid, preferModel) {
+  if (qid == null) return null
+  const matches = samples.filter(s => String(s.question_id) === String(qid))
+  if (!matches.length) return null
+  const preferred = preferModel && matches.find(s => s.model === preferModel)
+  return (preferred || matches[0]).file
+}
+const currentQid = computed(() =>
+  samples.find(s => s.file === sid.value)?.question_id ?? null)
 const layerIdx = ref(0)
 const maxLayer = ref(11)
 const sampleData = ref(null)
@@ -612,6 +626,7 @@ async function loadSample(file) {
 
 function onSampleChange() {
   loadSample(sid.value)
+  if (currentQid.value != null) broadcast(currentQid.value, null, 'token')
 }
 
 // ===== Watchers =====
@@ -628,6 +643,12 @@ watch([sampleData], () => {
 })
 
 // ===== Init =====
+// Consume a pending cross-view selection (e.g. a sample chosen in the diagnosis view).
+const pending = consume('token')
+if (pending?.sampleId != null) {
+  const f = fileForQid(pending.sampleId, pending.model)
+  if (f) sid.value = f
+}
 if (samples.length) loadSample(sid.value)
 </script>
 

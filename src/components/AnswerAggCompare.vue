@@ -121,9 +121,12 @@
 </template>
 
 <script setup>
-import { ref, computed, watch, nextTick } from 'vue'
+import { ref, computed, watch, nextTick, inject } from 'vue'
 import * as d3 from 'd3'
 import attnIndex from '../data/attn_index.json'
+
+const broadcast = inject('broadcast', () => {})
+const consume = inject('consume', () => null)
 
 const PW = 260  // heatmap display width (px)
 
@@ -394,7 +397,10 @@ async function loadAndRender() {
   drawAll()
 }
 
-watch(selQid, loadAndRender, { immediate: true })
+watch(selQid, (newVal) => {
+  if (newVal) broadcast(newVal, null, 'agg')
+  loadAndRender()
+}, { immediate: true })
 watch([aggType, layerRange, xform], async () => {
   // Recompute agg vecs from cached data, no re-fetch needed
   for (let i = 0; i < panels.value.length; i++) {
@@ -424,6 +430,12 @@ watch(diffPair, async () => {
     renderDiff(diffCv.value, rawC, rawW, grid.w, grid.h)
   }
 })
+
+// On mount: consume pending selection from Tab2
+const pending = consume('agg')
+if (pending && qidMap.has(pending.sampleId)) {
+  selQid.value = pending.sampleId
+}
 </script>
 
 <style scoped>
