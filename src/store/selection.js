@@ -21,6 +21,7 @@ export function broadcastFields(fields, source) {
   if (fields.sampleId !== undefined) selection.sampleId = fields.sampleId
   if (fields.model !== undefined) selection.model = fields.model
   if (fields.questionType !== undefined) selection.questionType = fields.questionType
+  if (fields.layerIdx !== undefined) selection.layerIdx = fields.layerIdx
   selection.source = source
 }
 
@@ -29,6 +30,7 @@ export function clearSelection() {
   selection.sampleId = null
   selection.model = null
   selection.questionType = null
+  selection.layerIdx = null
   selection.source = null
 }
 
@@ -41,5 +43,6 @@ export function consume(source) {
     sampleId: selection.sampleId,
     model: selection.model,
     questionType: selection.questionType,
+    layerIdx: selection.layerIdx,
   }
 }

@@ -54,7 +54,7 @@ import { ref, computed, onMounted, watch, nextTick, inject } from 'vue'
 import * as d3 from 'd3'
 import stats from '../data/layer_evo_stats.json'
 
-const broadcast = inject('broadcast', () => {})
+const broadcastFields = inject('broadcastFields', () => {})
 const navigate = inject('navigate', () => {})
 
 const MODEL_ORDER = ['qwen', 'llava', 'blip', 'clip']
@@ -304,7 +304,7 @@ function drawLine() {
 }
 
 function openInEvolution(modelKey, layerIdx) {
-  broadcast(null, modelKey, 'diffusion')
+  broadcastFields({ sampleId: null, model: modelKey, layerIdx: layerIdx ?? null }, 'diffusion')
   navigate('layer')
 }
 

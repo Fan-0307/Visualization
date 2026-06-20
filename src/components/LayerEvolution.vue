@@ -231,6 +231,7 @@ const sampleId = ref(''); const sampleList = ref([])
 const sampleInfo = ref(null)
 const dataA = ref(null); const dataB = ref(null)
 const layerIdxA = ref(0); const layerIdxB = ref(0)
+const targetLayerIdxA = ref(null)
 const playing = ref(false); const playSpeed = ref(500)
 const compareMode = ref(false); const syncMode = ref(true)
 const evoMetric = ref('entropy')
@@ -333,6 +334,7 @@ async function loadIndex() {
       } else {
         modelA.value = models.value.includes('llava') ? 'llava' : models.value[0]
       }
+      if (pending?.layerIdx != null) targetLayerIdxA.value = pending.layerIdx
       modelB.value = models.value.includes('blip') ? 'blip' : models.value[models.value.length > 1 ? 1 : 0]
       populateSamples(modelA.value)
       if (pending && pending.sampleId != null) {
@@ -370,7 +372,11 @@ async function loadSampleA() {
   const r = await fetch(`/data/layer_evo/${modelA.value}/${sampleId.value}/result.json`)
   dataA.value = await r.json()
   imgFallbackA.value = 0
-  layerIdxA.value = 0
+  const target = targetLayerIdxA.value
+  layerIdxA.value = target == null
+    ? 0
+    : Math.max(0, Math.min(Number(target) || 0, (dataA.value.layers?.length || 1) - 1))
+  targetLayerIdxA.value = null
   sampleInfo.value = { question: dataA.value.question, gt: dataA.value.ground_truth }
   await nextTick(); drawAll()
 }
