@@ -145,7 +145,7 @@ function drawHeatmap() {
           .style('left', (e.pageX + 12) + 'px').style('top', (e.pageY - 30) + 'px')
       })
       .on('mouseout', function () { d3.select(this).attr('stroke', 'none'); tip.style('opacity', 0) })
-      .on('click', (_, d) => openInEvolution(m, d.i))
+      .on('click', function (_, d) { tip.style('opacity', 0); openInEvolution(m, d.i) })
 
     // component boundary separators + labels
     M.component_boundaries.forEach(b => {
@@ -184,9 +184,9 @@ function drawLine() {
   if (!lineRef.value) return
   const svg = d3.select(lineRef.value)
   svg.selectAll('*').remove()
-  const ml = 46, mr = 120, mt = 14, mb = 40
+  const ml = 46, mr = 120, mt = 28, mb = 40
   const W = Math.max(560, (lineRef.value?.parentElement?.clientWidth || 700))
-  const H = 260
+  const H = 274
   const w = W - ml - mr, h = H - mt - mb
   svg.attr('width', W).attr('height', H)
   const g = svg.append('g').attr('transform', `translate(${ml},${mt})`)
@@ -212,8 +212,8 @@ function drawLine() {
       g.append('rect').attr('x', x0).attr('y', 0).attr('width', Math.max(0, x1 - x0)).attr('height', h)
         .attr('fill', compColors[SL[start].component] || '#f8fafc').attr('opacity', 0.7)
       if (x1 - x0 > 30)
-        g.append('text').attr('x', (x0 + x1) / 2).attr('y', 12).attr('text-anchor', 'middle')
-          .attr('font-size', 9).attr('fill', '#94a3b8').text(compLabel(SL[start].component))
+        g.append('text').attr('x', (x0 + x1) / 2).attr('y', -4).attr('text-anchor', 'middle')
+          .attr('font-size', 9).attr('fill', '#64748b').text(compLabel(SL[start].component))
       start = i
     }
   }
@@ -245,6 +245,62 @@ function drawLine() {
       .attr('stroke-dasharray', '3,3').attr('opacity', 0.9)
       .attr('d', d3.line().defined(d => d[key] != null).x((d, i) => x(frac(i, SL))).y(d => y(d[key])))
   })
+
+  // crosshair overlay
+  const crossLine = g.append('line').attr('stroke', '#1e293b').attr('stroke-width', 1)
+    .attr('stroke-dasharray', '4,3').attr('y1', 0).attr('y2', h).attr('x1', 0).attr('x2', 0)
+    .style('pointer-events', 'none').style('opacity', 0)
+  const crossXLabel = g.append('text').attr('text-anchor', 'start').attr('font-size', '10')
+    .attr('fill', '#1e293b').attr('font-weight', 600).style('pointer-events', 'none').style('opacity', 0)
+  const crossLabels = []
+
+  function getYAtX(L, nx) {
+    if (!L || L.length < 2) return null
+    for (let i = 0; i < L.length - 1; i++) {
+      const x0 = x(frac(i, L)), x1 = x(frac(i + 1, L))
+      if (nx >= x0 && nx <= x1) {
+        const t = (nx - x0) / (x1 - x0)
+        const v0 = L[i][metric.value], v1 = L[i + 1][metric.value]
+        if (v0 == null || v1 == null) continue
+        return v0 + (v1 - v0) * t
+      }
+    }
+    return null
+  }
+
+  models.forEach(m => {
+    const L = stats.models[m].layers
+    const label = g.append('text').attr('text-anchor', 'start').attr('font-size', '10')
+      .attr('fill', MODEL_COLORS[m]).attr('font-weight', 600).style('pointer-events', 'none')
+      .style('opacity', 0)
+    crossLabels.push({ model: m, el: label })
+  })
+
+  g.append('rect').attr('width', w).attr('height', h).attr('fill', 'none')
+    .style('pointer-events', 'all').style('cursor', 'crosshair')
+    .on('mousemove', function (e) {
+      const mx = d3.pointer(e, this)[0]
+      const clamped = Math.max(0, Math.min(w, mx))
+      const depth = x.invert(clamped)
+      crossLine.attr('x1', clamped).attr('x2', clamped).style('opacity', 1)
+      crossXLabel.attr('x', clamped + 4).attr('y', h + 14)
+        .text(d3.format('.0%')(depth)).style('opacity', 1)
+      crossLabels.forEach(({ model: m, el }) => {
+        const L = stats.models[m].layers
+        const vy = getYAtX(L, clamped)
+        if (vy != null) {
+          el.attr('x', clamped + 4).attr('y', y(vy) - 4)
+            .text(d3.format('.3f')(vy)).style('opacity', 1)
+        } else {
+          el.style('opacity', 0)
+        }
+      })
+    })
+    .on('mouseleave', function () {
+      crossLine.style('opacity', 0)
+      crossXLabel.style('opacity', 0)
+      crossLabels.forEach(({ el }) => el.style('opacity', 0))
+    })
 }
 
 function openInEvolution(modelKey, layerIdx) {

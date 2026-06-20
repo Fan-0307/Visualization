@@ -23,14 +23,15 @@
           </div>
         </div>
       </div>
-      <div style="overflow-x:auto;margin-bottom:28px">
+      <div style="margin-bottom:28px">
         <table class="acc-table">
           <thead>
             <tr>
-              <th>Model</th>
-              <th>Overall</th>
-              <th v-for="qt in qtypes" :key="qt" class="qt-head"
-                :class="{ emphasis: emphasisTypes.has(qt) }"
+              <th data-col="0" :class="{ 'col-hover': hoverCol === 0 }">Model</th>
+              <th data-col="1" :class="{ 'col-hover': hoverCol === 1 }">Overall</th>
+              <th v-for="(qt, ci) in qtypes" :key="qt" class="qt-head"
+                :class="{ emphasis: emphasisTypes.has(qt), 'col-hover': hoverCol === ci + 2 }"
+                :data-col="ci + 2"
                 @click="drill({ questionType: qt })"
                 title="点击按该问题类型筛选样本诊断">
                 {{ qt }}
@@ -41,13 +42,16 @@
           <tbody>
             <tr v-for="m in models" :key="m" class="model-row" @click="drill({ model: m })"
               title="点击在样本诊断中高亮该模型">
-              <td class="model-name"><span class="model-tooltip" :data-full-name="modelFullName(m)">{{ m }}</span></td>
-              <td :style="{background:accColor(stats[m]?.overall)}">{{ pct(stats[m]?.overall) }}</td>
-              <td v-for="qt in qtypes" :key="qt"
+              <td class="model-name"
+                @mouseenter="hoverCol = 0" @mouseleave="hoverCol = -1"><span class="model-tooltip" :data-full-name="modelFullName(m)">{{ m }}</span></td>
+              <td :style="{background:accColor(stats[m]?.overall)}"
+                @mouseenter="hoverCol = 1" @mouseleave="hoverCol = -1">{{ pct(stats[m]?.overall) }}</td>
+              <td v-for="(qt, ci) in qtypes" :key="qt"
                 class="acc-cell"
                 :class="{ emphasis: emphasisTypes.has(qt) }"
                 :style="{background:accColor(stats[m]?.byType[qt])}"
                 @click.stop="drill({ model: m, questionType: qt })"
+                @mouseenter="hoverCol = ci + 2" @mouseleave="hoverCol = -1"
                 title="点击按该模型+问题类型下钻">
                 {{ pct(stats[m]?.byType[qt]) }}
               </td>
@@ -57,12 +61,12 @@
       </div>
     </div>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px">
-      <div class="card">
-        <div class="section-title">Overall Accuracy</div>
-        <svg ref="barRef"></svg>
+    <div style="display:flex;gap:16px;margin-top:16px;align-items:stretch">
+      <div class="card" style="flex:1;min-width:0;margin-top:0">
+        <div class="section-title">总体准确率</div>
+        <svg ref="barRef" style="width:100%"></svg>
       </div>
-      <div class="card">
+      <div class="card" style="flex:2;min-width:0;margin-top:0">
         <div class="section-title">按问题类型准确率</div>
         <div style="overflow-x:auto"><svg ref="groupRef"></svg></div>
       </div>
@@ -80,6 +84,7 @@ const groupRef = ref(null)
 
 const broadcastFields = inject('broadcastFields', () => {})
 const navigate = inject('navigate', () => {})
+const hoverCol = ref(-1)
 
 // Drill down into the sample-diagnosis view, carrying the clicked dimension(s).
 function drill(fields) {
@@ -131,7 +136,8 @@ const colors = ['#3b82f6','#10b981','#f59e0b','#ef4444','#8b5cf6']
 
 function drawBar() {
   const ms = models.value
-  const W = 340, H = 180, ml = 50, mb = 28, mt = 8, mr = 16
+  const W = Math.max(340, (barRef.value?.parentElement?.clientWidth || 340) - 4)
+  const H = 220, ml = 50, mb = 28, mt = 8, mr = 16
   const svg = d3.select(barRef.value).attr('width', W).attr('height', H)
   svg.selectAll('*').remove()
   const g = svg.append('g').attr('transform', `translate(${ml},${mt})`)
@@ -164,8 +170,8 @@ function drawBar() {
 
 function drawGroup() {
   const ms = models.value, qts = qtypes.value
-  const W = Math.max(380, qts.length * ms.length * 20 + 80)
-  const H = 200, ml = 44, mb = 56, mt = 8, mr = 12
+  const W = Math.max(380, qts.length * ms.length * 20 + 80, (groupRef.value?.parentElement?.clientWidth || 400) - 4)
+  const H = 220, ml = 44, mb = 56, mt = 8, mr = 12
   const svg = d3.select(groupRef.value).attr('width', W).attr('height', H)
   svg.selectAll('*').remove()
   const g = svg.append('g').attr('transform', `translate(${ml},${mt})`)
@@ -236,11 +242,12 @@ watch(() => props.data, draw)
 </script>
 
 <style scoped>
-.acc-table { border-collapse: collapse; font-size: 13px; width: 100%; }
-.acc-table th { padding: 8px 14px; background: #f8fafc; border: 1px solid #e5e7eb; font-weight: 600; color: #374151; text-align: center; }
-.acc-table th:first-child { text-align: left; }
-.acc-table td { padding: 8px 14px; border: 1px solid #e5e7eb; text-align: center; font-size: 13px; }
-.model-name { font-weight: 600; color: #1e293b; text-align: left !important; }
+.acc-table { border-collapse: collapse; font-size: 14px; width: 100%; }
+.acc-table th { padding: 10px 16px; background: #f8fafc; border: 1px solid #e5e7eb; font-weight: 600; color: #374151; text-align: center; }
+.acc-table th:first-child { text-align: center; }
+.acc-table td { padding: 10px 16px; border: 1px solid #e5e7eb; text-align: center; font-size: 14px; }
+.model-name { font-weight: 600; color: #1e293b; text-align: center !important; }
+.acc-table th.col-hover { background: #dbeafe; color: #1d4ed8; }
 .summary-grid { display: grid; grid-template-columns: 1fr 1fr 1.5fr; gap: 12px; margin-bottom: 16px; }
 .summary-card { border: 1px solid #e5e7eb; border-radius: 8px; padding: 14px 16px; background: #fff; }
 .summary-best { border-left: 4px solid #10b981; background: linear-gradient(90deg, rgba(16,185,129,0.08), #fff 45%); }

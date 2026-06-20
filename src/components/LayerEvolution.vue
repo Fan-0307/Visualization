@@ -338,6 +338,9 @@ async function loadIndex() {
       if (pending && pending.sampleId != null) {
         sampleId.value = pending.sampleId
         nextTick().then(() => loadSampleA())
+      } else if (pending && sampleList.value.length > 0) {
+        sampleId.value = sampleList.value[0].id
+        nextTick().then(() => loadSampleA())
       }
     }
   } catch (e) { console.error('Failed to load index', e) }
