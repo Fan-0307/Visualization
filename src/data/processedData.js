@@ -23,9 +23,6 @@ const photoUrls = Object.fromEntries(
   })
 )
 
-function basename(path) {
-  return String(path || '').split('/').pop()
-}
 
 export function getPhotoUrl(modelKey, sampleId) {
   return photoUrls[`${modelKey}__${sampleId}`] || ''
@@ -35,7 +32,7 @@ export const sampleEntries = Object.entries(results.data || {}).map(([sampleId, 
   sample_id: sampleId,
   image_id: entry.image_id,
   image_path: entry.image_path,
-  image_src: `/img/${basename(entry.image_path)}`,
+  image_src: `/img/${entry.image_id}.jpeg`,
   question: entry.question,
   ground_truth: entry.ground_truth,
 }))
@@ -57,13 +54,13 @@ for (const [sampleId, entry] of Object.entries(results.data || {})) {
       sample_id: sampleId,
       image_id: entry.image_id,
       image_path: entry.image_path,
-      image_src: `/img/${basename(entry.image_path)}`,
+      image_src: `/img/${entry.image_id}.jpeg`,
       question: entry.question,
       ground_truth: entry.ground_truth,
       prediction: result.answer,
       correct: !!result.correct,
       confidence: result.confidence ?? null,
-      question_type: 'All',
+      question_type: entry.question_type || 'other',
     }
 
     matrixData.push(row)
