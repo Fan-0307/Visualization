@@ -52,7 +52,7 @@
         :class="p.data ? (p.correct ? 'aac-panel-ok' : 'aac-panel-err') : 'aac-panel-na'"
       >
         <div class="aac-ph">
-          <span class="aac-pname">{{ p.model }}</span>
+          <span class="aac-pname model-tooltip" :data-full-name="modelFullName(p.model)">{{ modelShortName(p.model) }}</span>
           <span v-if="p.data" class="aac-pbadge" :class="p.correct ? 'badge-ok' : 'badge-err'">
             {{ p.correct ? '✓ 正确' : '✗ 错误' }}
           </span>
@@ -126,6 +126,24 @@ import * as d3 from 'd3'
 import attnIndex from '../data/attn_index.json'
 
 const PW = 260  // heatmap display width (px)
+
+function modelShortName(model) {
+  const m = String(model || '').toLowerCase()
+  if (m.includes('qwen')) return 'Qwen2-VL'
+  if (m.includes('llava')) return 'LLaVA'
+  if (m.includes('clip')) return 'CLIP'
+  if (m.includes('blip')) return 'BLIP2'
+  return model
+}
+
+function modelFullName(model) {
+  const m = String(model || '').toLowerCase()
+  if (m.includes('qwen')) return 'Qwen2-VL-7B-Instruct'
+  if (m.includes('llava')) return 'llava-1.5-7b-hf'
+  if (m.includes('clip')) return 'clip-vit-base-patch32'
+  if (m.includes('blip')) return 'blip2-opt-2.7b'
+  return model
+}
 
 // ===== Build question index =====
 const qidMap = new Map()

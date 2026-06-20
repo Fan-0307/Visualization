@@ -2,20 +2,44 @@
   <div>
     <div class="card">
       <div class="section-title">模型准确率对比</div>
+      <div class="summary-grid">
+        <div class="summary-card summary-best">
+          <div class="summary-label">最佳模型</div>
+          <div class="summary-main model-tooltip" :data-full-name="modelFullName(bestModel?.model)">{{ bestModel?.model || '—' }}</div>
+          <div class="summary-sub">Overall {{ pct(bestModel?.value) }}</div>
+        </div>
+        <div class="summary-card summary-worst">
+          <div class="summary-label">最弱模型</div>
+          <div class="summary-main model-tooltip" :data-full-name="modelFullName(worstModel?.model)">{{ worstModel?.model || '—' }}</div>
+          <div class="summary-sub">Overall {{ pct(worstModel?.value) }}</div>
+        </div>
+        <div class="summary-card summary-insight">
+          <div class="summary-label">关键差异</div>
+          <div class="summary-main">视觉细粒度问题拉开差距</div>
+          <div class="summary-sub">
+            Qwen2-VL/LLaVA 在 what color、who 上稳定，CLIP 在开放式问题上明显较弱。
+          </div>
+        </div>
+      </div>
       <div style="overflow-x:auto;margin-bottom:28px">
         <table class="acc-table">
           <thead>
             <tr>
               <th>Model</th>
               <th>Overall</th>
-              <th v-for="qt in qtypes" :key="qt">{{ qt }}</th>
+              <th v-for="qt in qtypes" :key="qt" :class="{ emphasis: emphasisTypes.has(qt) }">
+                {{ qt }}
+                <span v-if="emphasisTypes.has(qt)" class="type-mark">重点</span>
+              </th>
             </tr>
           </thead>
           <tbody>
             <tr v-for="m in models" :key="m">
-              <td class="model-name">{{ m }}</td>
+              <td class="model-name"><span class="model-tooltip" :data-full-name="modelFullName(m)">{{ m }}</span></td>
               <td :style="{background:accColor(stats[m]?.overall)}">{{ pct(stats[m]?.overall) }}</td>
-              <td v-for="qt in qtypes" :key="qt" :style="{background:accColor(stats[m]?.byType[qt])}">
+              <td v-for="qt in qtypes" :key="qt"
+                :class="{ emphasis: emphasisTypes.has(qt) }"
+                :style="{background:accColor(stats[m]?.byType[qt])}">
                 {{ pct(stats[m]?.byType[qt]) }}
               </td>
             </tr>
@@ -47,6 +71,7 @@ const groupRef = ref(null)
 
 const models = computed(() => [...new Set(props.data.map(d => d.model))])
 const qtypes = computed(() => [...new Set(props.data.map(d => d.question_type))].sort())
+const emphasisTypes = new Set(['yes/no', 'how many', 'what color'])
 
 const stats = computed(() => {
   const s = {}
@@ -62,6 +87,20 @@ const stats = computed(() => {
   }
   return s
 })
+
+const rankedModels = computed(() =>
+  models.value
+    .map(model => ({ model, value: stats.value[model]?.overall ?? null }))
+    .filter(d => d.value != null)
+    .sort((a, b) => b.value - a.value)
+)
+const bestModel = computed(() => rankedModels.value[0] || null)
+const worstModel = computed(() => rankedModels.value[rankedModels.value.length - 1] || null)
+
+function modelFullName(model) {
+  if (!model) return ''
+  return props.data.find(d => d.model === model)?.model_full_name || model
+}
 
 function pct(v) { return v == null ? '—' : (v * 100).toFixed(1) + '%' }
 function accColor(v) {
@@ -111,12 +150,49 @@ function drawGroup() {
   g.append('g').call(d3.axisLeft(y).ticks(4).tickFormat(d3.format('.0%')).tickSize(-w))
     .selectAll('line').style('stroke','#f0f0f0')
   g.selectAll('.domain').remove()
+
+  const tooltip = d3.select('body').selectAll('.acc-tip').data([0]).join('div')
+    .attr('class', 'acc-tip')
+    .style('position', 'absolute')
+    .style('background', 'rgba(15, 23, 42, 0.92)')
+    .style('color', '#fff')
+    .style('padding', '8px 10px')
+    .style('border-radius', '8px')
+    .style('font-size', '12px')
+    .style('line-height', '1.5')
+    .style('box-shadow', '0 8px 20px rgba(15,23,42,0.18)')
+    .style('pointer-events', 'none')
+    .style('opacity', 0)
+
   qts.forEach(qt => ms.forEach((m,i) => {
     const v = stats.value[m]?.byType[qt]
     if (v == null) return
     g.append('rect').attr('x',x0(qt)+x1(m)).attr('y',y(v))
       .attr('width',x1.bandwidth()).attr('height',h-y(v))
       .attr('fill',colors[i%colors.length]).attr('rx',3)
+      .style('cursor', 'pointer')
+      .on('mouseover', function(e) {
+        d3.select(this)
+          .attr('stroke', '#0f172a')
+          .attr('stroke-width', 1.4)
+          .attr('opacity', 0.88)
+        tooltip.style('opacity', 1)
+          .html(`<b>${m}</b><br/><span style="color:#cbd5e1">${modelFullName(m)}</span><br/>${qt}: ${pct(v)}`)
+          .style('left', `${e.pageX + 12}px`)
+          .style('top', `${e.pageY - 34}px`)
+      })
+      .on('mousemove', function(e) {
+        tooltip
+          .style('left', `${e.pageX + 12}px`)
+          .style('top', `${e.pageY - 34}px`)
+      })
+      .on('mouseout', function() {
+        d3.select(this)
+          .attr('stroke', null)
+          .attr('stroke-width', null)
+          .attr('opacity', 1)
+        tooltip.style('opacity', 0)
+      })
   }))
   // legend below
   ms.forEach((m,i) => {
@@ -136,4 +212,18 @@ watch(() => props.data, draw)
 .acc-table th:first-child { text-align: left; }
 .acc-table td { padding: 8px 14px; border: 1px solid #e5e7eb; text-align: center; font-size: 13px; }
 .model-name { font-weight: 600; color: #1e293b; text-align: left !important; }
+.summary-grid { display: grid; grid-template-columns: 1fr 1fr 1.5fr; gap: 12px; margin-bottom: 16px; }
+.summary-card { border: 1px solid #e5e7eb; border-radius: 8px; padding: 14px 16px; background: #fff; }
+.summary-best { border-left: 4px solid #10b981; background: linear-gradient(90deg, rgba(16,185,129,0.08), #fff 45%); }
+.summary-worst { border-left: 4px solid #ef4444; background: linear-gradient(90deg, rgba(239,68,68,0.08), #fff 45%); }
+.summary-insight { border-left: 4px solid #3b82f6; background: linear-gradient(90deg, rgba(59,130,246,0.08), #fff 45%); }
+.summary-label { color: #64748b; font-size: 12px; margin-bottom: 6px; }
+.summary-main { color: #0f172a; font-size: 18px; font-weight: 700; line-height: 1.25; }
+.summary-sub { color: #475569; font-size: 12px; line-height: 1.45; margin-top: 4px; }
+.acc-table th.emphasis { background: #eff6ff; color: #1d4ed8; }
+.acc-table td.emphasis { font-weight: 700; box-shadow: inset 0 0 0 999px rgba(255,255,255,0.12); }
+.type-mark { display: block; margin-top: 2px; color: #2563eb; font-size: 10px; font-weight: 500; }
+@media (max-width: 900px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
 </style>

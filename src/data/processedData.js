@@ -1,10 +1,17 @@
 import results from './processed_data/results.json'
 
 export const modelLabels = {
-  qwen: 'Qwen3-VL',
+  qwen: 'Qwen2-VL',
   llava: 'LLaVA',
-  salesforce: 'Salesforce BLIP',
-  openai: 'OpenAI CLIP',
+  salesforce: 'BLIP2',
+  openai: 'CLIP',
+}
+
+export const modelFullNames = {
+  qwen: 'Qwen2-VL-7B-Instruct',
+  llava: 'llava-1.5-7b-hf',
+  salesforce: 'blip2-opt-2.7b',
+  openai: 'clip-vit-base-patch32',
 }
 
 export const modelKeys = results.models || Object.keys(modelLabels)
@@ -53,6 +60,7 @@ for (const [sampleId, entry] of Object.entries(results.data || {})) {
     const model = modelLabels[modelKey] || modelKey
     const row = {
       model,
+      model_full_name: modelFullNames[modelKey] || model,
       model_key: modelKey,
       sample_id: sampleId,
       image_id: entry.image_id,
@@ -63,10 +71,27 @@ for (const [sampleId, entry] of Object.entries(results.data || {})) {
       prediction: result.answer,
       correct: !!result.correct,
       confidence: result.confidence ?? null,
-      question_type: 'All',
+      question_type: entry.question_type || inferQuestionType(entry.question),
     }
 
     matrixData.push(row)
     attentionData[`${model}__${sampleId}`] = row
   }
+}
+
+function inferQuestionType(question) {
+  const text = String(question || '').trim().toLowerCase()
+  if (!text) return 'other'
+  if (text.startsWith('how many')) return 'how many'
+  if (text.startsWith('what color') || text.includes(' what color') || text.includes(' is what color')) {
+    return 'what color'
+  }
+  if (text.startsWith('what')) return 'what'
+  if (text.startsWith('where')) return 'where'
+  if (text.startsWith('which')) return 'which'
+  if (text.startsWith('who') || text.startsWith('whose')) return 'who'
+  if (/^(is|are|was|were|do|does|did|can|could|will|would|has|have|had)\b/.test(text)) {
+    return 'yes/no'
+  }
+  return 'other'
 }

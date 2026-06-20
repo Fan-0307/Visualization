@@ -6,7 +6,7 @@
         <div class="levo-cg">
           <label class="levo-lbl">模型 A</label>
           <select v-model="modelA" @change="onModelAChange" class="levo-sel">
-            <option v-for="m in models" :key="m" :value="m">{{ m }}</option>
+            <option v-for="m in models" :key="m" :value="m">{{ modelShortName(m) }}</option>
           </select>
         </div>
         <div class="levo-cg">
@@ -26,7 +26,7 @@
         <div class="levo-cg" v-if="compareMode">
           <label class="levo-lbl">模型 B</label>
           <select v-model="modelB" @change="onModelBChange" class="levo-sel">
-            <option v-for="m in models.filter(x => x !== modelA)" :key="m" :value="m">{{ m }}</option>
+            <option v-for="m in models.filter(x => x !== modelA)" :key="m" :value="m">{{ modelShortName(m) }}</option>
           </select>
           <label class="levo-lbl" style="margin-left:8px">
             <input type="checkbox" v-model="syncMode" /> 同步推进
@@ -56,7 +56,7 @@
           <input type="range" :min="0" :max="maxLayerA" v-model.number="layerIdxA"
             class="levo-slider" @input="onSlide('A')" />
           <button class="levo-btn" @click="incLayer('A')" :disabled="layerIdxA >= maxLayerA">▶</button>
-          <span class="levo-layer-num">{{ modelA }} 层 {{ layerIdxA }} / {{ maxLayerA }}</span>
+          <span class="levo-layer-num model-tooltip" :data-full-name="modelFullName(modelA)">{{ modelShortName(modelA) }} 层 {{ layerIdxA }} / {{ maxLayerA }}</span>
           <span class="levo-comp-tag" :style="{background: compColor(curComponent(dataA, layerIdxA))}">
             {{ curComponent(dataA, layerIdxA)?.replace(/_/g, ' ') || 'unknown' }}
           </span>
@@ -73,7 +73,7 @@
       <!-- ═══ Comparison mode: dual layer nav + dual sparklines ═══ -->
       <div v-if="compareMode && dataB" class="card levo-nav-card">
         <!-- Model A timeline -->
-        <div class="levo-timeline-label">{{ modelA }} ({{ totalLayersA }} 层, {{ componentsA.join(' → ') }})</div>
+        <div class="levo-timeline-label model-tooltip" :data-full-name="modelFullName(modelA)">{{ modelShortName(modelA) }} ({{ totalLayersA }} 层, {{ componentsA.join(' → ') }})</div>
         <div class="levo-nav-row">
           <button class="levo-btn" @click="decLayer('A')" :disabled="layerIdxA <= 0">◀</button>
           <input type="range" :min="0" :max="maxLayerA" v-model.number="layerIdxA"
@@ -88,7 +88,7 @@
         <svg ref="sparkSvgA" class="levo-spark" @click="onSparkClick($event, 'A')"></svg>
 
         <!-- Model B timeline -->
-        <div class="levo-timeline-label" style="margin-top:10px">{{ modelB }} ({{ totalLayersB }} 层, {{ componentsB.join(' → ') }})</div>
+        <div class="levo-timeline-label model-tooltip" style="margin-top:10px" :data-full-name="modelFullName(modelB)">{{ modelShortName(modelB) }} ({{ totalLayersB }} 层, {{ componentsB.join(' → ') }})</div>
         <div class="levo-nav-row">
           <button class="levo-btn" @click="decLayer('B')" :disabled="layerIdxB <= 0">◀</button>
           <input type="range" :min="0" :max="maxLayerB" v-model.number="layerIdxB"
@@ -117,7 +117,7 @@
         <!-- Panel A -->
         <div class="card levo-panel">
           <div class="levo-panel-hdr">
-            <span class="levo-panel-model">{{ modelA }}</span>
+            <span class="levo-panel-model model-tooltip" :data-full-name="modelFullName(modelA)">{{ modelShortName(modelA) }}</span>
             <span class="levo-panel-badge" :class="infoA?.correct ? 'badge-ok' : 'badge-err'">
               {{ infoA?.correct ? '✓ ' + infoA.pred : '✗ ' + (infoA?.pred || '(无预测)') }}
             </span>
@@ -126,7 +126,7 @@
             <canvas ref="canvasA" class="levo-canvas"
               @mousemove="onCanvasHover($event, 'A')" @mouseleave="hoverCell = null"></canvas>
             <img :src="imgPathA" style="display:none"
-              ref="imgA" @load="drawHeatmap('A')" />
+              ref="imgA" @load="drawHeatmap('A')" @error="onImageError('A')" />
           </div>
           <!-- Layer semantic info -->
           <div class="levo-semantic">{{ semA?.text }}</div>
@@ -145,7 +145,7 @@
         <!-- Panel B -->
         <div class="card levo-panel" v-if="compareMode && dataB">
           <div class="levo-panel-hdr">
-            <span class="levo-panel-model">{{ modelB }}</span>
+            <span class="levo-panel-model model-tooltip" :data-full-name="modelFullName(modelB)">{{ modelShortName(modelB) }}</span>
             <span class="levo-panel-badge" :class="infoB?.correct ? 'badge-ok' : 'badge-err'">
               {{ infoB?.correct ? '✓ ' + infoB.pred : '✗ ' + (infoB?.pred || '(无预测)') }}
             </span>
@@ -154,7 +154,7 @@
             <canvas ref="canvasB" class="levo-canvas"
               @mousemove="onCanvasHover($event, 'B')" @mouseleave="hoverCell = null"></canvas>
             <img :src="imgPathB" style="display:none"
-              ref="imgB" @load="drawHeatmap('B')" />
+              ref="imgB" @load="drawHeatmap('B')" @error="onImageError('B')" />
           </div>
           <!-- Layer semantic info -->
           <div class="levo-semantic">{{ semB?.text }}</div>
@@ -226,6 +226,7 @@ const playing = ref(false); const playSpeed = ref(500)
 const compareMode = ref(false); const syncMode = ref(true)
 const evoMetric = ref('concentration')
 const hoverCell = ref(null)
+const imgFallbackA = ref(0); const imgFallbackB = ref(0)
 
 const sparkSvgA = ref(null); const sparkSvgB = ref(null)
 const evoSvg = ref(null); const adjSvgA = ref(null); const adjSvgB = ref(null)
@@ -233,6 +234,24 @@ const canvasA = ref(null); const canvasB = ref(null)
 const imgA = ref(null); const imgB = ref(null)
 
 let playTimer = null; let indexData = null
+
+function modelShortName(model) {
+  const m = String(model || '').toLowerCase()
+  if (m.includes('qwen')) return 'Qwen2-VL'
+  if (m.includes('llava')) return 'LLaVA'
+  if (m.includes('clip')) return 'CLIP'
+  if (m.includes('blip')) return 'BLIP2'
+  return model
+}
+
+function modelFullName(model) {
+  const m = String(model || '').toLowerCase()
+  if (m.includes('qwen')) return 'Qwen2-VL-7B-Instruct'
+  if (m.includes('llava')) return 'llava-1.5-7b-hf'
+  if (m.includes('clip')) return 'clip-vit-base-patch32'
+  if (m.includes('blip')) return 'blip2-opt-2.7b'
+  return model
+}
 
 const evoMetrics = [
   { key: 'concentration', label: '集中度 ↑', info: '接近 1 = 注意力锁死在少数 patch，接近 0 = 均匀分布' },
@@ -259,8 +278,8 @@ const infoA = computed(() => dataA.value ? { correct: dataA.value.correct, pred:
 const infoB = computed(() => dataB.value ? { correct: dataB.value.correct, pred: dataB.value.prediction } : null)
 const layerA = computed(() => getLayer(dataA.value, layerIdxA.value))
 const layerB = computed(() => getLayer(dataB.value, layerIdxB.value))
-const imgPathA = computed(() => dataA.value?.image_path || '')
-const imgPathB = computed(() => dataB.value?.image_path || '')
+const imgPathA = computed(() => imageCandidates(dataA.value)[imgFallbackA.value] || '')
+const imgPathB = computed(() => imageCandidates(dataB.value)[imgFallbackB.value] || '')
 const semA = computed(() => compSemantic(layerA.value))
 const semB = computed(() => compSemantic(layerB.value))
 const gridLabelA = computed(() => gridLabel(layerA.value))
@@ -276,8 +295,8 @@ const componentsB = computed(() => {
 })
 const allComponentLegends = computed(() => {
   const r = {}
-  if (dataA.value) r[modelA.value] = componentsA.value
-  if (dataB.value && compareMode.value) r[modelB.value] = componentsB.value
+  if (dataA.value) r[modelShortName(modelA.value)] = componentsA.value
+  if (dataB.value && compareMode.value) r[modelShortName(modelB.value)] = componentsB.value
   return r
 })
 
@@ -316,6 +335,7 @@ async function loadSampleA() {
   if (!sampleId.value || !modelA.value) return
   const r = await fetch(`/data/layer_evo/${modelA.value}/${sampleId.value}/result.json`)
   dataA.value = await r.json()
+  imgFallbackA.value = 0
   layerIdxA.value = 0
   sampleInfo.value = { question: dataA.value.question, gt: dataA.value.ground_truth }
   await nextTick(); drawAll()
@@ -325,12 +345,43 @@ async function loadSampleB() {
   try {
     const r = await fetch(`/data/layer_evo/${modelB.value}/${sampleId.value}/result.json`)
     dataB.value = await r.json()
+    imgFallbackB.value = 0
     layerIdxB.value = 0
     await nextTick(); drawAll()
   } catch (e) { console.error('load B failed', e); dataB.value = null }
 }
 
 function nextTick() { return new Promise(r => setTimeout(r, 0)) }
+
+function imageCandidates(data) {
+  if (!data) return []
+  const candidates = []
+  const add = (path) => {
+    if (path && !candidates.includes(path)) candidates.push(path)
+  }
+  add(data.image_path)
+  add(data.img)
+
+  const id = data.image_id != null ? String(data.image_id) : ''
+  if (id) {
+    const padded = id.padStart(12, '0')
+    add(`/img/${id}.jpeg`)
+    add(`/img/${id}.jpg`)
+    add(`/img/COCO_val2014_${padded}.jpg`)
+    add(`/img/COCO_val2014_${padded}.jpeg`)
+  }
+  return candidates
+}
+
+function onImageError(which) {
+  if (which === 'A') {
+    const next = imgFallbackA.value + 1
+    if (next < imageCandidates(dataA.value).length) imgFallbackA.value = next
+  } else {
+    const next = imgFallbackB.value + 1
+    if (next < imageCandidates(dataB.value).length) imgFallbackB.value = next
+  }
+}
 
 // ── color ──────────────────────────────────────────────────────────
 function compColor(comp) {
@@ -706,11 +757,11 @@ function drawEvoChart() {
   // ── Legend ──
   const ly = h + 24
   g.append('rect').attr('x', 0).attr('y', ly - 8).attr('width', 14).attr('height', 3).attr('fill', '#3b82f6').attr('rx', 1)
-  g.append('text').attr('x', 18).attr('y', ly).attr('font-size', 11).attr('fill', '#3b82f6').attr('font-weight', 600).text(modelA.value)
+  g.append('text').attr('x', 18).attr('y', ly).attr('font-size', 11).attr('fill', '#3b82f6').attr('font-weight', 600).text(modelShortName(modelA.value))
   if (valsB) {
     g.append('line').attr('x1', 100).attr('x2', 114).attr('y1', ly - 6).attr('y2', ly - 6)
       .attr('stroke', '#f59e0b').attr('stroke-width', 2).attr('stroke-dasharray', '4,3')
-    g.append('text').attr('x', 118).attr('y', ly).attr('font-size', 11).attr('fill', '#f59e0b').attr('font-weight', 600).text(modelB.value)
+    g.append('text').attr('x', 118).attr('y', ly).attr('font-size', 11).attr('fill', '#f59e0b').attr('font-weight', 600).text(modelShortName(modelB.value))
   }
 }
 

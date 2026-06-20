@@ -32,7 +32,7 @@ const activeTab = ref('compare')
 
 const tabs = [
   { id: 'compare', label: '模型对比' },
-  { id: 'matrix',  label: 'Error Matrix & Attention' },
+  { id: 'matrix',  label: 'Error Matrix & Evidence' },
   { id: 'pattern', label: '正确 / 错误模式' },
   { id: 'agg',     label: '聚合注意力对比' },
   { id: 'token',   label: '逐层 Token 注意力' },
@@ -55,4 +55,52 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
 .card + .card { margin-top: 16px; }
 .section-title { font-size: 14px; font-weight: 600; color: #444; margin-bottom: 14px; }
+.model-tooltip {
+  position: relative;
+  cursor: help;
+}
+.model-tooltip::after {
+  content: attr(data-full-name);
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 8px);
+  z-index: 60;
+  transform: translate(-50%, -2px);
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  padding: 7px 10px;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.94);
+  color: #f8fafc;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.18);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0;
+  transition: opacity 0.14s ease, transform 0.14s ease;
+}
+.model-tooltip::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 4px);
+  z-index: 61;
+  width: 8px;
+  height: 8px;
+  transform: translate(-50%, -2px) rotate(45deg);
+  opacity: 0;
+  pointer-events: none;
+  background: rgba(15, 23, 42, 0.94);
+  transition: opacity 0.14s ease, transform 0.14s ease;
+}
+.model-tooltip:hover::after,
+.model-tooltip:hover::before {
+  opacity: 1;
+  transform: translate(-50%, 0) rotate(0);
+}
+.model-tooltip:hover::before {
+  transform: translate(-50%, 0) rotate(45deg);
+}
 </style>

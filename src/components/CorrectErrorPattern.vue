@@ -4,7 +4,8 @@
       <div class="section-title">正确 vs 错误时的注意力模式</div>
       <div style="display:flex;gap:8px;margin-bottom:20px">
         <button v-for="m in models" :key="m" @click="selectedModel=m"
-          :class="['model-btn', selectedModel===m && 'model-btn-active']">{{ m }}</button>
+          :data-full-name="modelFullName(m)"
+          :class="['model-btn', 'model-tooltip', selectedModel===m && 'model-btn-active']">{{ m }}</button>
       </div>
 
       <div v-if="selectedModel" style="display:flex;gap:32px;flex-wrap:wrap">
@@ -54,6 +55,8 @@ watch(() => props.models, ms => { if (ms?.length) selectedModel.value = ms[0] },
 
 const modelKey = (label) =>
   props.data.find(d => d.model === label)?.model_key || label.toLowerCase()
+const modelFullName = (label) =>
+  props.data.find(d => d.model === label)?.model_full_name || label
 const modelPhoto = (sampleId) => getPhotoUrl(modelKey(selectedModel.value), sampleId)
 
 const correctSamples = computed(() =>
