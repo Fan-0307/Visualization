@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="card">
-      <div class="section-title">模型准确率对比</div>
+      <div class="section-title">模型准确率对比
+        <span class="drill-hint">点击模型行或问题类型 → 跳转「样本诊断」并自动筛选</span>
+      </div>
       <div class="summary-grid">
         <div class="summary-card summary-best">
           <div class="summary-label">最佳模型</div>
@@ -27,19 +29,26 @@
             <tr>
               <th>Model</th>
               <th>Overall</th>
-              <th v-for="qt in qtypes" :key="qt" :class="{ emphasis: emphasisTypes.has(qt) }">
+              <th v-for="qt in qtypes" :key="qt" class="qt-head"
+                :class="{ emphasis: emphasisTypes.has(qt) }"
+                @click="drill({ questionType: qt })"
+                title="点击按该问题类型筛选样本诊断">
                 {{ qt }}
                 <span v-if="emphasisTypes.has(qt)" class="type-mark">重点</span>
               </th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="m in models" :key="m">
+            <tr v-for="m in models" :key="m" class="model-row" @click="drill({ model: m })"
+              title="点击在样本诊断中高亮该模型">
               <td class="model-name"><span class="model-tooltip" :data-full-name="modelFullName(m)">{{ m }}</span></td>
               <td :style="{background:accColor(stats[m]?.overall)}">{{ pct(stats[m]?.overall) }}</td>
               <td v-for="qt in qtypes" :key="qt"
+                class="acc-cell"
                 :class="{ emphasis: emphasisTypes.has(qt) }"
-                :style="{background:accColor(stats[m]?.byType[qt])}">
+                :style="{background:accColor(stats[m]?.byType[qt])}"
+                @click.stop="drill({ model: m, questionType: qt })"
+                title="点击按该模型+问题类型下钻">
                 {{ pct(stats[m]?.byType[qt]) }}
               </td>
             </tr>
@@ -62,12 +71,21 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, watch } from 'vue'
+import { ref, computed, onMounted, watch, inject } from 'vue'
 import * as d3 from 'd3'
 
 const props = defineProps({ data: Array })
 const barRef = ref(null)
 const groupRef = ref(null)
+
+const broadcastFields = inject('broadcastFields', () => {})
+const navigate = inject('navigate', () => {})
+
+// Drill down into the sample-diagnosis view, carrying the clicked dimension(s).
+function drill(fields) {
+  broadcastFields(fields, 'compare')
+  navigate('matrix')
+}
 
 const models = computed(() => [...new Set(props.data.map(d => d.model))])
 const qtypes = computed(() => [...new Set(props.data.map(d => d.question_type))].sort())
@@ -125,10 +143,20 @@ function drawBar() {
   g.append('g').call(d3.axisLeft(y).ticks(4).tickFormat(d3.format('.0%')).tickSize(-w))
     .selectAll('line').style('stroke','#f0f0f0')
   g.select('.domain').remove()
+  const barTip = d3.select('body').selectAll('.acc-tip').data([0]).join('div').attr('class','acc-tip')
+    .style('position','absolute').style('background','rgba(15,23,42,0.92)').style('color','#fff')
+    .style('padding','7px 10px').style('border-radius','8px').style('font-size','12px')
+    .style('pointer-events','none').style('opacity',0).style('line-height','1.5')
   ms.forEach((m,i) => {
     const v = stats.value[m]?.overall ?? 0
     g.append('rect').attr('x',x(m)).attr('y',y(v)).attr('width',x.bandwidth()).attr('height',h-y(v))
-      .attr('fill',colors[i%colors.length]).attr('rx',4)
+      .attr('fill',colors[i%colors.length]).attr('rx',4).style('cursor','pointer')
+      .on('mouseover',function(e){ d3.select(this).attr('opacity',0.85)
+        barTip.style('opacity',1).html(`<b>${m}</b> · Overall ${pct(v)}<br/><span style="color:#93c5fd">▶ 点击 → 样本诊断 · 高亮该模型</span>`)
+          .style('left',`${e.pageX+12}px`).style('top',`${e.pageY-34}px`) })
+      .on('mousemove',e=>barTip.style('left',`${e.pageX+12}px`).style('top',`${e.pageY-34}px`))
+      .on('mouseout',function(){ d3.select(this).attr('opacity',1); barTip.style('opacity',0) })
+      .on('click',()=>{ barTip.style('opacity',0); drill({ model: m }) })
     g.append('text').attr('x',x(m)+x.bandwidth()/2).attr('y',y(v)-5)
       .attr('text-anchor','middle').attr('font-size',11).attr('fill','#444').text((v*100).toFixed(1)+'%')
   })
@@ -177,7 +205,7 @@ function drawGroup() {
           .attr('stroke-width', 1.4)
           .attr('opacity', 0.88)
         tooltip.style('opacity', 1)
-          .html(`<b>${m}</b><br/><span style="color:#cbd5e1">${modelFullName(m)}</span><br/>${qt}: ${pct(v)}`)
+          .html(`<b>${m}</b><br/><span style="color:#cbd5e1">${modelFullName(m)}</span><br/>${qt}: ${pct(v)}<br/><span style="color:#93c5fd">▶ 点击 → 样本诊断 · 筛选「${qt}」</span>`)
           .style('left', `${e.pageX + 12}px`)
           .style('top', `${e.pageY - 34}px`)
       })
@@ -193,6 +221,7 @@ function drawGroup() {
           .attr('opacity', 1)
         tooltip.style('opacity', 0)
       })
+      .on('click', () => { tooltip.style('opacity', 0); drill({ model: m, questionType: qt }) })
   }))
   // legend below
   ms.forEach((m,i) => {
@@ -223,6 +252,13 @@ watch(() => props.data, draw)
 .acc-table th.emphasis { background: #eff6ff; color: #1d4ed8; }
 .acc-table td.emphasis { font-weight: 700; box-shadow: inset 0 0 0 999px rgba(255,255,255,0.12); }
 .type-mark { display: block; margin-top: 2px; color: #2563eb; font-size: 10px; font-weight: 500; }
+.drill-hint { font-weight: 400; color: #94a3b8; font-size: 12px; margin-left: 10px; }
+.qt-head { cursor: pointer; transition: background 0.15s ease; }
+.qt-head:hover { background: #dbeafe; color: #1d4ed8; }
+.model-row { cursor: pointer; transition: background 0.15s ease; }
+.model-row:hover td { background: #f1f5f9; }
+.acc-cell { cursor: pointer; }
+.acc-cell:hover { outline: 2px solid #3b82f6; outline-offset: -2px; }
 @media (max-width: 900px) {
   .summary-grid { grid-template-columns: 1fr; }
 }

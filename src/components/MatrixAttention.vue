@@ -5,6 +5,14 @@
       <div class="section-title">Error Matrix
         <span style="font-weight:400;color:#999;font-size:12px;margin-left:8px">点击格子查看末层视觉证据</span>
       </div>
+      <div v-if="linkSource" class="link-breadcrumb">
+        <span class="lb-arrow">←</span>
+        来自「模型对比」：
+        <b v-if="linkModel">{{ linkModel }}</b>
+        <b v-if="linkModel && questionTypeFilter !== 'all'"> · </b>
+        <b v-if="questionTypeFilter !== 'all'">{{ questionTypeFilter }}</b>
+        <button class="lb-clear" @click="clearLink">清除联动 ✕</button>
+      </div>
       <div class="filter-row">
         <label class="filter-field">
           <span>问题类型</span>
@@ -42,7 +50,7 @@
     </div>
 
     <!-- bottom: attention detail for selected sample -->
-    <div class="card" style="margin-top:16px">
+    <div class="card" style="margin-top:16px" ref="detailCard">
       <div class="section-title">
         末层视觉证据对比
       </div>
@@ -86,7 +94,7 @@
             <div class="img-label">原图</div>
             <img :src="selectedEntry?.image_src"
               class="attn-img" style="border:2px solid #e5e7eb"
-              @error="e => e.target.style.opacity='0.15'" />
+              @error="e => { if (!e.target._tried && selectedEntry?.image_src_fallback) { e.target._tried=true; e.target.src=selectedEntry.image_src_fallback } else { e.target.style.opacity='0.15' } }" />
           </div>
           <!-- per-model -->
           <div v-for="m in models" :key="m" style="text-align:center">
@@ -98,6 +106,11 @@
               class="attn-img" :style="{border: selected.model===m ? '2px solid #3b82f6' : '2px solid #e5e7eb'}"
               @error="e => { e.target.style.display='none'; e.target.nextElementSibling.style.display='flex' }" />
             <div class="attn-placeholder">暂无证据图</div>
+            <div class="hm-legend">
+              <span class="hm-legend-label">低</span>
+              <div class="hm-legend-bar"></div>
+              <span class="hm-legend-label">高</span>
+            </div>
           </div>
         </div>
       </template>
@@ -106,16 +119,29 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, watch } from 'vue'
+import { ref, computed, onMounted, watch, inject, nextTick } from 'vue'
 import * as d3 from 'd3'
 import { attentionData, getPhotoUrl } from '../data/processedData'
 
+const broadcast = inject('broadcast', () => {})
+const consume = inject('consume', () => null)
+
 const props = defineProps({ data: Array, models: Array })
 const svgRef = ref(null)
+const detailCard = ref(null)
 const selected = ref(null)
 const questionTypeFilter = ref('all')
 const errorFilter = ref('any_error')
 const sortMode = ref('default')
+
+// Linked drill-down state: the model/source carried over from the overview view.
+const linkModel = ref(null)
+const linkSource = ref(null)
+
+function clearLink() {
+  linkModel.value = null
+  linkSource.value = null
+}
 
 const modelKey = (label) =>
   props.data.find(d => d.model === label)?.model_key || label.toLowerCase()
@@ -225,8 +251,19 @@ function redraw() {
     .call(d3.axisBottom(x).tickSize(0))
     .selectAll('text').attr('transform','rotate(-45)').style('text-anchor','end').style('font-size','7px').style('fill','#999')
   g.append('g').call(d3.axisLeft(y).tickSize(0))
-    .selectAll('text').style('font-size','12px').style('fill','#444')
+    .selectAll('text').style('font-size','12px')
+    .style('fill', d => d === linkModel.value ? '#1d4ed8' : '#444')
+    .style('font-weight', d => d === linkModel.value ? 700 : 400)
   g.selectAll('.domain').style('display','none')
+
+  // Highlight the linked model's row (drilled in from the overview view).
+  if (linkModel.value && y(linkModel.value) != null) {
+    g.insert('rect', ':first-child')
+      .attr('x', -ml + 4).attr('y', y(linkModel.value) - 1)
+      .attr('width', samples.length * cell + ml - 8).attr('height', y.bandwidth() + 2)
+      .attr('fill', 'rgba(59,130,246,0.10)').attr('rx', 3)
+      .attr('stroke', 'rgba(59,130,246,0.45)').attr('stroke-width', 1)
+  }
 
   const tooltip = d3.select('body').selectAll('.em-tip').data([0]).join('div')
     .attr('class','em-tip')
@@ -247,7 +284,7 @@ function redraw() {
       d3.select(this).attr('opacity', 1).attr('stroke','#1d4ed8').attr('stroke-width', 2)
       const s = sampleStats.value[d.sample_id]
       tooltip.style('opacity',1)
-        .html(`<b>${d.model}</b> · ${d.sample_id}<br/><span style="color:#cbd5e1">${d.model_full_name || modelFullName(d.model)}</span><br/>${d.correct ? '✓ 正确' : '✗ 错误'}<br/>类型：${s?.questionType || 'unknown'} · 错误 ${s?.wrong || 0}/${s?.total || 0} · 分歧 ${s?.divergence || 0}`)
+        .html(`<b>${d.model}</b> · ${d.sample_id}<br/><span style="color:#cbd5e1">${d.model_full_name || modelFullName(d.model)}</span><br/>${d.correct ? '✓ 正确' : '✗ 错误'}<br/>类型：${s?.questionType || 'unknown'} · 错误 ${s?.wrong || 0}/${s?.total || 0} · 分歧 ${s?.divergence || 0}<br/><span style="color:#93c5fd">▶ 点击查看四模型证据图对比</span>`)
         .style('left',(e.pageX+12)+'px').style('top',(e.pageY-28)+'px')
     })
     .on('mouseout', function(e, d) {
@@ -256,14 +293,37 @@ function redraw() {
         .attr('stroke-width', d.sample_id === selected.value?.sample_id ? 2 : 1.5)
       tooltip.style('opacity',0)
     })
-    .on('click', (_, d) => { selected.value = d; redraw() })
+    .on('click', (_, d) => {
+      selected.value = d; broadcast(d.sample_id, d.model, 'matrix'); redraw()
+      nextTick(() => detailCard.value?.scrollIntoView({ behavior: 'smooth', block: 'start' }))
+    })
+}
+
+// Consume a pending cross-view selection (e.g. drilled in from the overview).
+const pending = consume('matrix')
+if (pending) {
+  linkSource.value = 'compare'
+  if (pending.questionType && questionTypeOptions.value.includes(pending.questionType)) {
+    questionTypeFilter.value = pending.questionType
+    errorFilter.value = 'all'   // overview drill-down should not be hidden by the error filter
+  }
+  if (pending.model) linkModel.value = pending.model
+  if (pending.sampleId && sampleStats.value[pending.sampleId]) {
+    selected.value = { sample_id: pending.sampleId, model: pending.model || props.models?.[0] }
+    errorFilter.value = 'all'
+  }
 }
 
 onMounted(redraw)
-watch([() => props.data, questionTypeFilter, errorFilter, sortMode], redraw)
+watch([() => props.data, questionTypeFilter, errorFilter, sortMode, linkModel], redraw)
 </script>
 
 <style scoped>
+.link-breadcrumb { display: flex; align-items: center; gap: 6px; margin: 2px 0 12px; padding: 7px 12px; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; color: #1e3a8a; font-size: 12px; }
+.link-breadcrumb b { color: #1d4ed8; }
+.lb-arrow { font-weight: 700; color: #3b82f6; }
+.lb-clear { margin-left: auto; border: 1px solid #bfdbfe; background: #fff; color: #1d4ed8; border-radius: 6px; padding: 3px 8px; font-size: 11px; cursor: pointer; }
+.lb-clear:hover { background: #dbeafe; }
 .filter-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 4px 0 12px; }
 .filter-field { display: flex; align-items: center; gap: 6px; color: #475569; font-size: 12px; }
 .filter-field select { height: 28px; border: 1px solid #dbe3ef; border-radius: 6px; background: #fff; color: #1e293b; padding: 0 8px; font-size: 12px; outline: none; }
@@ -279,7 +339,10 @@ watch([() => props.data, questionTypeFilter, errorFilter, sortMode], redraw)
 .diagnosis-title { color: #1d4ed8; font-size: 12px; font-weight: 700; margin-bottom: 6px; }
 .diagnosis-text { color: #1e293b; font-size: 13px; line-height: 1.7; }
 .img-label { font-size: 12px; font-weight: 600; margin-bottom: 4px; }
-.img-pred { font-size: 11px; color: #888; margin-bottom: 4px; max-width: 168px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.attn-img { width: 168px; height: 168px; object-fit: cover; border-radius: 8px; display: block; }
-.attn-placeholder { width: 168px; height: 168px; background: #f3f4f6; border-radius: 8px; display: none; align-items: center; justify-content: center; font-size: 11px; color: #bbb; border: 1px solid #e5e7eb; }
+.img-pred { font-size: 11px; color: #888; margin-bottom: 4px; max-width: 132px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.attn-img { width: 132px; height: 132px; object-fit: cover; border-radius: 8px; display: block; }
+.attn-placeholder { width: 132px; height: 132px; background: #f3f4f6; border-radius: 8px; display: none; align-items: center; justify-content: center; font-size: 11px; color: #bbb; border: 1px solid #e5e7eb; }
+.hm-legend { display: flex; align-items: center; gap: 4px; justify-content: center; margin-top: 4px; }
+.hm-legend-label { font-size: 10px; color: #9ca3af; }
+.hm-legend-bar { width: 72px; height: 6px; border-radius: 3px; background: linear-gradient(to right, #fff5cc, #f59e0b 50%, #dc2626); flex-shrink: 0; }
 </style>

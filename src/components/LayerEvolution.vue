@@ -174,6 +174,12 @@
           <div class="section-title">注意力演化分析</div>
           <div class="levo-analytics-desc">
             追踪注意力从浅层到深层的聚焦/扩散过程。组件交界处（色带变化）通常伴随注意力模式的剧烈变化。
+            <span class="levo-comp-guide">
+              <span class="levo-comp-chip" style="background:#3b82f6">视觉编码</span>
+              <span class="levo-comp-chip" style="background:#f59e0b">Q-Former交叉</span>
+              <span class="levo-comp-chip" style="background:#8b5cf6">Q-Former自注意</span>
+              <span class="levo-comp-chip" style="background:#ef4444">语言模型</span>
+            </span>
           </div>
         </div>
 
@@ -212,8 +218,11 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted, inject, watch } from 'vue'
 import * as d3 from 'd3'
+
+const broadcast = inject('broadcast', () => {})
+const consume = inject('consume', () => null)
 
 // ── state ──────────────────────────────────────────────────────────
 const models = ref([]); const totalSamples = ref(0)
@@ -224,7 +233,7 @@ const dataA = ref(null); const dataB = ref(null)
 const layerIdxA = ref(0); const layerIdxB = ref(0)
 const playing = ref(false); const playSpeed = ref(500)
 const compareMode = ref(false); const syncMode = ref(true)
-const evoMetric = ref('concentration')
+const evoMetric = ref('entropy')
 const hoverCell = ref(null)
 const imgFallbackA = ref(0); const imgFallbackB = ref(0)
 
@@ -254,12 +263,13 @@ function modelFullName(model) {
 }
 
 const evoMetrics = [
-  { key: 'concentration', label: '集中度 ↑', info: '接近 1 = 注意力锁死在少数 patch，接近 0 = 均匀分布' },
-  { key: 'entropy', label: 'Entropy ↓', info: '接近 1 = 均匀散布（没有重点），接近 0 = 极度集中' },
-  { key: 'sparsity', label: 'Gini ↑', info: '接近 1 = 极少数 patch 垄断注意力（类似贫富差距）' },
-  { key: 'top5', label: 'Top-5% ↑', info: '前 5% patch 占据的注意力质量占比，越高越集中' },
+  { key: 'entropy', label: 'Entropy ↓', info: '接近 1 = 均匀散布（扩散，没有重点），接近 0 = 极度集中' },
+  { key: 'top5', label: 'Top-5% ↑', info: '最热的 5% patch 占据的注意力质量占比，越高越聚焦' },
 ]
 const metricInfo = computed(() => evoMetrics.find(m => m.key === evoMetric.value)?.info || '')
+
+// Redraw the evolution curve when the metric (entropy / Top-5%) changes.
+watch(evoMetric, () => { if (dataA.value) drawEvoChart() })
 
 // ── computed ────────────────────────────────────────────────────────
 const maxLayerA = computed(() => (dataA.value?.layers?.length || 1) - 1)
@@ -308,9 +318,27 @@ async function loadIndex() {
     models.value = Object.keys(indexData.models).sort()
     totalSamples.value = indexData.total_samples
     if (models.value.length > 0) {
-      modelA.value = models.value.includes('llava') ? 'llava' : models.value[0]
+      // Check for pending external selection
+      const pending = consume('layer')
+      let matchedModel = null
+      if (pending) {
+        for (const [m, info] of Object.entries(indexData.models || {})) {
+          if (pending.sampleId != null && pending.sampleId in (info.samples || {})) { matchedModel = m; break }
+        }
+        // No sample match (e.g. drilled in from 注意力扩散 with only a model) → honor the model.
+        if (!matchedModel && pending.model && models.value.includes(pending.model)) matchedModel = pending.model
+      }
+      if (matchedModel) {
+        modelA.value = matchedModel
+      } else {
+        modelA.value = models.value.includes('llava') ? 'llava' : models.value[0]
+      }
       modelB.value = models.value.includes('blip') ? 'blip' : models.value[models.value.length > 1 ? 1 : 0]
       populateSamples(modelA.value)
+      if (pending && pending.sampleId != null) {
+        sampleId.value = pending.sampleId
+        nextTick().then(() => loadSampleA())
+      }
     }
   } catch (e) { console.error('Failed to load index', e) }
 }
@@ -324,7 +352,10 @@ function populateSamples(model) {
 
 function onModelAChange() { populateSamples(modelA.value); sampleId.value = ''; dataA.value = null }
 function onModelBChange() { if (sampleId.value) loadSampleB() }
-function onSampleChange() { loadSampleA(); if (compareMode.value) loadSampleB() }
+function onSampleChange() {
+  broadcast(sampleId.value, null, 'layer')
+  loadSampleA(); if (compareMode.value) loadSampleB()
+}
 function onCompareToggle() {
   if (compareMode.value && sampleId.value) { loadSampleB(); layerIdxB.value = layerIdxA.value }
   else dataB.value = null
@@ -556,6 +587,7 @@ function drawSparkline(svgRef, data, layerIdx, modelLabel) {
   const W = svgRef.clientWidth || 700
   const H = 40, ml = 4, mr = 4, mt = 3, mb = 3
   const w = W - ml - mr, h = H - mt - mb
+  svg.attr('viewBox', `0 0 ${W} ${H}`).attr('width', W).attr('height', H)
 
   const vals = layers.map(l => {
     const g = l.raw_visual_grid
@@ -630,6 +662,7 @@ function drawEvoChart() {
   const W = evoSvg.value.clientWidth || 700
   const H = 280, ml = 52, mr = 20, mt = 14, mb = 48
   const w = W - ml - mr, h = H - mt - mb
+  svg.attr('viewBox', `0 0 ${W} ${H}`).attr('width', W).attr('height', H)
 
   const compute = (l, metric) => {
     const g = l.raw_visual_grid
@@ -774,6 +807,7 @@ function drawAdjChart(svgRef, data, modelLabel) {
   const W = svgRef.clientWidth || 700
   const H = 160, ml = 48, mr = 48, mt = 12, mb = 36
   const w = W - ml - mr, h = H - mt - mb
+  svg.attr('viewBox', `0 0 ${W} ${H}`).attr('width', W).attr('height', H)
 
   const x = d3.scaleBand().domain(d3.range(diffs.length)).range([0, w]).padding(0.25)
   const yL1 = d3.scaleLinear().domain([0, d3.max(diffs, d => d.l1_sum || 0) * 1.15]).range([h, 0])
@@ -966,6 +1000,8 @@ onUnmounted(() => { clearTimeout(playTimer); window.removeEventListener('keydown
 .levo-analytics { padding: 20px; }
 .levo-analytics-header { margin-bottom: 14px; }
 .levo-analytics-desc { font-size: 12px; color: #999; margin-top: 4px; line-height: 1.5; }
+.levo-comp-guide { display: inline-flex; gap: 6px; margin-left: 12px; vertical-align: middle; }
+.levo-comp-chip { display: inline-block; padding: 1px 8px; border-radius: 3px; font-size: 10px; color: #fff; opacity: 0.85; }
 .levo-metric-row { display: flex; gap: 8px; align-items: center; margin-bottom: 18px; flex-wrap: wrap; }
 .levo-metric-info { font-size: 11px; color: #aaa; margin-left: 8px; }
 .levo-metric-btn { padding: 5px 14px; border: 1px solid #ddd; border-radius: 5px; background: #fff; cursor: pointer; font-size: 12px; color: #555; transition: all 0.15s; }
@@ -974,7 +1010,7 @@ onUnmounted(() => { clearTimeout(playTimer); window.removeEventListener('keydown
 
 .levo-chart-section { margin-top: 20px; padding-top: 16px; border-top: 1px solid #f0f0f0; }
 .levo-chart-title { font-size: 13px; font-weight: 600; color: #555; margin-bottom: 8px; }
-.levo-chart-svg { width: 100%; }
+.levo-chart-svg { width: 100%; height: auto; display: block; }
 .levo-adj-desc { font-size: 11px; color: #aaa; margin-bottom: 8px; }
 
 .levo-comp-legend { display: flex; gap: 6px; align-items: center; margin-top: 8px; flex-wrap: wrap; }
